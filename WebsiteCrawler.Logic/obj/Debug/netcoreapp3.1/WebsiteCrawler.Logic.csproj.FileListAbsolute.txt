@@ -1,0 +1,11 @@
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\bin\Debug\netcoreapp3.1\WebsiteCrawler.Logic.deps.json
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\bin\Debug\netcoreapp3.1\WebsiteCrawler.Logic.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.csprojAssemblyReference.cache
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.AssemblyInfoInputs.cache
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.AssemblyInfo.cs
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\bin\Debug\netcoreapp3.1\WebsiteCrawler.Logic.pdb
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.pdb
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\bin\Debug\netcoreapp3.1\WebsiteCrawler.Model.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\bin\Debug\netcoreapp3.1\WebsiteCrawler.Model.pdb
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\obj\Debug\netcoreapp3.1\WebsiteCrawler.Logic.csproj.CopyComplete
