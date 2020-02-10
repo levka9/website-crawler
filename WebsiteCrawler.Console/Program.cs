@@ -23,8 +23,10 @@ namespace WebsiteCrawler.Console
             log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
             #endregion
 
+            string websiteUrl = "http://www.lainyan.co.il";
+
             var pageLinkParser = new PageParser();
-            await pageLinkParser.Parse("http://www.lainyan.co.il", 0);
+            await pageLinkParser.Parse(websiteUrl, 0);
             
             await FileData.Save<Page>("links.txt", pageLinkParser.Page.InnerPages);
 
