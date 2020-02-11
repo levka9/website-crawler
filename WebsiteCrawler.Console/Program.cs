@@ -6,6 +6,7 @@ using System.Xml;
 using WebsiteCrawler.Logic;
 using System.Linq;
 using WebsiteCrawler.Logic.Models;
+using System.Collections.Generic;
 
 namespace WebsiteCrawler.Console
 {
@@ -22,13 +23,13 @@ namespace WebsiteCrawler.Console
 
             log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
             #endregion
+                        
+            /* Website Parser */
+            //var websiteParser = new WebsiteParser("https://www.mgweb.co.il");
+            var websiteParser = new WebsiteParser("https://buywordpress.co.il");
+            await websiteParser.Parse();
 
-            string websiteUrl = "http://www.lainyan.co.il";
-
-            var pageLinkParser = new PageParser();
-            await pageLinkParser.Parse(websiteUrl, 0);
-            
-            await FileData.Save<Page>("links.txt", pageLinkParser.Page.InnerPages);
+            await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x=> new { url = x.Key, deep = x.Value }));
 
             System.Console.WriteLine("Hello World!");
         }

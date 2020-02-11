@@ -20,7 +20,7 @@ namespace WebsiteCrawler.Logic
                 {
                     result = false;
                 }
-                else if (Url.Contains(host))
+                else if (!BaseUrl.Contains(host))
                 {
                     result = true;
                 }

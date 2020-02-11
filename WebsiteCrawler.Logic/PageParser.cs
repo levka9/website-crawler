@@ -13,8 +13,14 @@ namespace WebsiteCrawler.Logic
     {
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         string url;
+        string baseUrl;
         HttpClient httpClient;
-        public Page Page { get; set; }               
+        public Page Page { get; set; }
+
+        public PageParser(string BaseUrl)
+        {
+            baseUrl = BaseUrl;
+        }
 
         public async Task Parse(string Url, int Deep)
         {
@@ -39,31 +45,41 @@ namespace WebsiteCrawler.Logic
             catch (Exception ex)
             {
                 log.Error("GetHtmlPage", ex);
-                throw ex;
+                return null;
+                //throw ex;
             }
         }
 
         private Page GetAllLinks(string HtmlPage, int Deep)
         {
+            if (string.IsNullOrEmpty(HtmlPage)) return null;
+
             Page = new Page();
             Page.InnerPages = new List<Page>();
 
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(HtmlPage);
-
-            var links = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
-
-            for (int i = 0, lenght = links.Count(); i < lenght; i++)
+            try
             {
-                if (links[i].Attributes["href"] != null)
+                var htmlDocument = new HtmlDocument();
+                htmlDocument.LoadHtml(HtmlPage);
+
+                var links = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
+
+                for (int i = 0, lenght = links.Count(); i < lenght; i++)
                 {
-                    Page.InnerPages.Add(new Page()
+                    if (links[i].Attributes["href"] != null)
                     {
-                        Url = links[i].Attributes["href"].Value,
-                        Deep = Deep,
-                        IsExternal = Url.IsExternal(url, links[i].Attributes["href"].Value)                        
-                    });
-                }                
+                        Page.InnerPages.Add(new Page()
+                        {
+                            Url = links[i].Attributes["href"].Value,
+                            Deep = Deep,
+                            IsExternal = Url.IsExternal(baseUrl, links[i].Attributes["href"].Value)
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("GetAllLinks ", ex);                
             }
 
             return Page;
