@@ -9,45 +9,57 @@ namespace WebsiteCrawler.Logic
 {
     public class WebsiteParser
     {
-        PageParser pageParser;        
+
+        #region Private params
+        int maxDeep;
         string baseUrl;
+        PageParser pageParser;
+        #endregion
+
+        #region Public params
         public int TotalPagesParsed { get; set; }
         public Dictionary<string, int> DicAllInternalUrls { get; set; }
+        #endregion
 
-        public WebsiteParser(string BaseUrl)
+        #region Constructors
+        public WebsiteParser(string BaseUrl, int MaxDeep = 100)
         {
             baseUrl = BaseUrl;
+            maxDeep = MaxDeep;
             DicAllInternalUrls = new Dictionary<string, int>();
-        }
+        } 
+        #endregion
 
         public async Task Parse()
         {
             pageParser = new PageParser(baseUrl);
             pageParser.Page = new Page();
-            //await pageParser.Parse(BaseUrl, 0);
 
             await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
         {
-            TotalPagesParsed++;
-            Console.WriteLine($"{TotalPagesParsed} - Parse: {Url}");            
-            await pageParser.Parse(Url, Deep);
-
-            if (pageParser.Page == null || TotalPagesParsed > 20)
+            if (Deep > maxDeep)
             {
                 return;
             }
 
-            Page.InnerPages = GetOnlyNewInternalPages(pageParser.Page.InnerPages, Deep);
+            TotalPagesParsed++;
+            Console.WriteLine($"{TotalPagesParsed} - Parse: {Url}");            
+            await pageParser.Parse(Url, Deep);
 
-            for (int i = 0, length = Page.InnerPages.Count(); i < length; i++)
+            if (pageParser.Page != null)
             {
-                var pageUrl = GetPageUrl(Page.InnerPages.ElementAt(i).Url);
+                Page.InnerPages = GetOnlyNewInternalPages(pageParser.Page.InnerPages, Deep);
 
-                await RecursiveParseInnerPages(pageUrl, Deep + 1, Page.InnerPages.ElementAt(i));
-            }
+                for (int i = 0, length = Page.InnerPages.Count(); i < length; i++)
+                {
+                    var pageUrl = GetPageUrl(Page.InnerPages.ElementAt(i).Url);
+
+                    await RecursiveParseInnerPages(pageUrl, Deep + 1, Page.InnerPages.ElementAt(i));
+                }
+            }            
         }
 
         private string GetPageUrl(string pageUrl)
@@ -74,7 +86,7 @@ namespace WebsiteCrawler.Logic
                     pageUrl = $"{baseUrl}{pageUrl}";
                 }
 
-                if (!DicAllInternalUrls.ContainsKey(pageUrl))
+                if (!DicAllInternalUrls.ContainsKey(pageUrl) && !ImageHelper.IsImage(pageUrl))
                 {
                     DicAllInternalUrls.Add(pageUrl, Deep);
 
@@ -84,5 +96,6 @@ namespace WebsiteCrawler.Logic
 
             return newPages;
         }
+
     }
 }

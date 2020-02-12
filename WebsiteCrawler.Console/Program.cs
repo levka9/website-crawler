@@ -23,10 +23,13 @@ namespace WebsiteCrawler.Console
 
             log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
             #endregion
-                        
+
             /* Website Parser */
             //var websiteParser = new WebsiteParser("https://www.mgweb.co.il");
-            var websiteParser = new WebsiteParser("https://buywordpress.co.il");
+            //var websiteParser = new WebsiteParser("https://buywordpress.co.il");
+            //var websiteParser = new WebsiteParser("https://proxy6.net");
+
+            var websiteParser = new WebsiteParser("https://buywordpress.co.il", 3);
             await websiteParser.Parse();
 
             await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x=> new { url = x.Key, deep = x.Value }));

@@ -10407,3 +10407,361 @@ System.ArgumentNullException: Value cannot be null. (Parameter 'source')
    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 04:57:59 GetHtmlPage
+System.InvalidOperationException: The character set provided in ContentType is invalid. Cannot read content as string using an invalid character set.
+ ---> System.ArgumentException: 'windows-1255' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method. (Parameter 'name')
+   at System.Text.EncodingTable.InternalGetCodePageFromName(String name)
+   at System.Text.EncodingTable.GetCodePageFromName(String name)
+   at System.Text.Encoding.GetEncoding(String name)
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:59:23 GetHtmlPage
+System.Net.Http.HttpRequestException: No such host is known.
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:19:56 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:31:19 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:31:32 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:31:36 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:42 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:44 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:49 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:31:52 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:53 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:57 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:57 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:58 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:31:59 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:00 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:00 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:01 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:01 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:02 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:02 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:03 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:03 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:04 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:05 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:05 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:06 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:07 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:07 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:08 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:08 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:09 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:10 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:10 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:11 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:12 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:12 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:13 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:14 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:15 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:15 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:16 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:16 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:17 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:18 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:19 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:19 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:20 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:21 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:22 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:23 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:24 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:24 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:25 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:25 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:26 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:26 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:27 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:28 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:28 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:30 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:31 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:32 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:32 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:33 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:33 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:32:34 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
