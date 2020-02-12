@@ -29,12 +29,12 @@ namespace WebsiteCrawler.Console
             //var websiteParser = new WebsiteParser("https://buywordpress.co.il");
             //var websiteParser = new WebsiteParser("https://proxy6.net");
 
-            var websiteParser = new WebsiteParser("https://buywordpress.co.il", 3);
+            var websiteParser = new WebsiteParser("https://www.nytimes.com", 2);
             await websiteParser.Parse();
 
             await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x=> new { url = x.Key, deep = x.Value }));
 
-            System.Console.WriteLine("Hello World!");
+            System.Console.ReadKey();
         }
     }
 }
