@@ -7,6 +7,7 @@ using WebsiteCrawler.Logic;
 using System.Linq;
 using WebsiteCrawler.Logic.Models;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace WebsiteCrawler.Console
 {
@@ -25,14 +26,10 @@ namespace WebsiteCrawler.Console
             #endregion
 
             /* Website Parser */
-            //var websiteParser = new WebsiteParser("https://www.mgweb.co.il");
-            //var websiteParser = new WebsiteParser("https://buywordpress.co.il");
-            //var websiteParser = new WebsiteParser("https://proxy6.net");
+            //await OneThreadWebsiteParser.Start();
 
-            var websiteParser = new WebsiteParser("https://www.nytimes.com", 2);
-            await websiteParser.Parse();
-
-            await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x=> new { url = x.Key, deep = x.Value }));
+            var multiThreadWebsiteParser = new MultiThreadWebsiteParser();
+            multiThreadWebsiteParser.Start();
 
             System.Console.ReadKey();
         }
