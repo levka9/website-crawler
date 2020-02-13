@@ -9,7 +9,7 @@ namespace WebsiteCrawler.Console
 {
     public class MultiThreadWebsiteParser
     {
-        const int MAX_TASK_QUANTITY = 10;
+        const int MAX_TASK_QUANTITY = 10; 
 
         int deep;
         List<Task> tasks;
