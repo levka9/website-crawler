@@ -28,7 +28,16 @@ namespace WebsiteCrawler.Console
             /* Website Parser */
             //await OneThreadWebsiteParser.Start();
 
-            var multiThreadWebsiteParser = new MultiThreadWebsiteParser();
+            var websites = new Queue<string>();
+            websites.Enqueue("https://www.nytimes.com");
+            websites.Enqueue("https://buywordpress.co.il");
+            websites.Enqueue("https://www.mgweb.co.il");
+            websites.Enqueue("https://habr.com");
+            websites.Enqueue("https://skyeng.ru");
+            websites.Enqueue("https://docs.microsoft.com");
+
+
+            var multiThreadWebsiteParser = new MultiThreadWebsiteParser(websites, 1);
             multiThreadWebsiteParser.Start();
 
             System.Console.ReadKey();

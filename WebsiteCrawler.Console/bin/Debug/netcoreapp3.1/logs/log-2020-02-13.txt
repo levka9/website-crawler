@@ -1,0 +1,957 @@
+ERROR 02:48:13 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:48:15 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:55 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:56 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:57 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:58 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:57:59 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:00 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:01 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 02:58:02 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 03:00:55 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 03:00:57 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:16:39 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:16:43 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:16:42 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:16:45 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:18:14 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:18:18 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:18:19 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:18:20 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:34:45 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:34:47 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:34:49 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:34:50 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:35:53 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 301 (Moved Permanently).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:36:20 GetHtmlPage
+System.Net.Http.HttpRequestException: No such host is known.
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:36:21 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 04:37:15 GetHtmlPage
+System.Net.Http.HttpRequestException: The requested name is valid, but no data of the requested type was found.
+ ---> System.Net.Sockets.SocketException (11004): The requested name is valid, but no data of the requested type was found.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:39:06 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 04:41:33 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:41:37 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:41:35 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:41:38 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:42:41 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 301 (Moved Permanently).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:43:09 GetHtmlPage
+System.Net.Http.HttpRequestException: No such host is known.
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:43:10 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 04:45:50 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 04:59:04 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:59:09 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:59:11 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 04:59:11 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:10:34 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:10:36 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:10:35 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:10:38 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:11:42 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 301 (Moved Permanently).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:12:09 GetHtmlPage
+System.Net.Http.HttpRequestException: No such host is known.
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 05:12:10 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
+ERROR 05:14:40 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in D:\Learn\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 65
