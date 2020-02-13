@@ -1,4 +1,4 @@
-# website-crawler
+# Website-crawler
 
 This is C#  website crawler(console application) wich return all inner and outer links from website.
 
