@@ -15,6 +15,7 @@ You can run this application from WebsiteCrawler.Console by set your parameter i
 All results you get in text file "links.txt".
 
 Result example:
+
 {"url":"https://www.nytimes.com#after-dfp-ad-top","deep":0}
 {"url":"https://www.nytimes.com#site-content","deep":0}
 {"url":"https://www.nytimes.com#site-index","deep":0}
