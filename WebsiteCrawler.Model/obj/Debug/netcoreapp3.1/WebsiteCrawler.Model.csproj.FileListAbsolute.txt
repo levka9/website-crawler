@@ -6,3 +6,11 @@ D:\Learn\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCraw
 D:\Learn\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.AssemblyInfo.cs
 D:\Learn\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.dll
 D:\Learn\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.pdb
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\bin\Debug\netcoreapp3.1\WebsiteCrawler.Model.deps.json
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\bin\Debug\netcoreapp3.1\WebsiteCrawler.Model.dll
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\bin\Debug\netcoreapp3.1\WebsiteCrawler.Model.pdb
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.csprojAssemblyReference.cache
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.AssemblyInfoInputs.cache
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.AssemblyInfo.cs
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.dll
+F:\asp.net\WebsiteCrawler\WebsiteCrawler.Model\obj\Debug\netcoreapp3.1\WebsiteCrawler.Model.pdb

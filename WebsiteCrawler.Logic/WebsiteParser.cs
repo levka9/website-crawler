@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic.Models;
 using System.Linq;
+using WebsiteCrawler.Logic.Requests;
+using System.Threading;
 
 namespace WebsiteCrawler.Logic
 {
@@ -14,6 +16,8 @@ namespace WebsiteCrawler.Logic
         int maxDeep;
         string baseUrl;
         PageParser pageParser;
+        IEnumerable<string> domainExtentions;
+        int? taskId;
         #endregion
 
         #region Public params
@@ -22,20 +26,33 @@ namespace WebsiteCrawler.Logic
         #endregion
 
         #region Constructors
-        public WebsiteParser(string BaseUrl, int MaxDeep = 100)
+        public WebsiteParser(WebsiteParserRequest WebsiteParserRequest)
         {
-            baseUrl = BaseUrl;
-            maxDeep = MaxDeep;
+            taskId = WebsiteParserRequest.TaskId;
+            baseUrl = WebsiteParserRequest.WebsiteUrl;
+            maxDeep = WebsiteParserRequest.MaxDeep;
+            domainExtentions = WebsiteParserRequest.DomainExtentions;
+
             DicAllInternalUrls = new Dictionary<string, int>();
         } 
         #endregion
 
         public async Task Parse()
         {
+            System.Console.WriteLine($"Task id {taskId} start.");
+
+            if (!WebRequestHelper.Check(baseUrl)) 
+            {
+                System.Console.WriteLine($"Task id {taskId} ended.");
+                return;
+            } 
+
             pageParser = new PageParser(baseUrl);
             pageParser.Page = new Page();
 
             await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+
+            System.Console.WriteLine($"Task id {taskId} ended.");
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
@@ -49,10 +66,12 @@ namespace WebsiteCrawler.Logic
             Console.WriteLine($"{TotalPagesParsed} - Parse: {Url}");            
             await pageParser.Parse(Url, Deep);
 
-            if (pageParser.Page != null)
+            if (IsContainInnerPages(pageParser.Page))
             {
-                Page.InnerPages = GetOnlyNewInternalPages(pageParser.Page.InnerPages, Deep);
+                SetExternalWebsite(pageParser.Page.InnerPages);
 
+                Page.InnerPages = GetOnlyNewInternalPages(pageParser.Page.InnerPages, Deep);
+                
                 for (int i = 0, length = Page.InnerPages.Count(); i < length; i++)
                 {
                     var pageUrl = GetPageUrl(Page.InnerPages.ElementAt(i).Url);
@@ -60,6 +79,11 @@ namespace WebsiteCrawler.Logic
                     await RecursiveParseInnerPages(pageUrl, Deep + 1, Page.InnerPages.ElementAt(i));
                 }
             }            
+        }
+
+        private bool IsContainInnerPages(Page Page)
+        {
+            return pageParser.Page != null && pageParser.Page.InnerPages != null;
         }
 
         private string GetPageUrl(string pageUrl)
@@ -74,8 +98,10 @@ namespace WebsiteCrawler.Logic
 
         private List<Page> GetOnlyNewInternalPages(List<Page> Pages, int Deep)
         {
+            if (Pages == null && Pages.Count == 0) return null;
+
             var newPages = new List<Page>();
-            var pages = Pages.Where(x => x.IsExternal != true).ToList();            
+            var pages = Pages.Where(x => x.IsExternal != true).ToList();
 
             for (int i = 0, length = pages.Count(); i < length; i++)
             {
@@ -97,5 +123,29 @@ namespace WebsiteCrawler.Logic
             return newPages;
         }
 
+        private void SetExternalWebsite(List<Page> Pages)
+        {
+            if (Pages == null && Pages.Count == 0) return;
+
+            var pages = Pages.Where(x => x.IsExternal == true).ToList();
+
+            for (int i = 0, length = pages.Count(); i < length; i++)
+            {
+                var pageUrl = pages.ElementAt(i).Url;
+                
+                var url = new Uri(pageUrl);
+                var baseUrl = url.GetLeftPart(UriPartial.Authority);
+
+                if (!WebSitesConcurrentQueue.AllWebSites.Contains(baseUrl) && Url.IsContainExtention(baseUrl, domainExtentions))
+                {
+                    WebSitesConcurrentQueue.WebSites.Enqueue(baseUrl);
+                    WebSitesConcurrentQueue.AllWebSites.Enqueue(baseUrl);
+
+                    Console.WriteLine($"New website added: {baseUrl}");
+
+                    FileData.Save("websites.txt", baseUrl);
+                }
+            }
+        }
     }
 }

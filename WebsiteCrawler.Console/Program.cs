@@ -8,6 +8,9 @@ using System.Linq;
 using WebsiteCrawler.Logic.Models;
 using System.Collections.Generic;
 using System.Threading;
+using System.Collections.Concurrent;
+using WebsiteCrawler.Logic.Requests;
+using System.Linq;
 
 namespace WebsiteCrawler.Console
 {
@@ -28,17 +31,28 @@ namespace WebsiteCrawler.Console
             /* Website Parser */
             //await OneThreadWebsiteParser.Start();
 
-            var websites = new Queue<string>();
-            websites.Enqueue("https://www.nytimes.com");
-            websites.Enqueue("https://buywordpress.co.il");
-            websites.Enqueue("https://www.mgweb.co.il");
-            websites.Enqueue("https://habr.com");
-            websites.Enqueue("https://skyeng.ru");
-            websites.Enqueue("https://docs.microsoft.com");
+            var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
+            multiThreadWebsiteParserRequest.WebsiteUrls = new List<string>()
+            {
+                "https://www.2net.co.il",
+                //"http://www.lainyan.co.il",
+                //"https://www.a.co.il",
+                //"http://www.startpage.co.il"
+            };
+                        
+            multiThreadWebsiteParserRequest.DomainExtentions = new List<string>() 
+            { 
+                "co.il",
+                "org.il"
+            };
 
+            multiThreadWebsiteParserRequest.MaxDeep = 1;
 
-            var multiThreadWebsiteParser = new MultiThreadWebsiteParser(websites, 1);
-            multiThreadWebsiteParser.Start();
+            var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
+            await multiThreadWebsiteParser.Start();
+
+            //var testMultithreadTasks = new TestMultithreadTasks();
+            //await testMultithreadTasks.Start();
 
             System.Console.ReadKey();
         }

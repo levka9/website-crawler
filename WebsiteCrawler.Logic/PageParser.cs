@@ -11,11 +11,13 @@ namespace WebsiteCrawler.Logic
 {
     public class PageParser
     {
+        #region Properties
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         string url;
         string baseUrl;
         HttpClient httpClient;
-        public Page Page { get; set; }
+        public Page Page { get; set; } 
+        #endregion
 
         public PageParser(string BaseUrl)
         {

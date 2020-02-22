@@ -1,0 +1,184 @@
+ERROR 10:44:39 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 10:44:44 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 10:44:42 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 10:44:50 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 41
+ERROR 11:04:40 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:04:45 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:04:43 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:04:47 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:06:30 GetHtmlPage
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:06:35 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:06:34 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:06:35 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:06:32 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:23 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:26 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:38 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:42 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:36 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:26 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:33 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:26 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:31 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 67
+ERROR 11:08:36 GetAllLinks 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at WebsiteCrawler.Logic.PageParser.GetAllLinks(String HtmlPage, Int32 Deep) in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 67
+ERROR 11:08:31 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:08:33 GetHtmlPage
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(Task`1 getTask)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:17:26 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:17:31 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:17:44 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:17:44 GetHtmlPage
+System.UriFormatException: Invalid URI: Invalid port specified.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at System.Net.Http.HttpClient.CreateUri(String uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
+ERROR 11:19:22 GetHtmlPage
+System.ArgumentException: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+   at System.Net.Http.HttpRequestMessage.InitializeValues(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpRequestMessage..ctor(HttpMethod method, Uri requestUri)
+   at System.Net.Http.HttpClient.CreateRequestMessage(HttpMethod method, Uri uri)
+   at System.Net.Http.HttpClient.GetStringAsync(String requestUri)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in F:\asp.net\WebsiteCrawler\WebsiteCrawler.Logic\PageParser.cs:line 43
