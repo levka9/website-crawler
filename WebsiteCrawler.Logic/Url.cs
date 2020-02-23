@@ -30,7 +30,29 @@ namespace WebsiteCrawler.Logic
             catch 
             {
                 return false;
-            }         
+            }
+        }
+
+        public static string GetDomain(string BaseUrl)
+        {            
+            try
+            {
+                return new System.Uri(BaseUrl).Host;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        public static bool IsContainExtention(string Url, IEnumerable<string> DomainExtentions)
+        {
+            foreach (var domainExtention in DomainExtentions)
+            {
+                if(Url.Contains(domainExtention) == true) return true;
+            }
+
+            return false;
         }
     }
 }

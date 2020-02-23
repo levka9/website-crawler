@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic;
 using System.Linq;
+using WebsiteCrawler.Models.Requests;
 
 namespace WebsiteCrawler.Console
 {
@@ -11,7 +12,14 @@ namespace WebsiteCrawler.Console
     {
         public static async Task Start()
         {
-            var websiteParser = new WebsiteParser("https://www.nytimes.com", 2);
+            var websiteParserRequest = new WebsiteParserRequest()
+            {
+                WebsiteUrl = "https://www.nytimes.com",
+                MaxDeep = 2,
+                DomainExtentions = null
+            };
+
+            var websiteParser = new WebsiteParser(websiteParserRequest);
             await websiteParser.Parse();
 
             await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));

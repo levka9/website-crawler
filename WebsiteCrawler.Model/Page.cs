@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebsiteCrawler.Logic.Models
+namespace WebsiteCrawler.Models
 {
     public class Page
     {        
