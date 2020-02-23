@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-using WebsiteCrawler.Logic.Models;
+using WebsiteCrawler.Models;
 
 namespace WebsiteCrawler.Logic
 {

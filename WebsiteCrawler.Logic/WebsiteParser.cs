@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using WebsiteCrawler.Logic.Models;
+using WebsiteCrawler.Models;
 using System.Linq;
-using WebsiteCrawler.Logic.Requests;
+using WebsiteCrawler.Models.Requests;
 using System.Threading;
 
 namespace WebsiteCrawler.Logic
@@ -14,7 +14,8 @@ namespace WebsiteCrawler.Logic
 
         #region Private params
         int maxDeep;
-        string baseUrl;
+        string domain;
+        string baseUrl;        
         PageParser pageParser;
         IEnumerable<string> domainExtentions;
         int? taskId;
@@ -32,6 +33,7 @@ namespace WebsiteCrawler.Logic
             baseUrl = WebsiteParserRequest.WebsiteUrl;
             maxDeep = WebsiteParserRequest.MaxDeep;
             domainExtentions = WebsiteParserRequest.DomainExtentions;
+            domain = Url.GetDomain(WebsiteParserRequest.WebsiteUrl);
 
             DicAllInternalUrls = new Dictionary<string, int>();
         } 
@@ -39,11 +41,11 @@ namespace WebsiteCrawler.Logic
 
         public async Task Parse()
         {
-            System.Console.WriteLine($"Task id {taskId} start.");
+            System.Console.WriteLine($"Task id {taskId} start. Domain: {domain}");
 
             if (!WebRequestHelper.Check(baseUrl)) 
             {
-                System.Console.WriteLine($"Task id {taskId} ended.");
+                System.Console.WriteLine($"Task id {taskId} ended. Domain: {domain}");
                 return;
             } 
 
@@ -52,7 +54,7 @@ namespace WebsiteCrawler.Logic
 
             await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
 
-            System.Console.WriteLine($"Task id {taskId} ended.");
+            System.Console.WriteLine($"Task id {taskId} ended. Domain: {domain}");
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
@@ -88,9 +90,10 @@ namespace WebsiteCrawler.Logic
 
         private string GetPageUrl(string pageUrl)
         {
-            if (!pageUrl.Contains(baseUrl))
+            if (!pageUrl.Contains(domain))
             {
-                pageUrl = $"{baseUrl}{pageUrl}";
+                pageUrl = (pageUrl.StartsWith("/")) ? $"{baseUrl}{pageUrl}"
+                                                    : $"{baseUrl}/{pageUrl}";
             }
 
             return pageUrl;
@@ -107,9 +110,10 @@ namespace WebsiteCrawler.Logic
             {
                 var pageUrl = pages.ElementAt(i).Url;
 
-                if (!pageUrl.Contains(baseUrl))
+                if (!pageUrl.Contains(domain))
                 {
-                    pageUrl = $"{baseUrl}{pageUrl}";
+                    pageUrl = (pageUrl.StartsWith("/")) ? $"{baseUrl}{pageUrl}" 
+                                                        : $"{baseUrl}/{pageUrl}";
                 }
 
                 if (!DicAllInternalUrls.ContainsKey(pageUrl) && !ImageHelper.IsImage(pageUrl))

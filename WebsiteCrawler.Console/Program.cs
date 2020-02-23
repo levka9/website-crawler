@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using System.Xml;
 using WebsiteCrawler.Logic;
 using System.Linq;
-using WebsiteCrawler.Logic.Models;
+using WebsiteCrawler.Models;
 using System.Collections.Generic;
 using System.Threading;
 using System.Collections.Concurrent;
-using WebsiteCrawler.Logic.Requests;
+using WebsiteCrawler.Models.Requests;
 using System.Linq;
 
 namespace WebsiteCrawler.Console
@@ -50,6 +50,9 @@ namespace WebsiteCrawler.Console
 
             var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
             await multiThreadWebsiteParser.Start();
+
+            //var multiThreadWebsiteParser = new MultiThreadWebsiteParserTest(multiThreadWebsiteParserRequest);
+            //await multiThreadWebsiteParser.Start();
 
             //var testMultithreadTasks = new TestMultithreadTasks();
             //await testMultithreadTasks.Start();

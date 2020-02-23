@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic;
-using WebsiteCrawler.Logic.Requests;
+using WebsiteCrawler.Models.Requests;
 
 namespace WebsiteCrawler.Logic
 {
     public class MultiThreadWebsiteParser
     {
         #region Properties
-        const int MAX_TASK_QUANTITY = 10;
+        const int MAX_TASK_QUANTITY = 50;
 
         int maxDeep;
         List<Task> tasks;
@@ -32,6 +32,7 @@ namespace WebsiteCrawler.Logic
 
         public async Task Start()
         {
+            var taskCounter = 0;
 
             while (true)
             {
@@ -41,27 +42,24 @@ namespace WebsiteCrawler.Logic
                     WebSitesConcurrentQueue.WebSites.TryDequeue(out websiteName);
 
                     if (!string.IsNullOrEmpty(websiteName))
-                    {                            
-                        var task = new Task(async () =>
-                        {
-                            var websiteParserRequest = GetWebsiteParserRequest(websiteName, Task.CurrentId);
-                            
-                            var websiteParser = new WebsiteParser(websiteParserRequest);
-                            await websiteParser.Parse();
-                        }, TaskCreationOptions.LongRunning);
-
-                        task.Start();
-                        tasks.Add(task);
+                    {                        
+                        tasks.Add(CreateWebsiteParser(websiteName, taskCounter++));
                     }                    
                 }
 
-                //Task.WaitAll(tasks.ToArray());
-                //Thread.Sleep(500);
                 var completedTask = await Task.WhenAny(tasks.ToArray());                
                 tasks.Remove(completedTask);
-                System.Console.WriteLine($"Task id: {completedTask.Id} completed");
-                Thread.Sleep(2000);
+
+                System.Console.WriteLine($"Task id: {completedTask.Id} completed");                
             }                
+        }
+
+        private async Task CreateWebsiteParser(string WebsiteName, int? taskCounter)
+        {
+            var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
+
+            var websiteParser = new WebsiteParser(websiteParserRequest);
+            await websiteParser.Parse();
         }
 
         private WebsiteParserRequest GetWebsiteParserRequest(string WebsiteName, int? TaskId)
