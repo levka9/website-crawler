@@ -1,38 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {}
+    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {}
   },
   "projects": {
-    "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {
+    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
+        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
         "projectName": "WebsiteCrawler.Console",
-        "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
-        "packagesPath": "C:\\Users\\Lev\\.nuget\\packages\\",
-        "outputPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Console\\obj\\",
+        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
+        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
+        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Console\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.grapecity.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
-                "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj"
+              "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+                "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj"
               }
             }
           }
@@ -66,39 +67,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
         "projectName": "WebsiteCrawler.Logic",
-        "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
-        "packagesPath": "C:\\Users\\Lev\\.nuget\\packages\\",
-        "outputPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\obj\\",
+        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
+        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.grapecity.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
-                "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
+              "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+                "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
               }
             }
           }
@@ -140,32 +142,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
         "projectName": "WebsiteCrawler.Model",
-        "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
-        "packagesPath": "C:\\Users\\Lev\\.nuget\\packages\\",
-        "outputPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\obj\\",
+        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
+        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.grapecity.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -196,7 +199,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,12 +13,12 @@ namespace WebsiteCrawler.Logic
     {
 
         #region Private params
-        int maxDeep;
-        string domain;
-        string baseUrl;        
-        PageParser pageParser;
-        IEnumerable<string> domainExtentions;
         int? taskId;
+        int maxDeep;        
+        string baseUrl;
+        string domainName;
+        PageParser pageParser;
+        IEnumerable<string> domainExtentions;        
         #endregion
 
         #region Public params
@@ -33,7 +33,7 @@ namespace WebsiteCrawler.Logic
             baseUrl = WebsiteParserRequest.WebsiteUrl;
             maxDeep = WebsiteParserRequest.MaxDeep;
             domainExtentions = WebsiteParserRequest.DomainExtentions;
-            domain = Url.GetDomain(WebsiteParserRequest.WebsiteUrl);
+            domainName = Url.GetDomain(WebsiteParserRequest.WebsiteUrl);
 
             DicAllInternalUrls = new Dictionary<string, int>();
         } 
@@ -41,11 +41,11 @@ namespace WebsiteCrawler.Logic
 
         public async Task Parse()
         {
-            System.Console.WriteLine($"Task id {taskId} start. Domain: {domain}");
+            System.Console.WriteLine($"Task id {taskId} start. Domain: {domainName}");
 
             if (!WebRequestHelper.Check(baseUrl)) 
             {
-                System.Console.WriteLine($"Task id {taskId} ended. Domain: {domain}");
+                System.Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
                 return;
             } 
 
@@ -54,7 +54,7 @@ namespace WebsiteCrawler.Logic
 
             await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
 
-            System.Console.WriteLine($"Task id {taskId} ended. Domain: {domain}");
+            System.Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
@@ -90,7 +90,7 @@ namespace WebsiteCrawler.Logic
 
         private string GetPageUrl(string pageUrl)
         {
-            if (!pageUrl.Contains(domain))
+            if (!pageUrl.Contains(domainName))
             {
                 pageUrl = (pageUrl.StartsWith("/")) ? $"{baseUrl}{pageUrl}"
                                                     : $"{baseUrl}/{pageUrl}";
@@ -110,7 +110,7 @@ namespace WebsiteCrawler.Logic
             {
                 var pageUrl = pages.ElementAt(i).Url;
 
-                if (!pageUrl.Contains(domain))
+                if (!pageUrl.Contains(domainName))
                 {
                     pageUrl = (pageUrl.StartsWith("/")) ? $"{baseUrl}{pageUrl}" 
                                                         : $"{baseUrl}/{pageUrl}";
@@ -147,7 +147,7 @@ namespace WebsiteCrawler.Logic
 
                     Console.WriteLine($"New website added: {baseUrl}");
 
-                    FileData.Save("websites.txt", baseUrl);
+                    FileData.Save("websites.txt", domainName);
                 }
             }
         }

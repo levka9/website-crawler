@@ -5132,38 +5132,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lev\\.nuget\\packages\\": {},
+    "C:\\Users\\user9\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+      "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
       "projectName": "WebsiteCrawler.Logic",
-      "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
-      "packagesPath": "C:\\Users\\Lev\\.nuget\\packages\\",
-      "outputPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Logic\\obj\\",
+      "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+      "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
+      "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.grapecity.com/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
-              "projectPath": "F:\\asp.net\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
+            "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+              "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
             }
           }
         }
@@ -5205,7 +5207,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

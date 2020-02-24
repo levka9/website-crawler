@@ -3,3 +3,4 @@
 ################################################################################
 
 /.vs/WebsiteCrawler/v16
+/WebsiteCrawler.Console/bin/Debug/netcoreapp3.1/logs
