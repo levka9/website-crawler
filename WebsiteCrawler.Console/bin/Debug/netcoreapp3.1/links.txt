@@ -1,0 +1,13 @@
+{"url":"http://www.lainyan.co.il/mainlinks/AD.htm","deep":0}
+{"url":"http://www.lainyan.co.il/mail-server.html","deep":0}
+{"url":"http://www.lainyan.co.il/#tachbura","deep":0}
+{"url":"http://www.lainyan.co.il/mainlinks/luchot.htm","deep":0}
+{"url":"http://www.lainyan.co.il/#hok","deep":0}
+{"url":"http://www.lainyan.co.il/mainlinks/whats-the-use-israel.htm","deep":0}
+{"url":"http://www.lainyan.co.il/#rosh","deep":0}
+{"url":"http://www.lainyan.co.il/","deep":1}
+{"url":"http://www.lainyan.co.il/javascript:addbookmark();","deep":1}
+{"url":"http://www.lainyan.co.il/#michrazim","deep":1}
+{"url":"http://www.lainyan.co.il/#drushim","deep":1}
+{"url":"http://www.lainyan.co.il/#dirot","deep":1}
+{"url":"http://www.lainyan.co.il/#rechev","deep":1}

@@ -14,9 +14,13 @@ namespace WebsiteCrawler.Console
         {
             var websiteParserRequest = new WebsiteParserRequest()
             {
-                WebsiteUrl = "https://www.nytimes.com",
+                WebsiteUrl = "http://www.lainyan.co.il",
                 MaxDeep = 2,
-                DomainExtentions = null
+                DomainExtentions = new List<string>()
+                {
+                    "co.il",
+                    "org.il"
+                }
             };
 
             var websiteParser = new WebsiteParser(websiteParserRequest);

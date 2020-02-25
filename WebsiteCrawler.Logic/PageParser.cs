@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using WebsiteCrawler.Models;
+using System.Text;
 
 namespace WebsiteCrawler.Logic
 {
-    public class PageParser
+    public class PageParser : IDisposable
     {
         #region Properties
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -28,9 +29,9 @@ namespace WebsiteCrawler.Logic
         {
             url = Url;
 
-            var htmlPage = await GetHtmlPage();
+            var htmlPageContent = await GetHtmlPage();
 
-            GetAllLinks(htmlPage, Deep);
+            GetAllLinks(htmlPageContent, Deep);
 
             // TODO: FilterUrls();
         }
@@ -40,9 +41,13 @@ namespace WebsiteCrawler.Logic
             try
             {
                 httpClient = new HttpClient();
-                var htmlPage = await httpClient.GetStringAsync(this.url);
+                //var htmlPageContent = await httpClient.GetStringAsync(this.url);
 
-                return htmlPage;
+                var contentBytes = await httpClient.GetByteArrayAsync(this.url);
+                
+                string htmlPageContent = Encoding.UTF8.GetString(contentBytes);
+
+                return htmlPageContent;
             }
             catch (Exception ex)
             {
@@ -52,18 +57,19 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        private Page GetAllLinks(string HtmlPage, int Deep)
+        private Page GetAllLinks(string HtmlPageContent, int Deep)
         {
-            if (string.IsNullOrEmpty(HtmlPage)) return null;
+            if (string.IsNullOrEmpty(HtmlPageContent)) return null;
 
             Page = new Page();
+            Page.HtmlPageContent = HtmlPageContent;
             Page.InnerPages = new List<Page>();
 
             try
             {
                 var htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(HtmlPage);
-
+                htmlDocument.LoadHtml(HtmlPageContent);
+                
                 var links = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
 
                 for (int i = 0, lenght = links.Count(); i < lenght; i++)
@@ -85,6 +91,11 @@ namespace WebsiteCrawler.Logic
             }
 
             return Page;
+        }
+
+        public void Dispose()
+        {
+            httpClient.Dispose();
         }
     }
 }
