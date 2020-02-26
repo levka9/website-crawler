@@ -29,28 +29,28 @@ namespace WebsiteCrawler.Console
             #endregion
 
             /* Website Parser */
-            await OneThreadWebsiteParser.Start();
+            //await OneThreadWebsiteParser.Start();
 
-            //var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
-            //multiThreadWebsiteParserRequest.WebsiteUrls = new List<string>()
-            //{
-            //    "https://www.2net.co.il",
-            //    //"http://www.lainyan.co.il",
-            //    //"https://www.a.co.il",
-            //    //"http://www.startpage.co.il"
-            //};
-                        
-            //multiThreadWebsiteParserRequest.DomainExtentions = new List<string>() 
-            //{ 
-            //    "co.il",
-            //    "org.il"
-            //};
+            var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
+            multiThreadWebsiteParserRequest.WebsiteUrls = new List<string>()
+            {
+                "https://www.2net.co.il",
+                //"http://www.lainyan.co.il",
+                //"https://www.a.co.il",
+                //"http://www.startpage.co.il"
+            };
 
-            //multiThreadWebsiteParserRequest.MaxDeep = 1;
+            multiThreadWebsiteParserRequest.DomainExtentions = new List<string>()
+            {
+                "co.il",
+                "org.il"
+            };
 
-            //var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
-            //await multiThreadWebsiteParser.Start();
-            
+            multiThreadWebsiteParserRequest.MaxDeep = 1;
+
+            var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
+            await multiThreadWebsiteParser.Start();
+
             System.Console.ReadKey();
         }
     }

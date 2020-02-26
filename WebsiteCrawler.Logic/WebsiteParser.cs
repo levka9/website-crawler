@@ -8,13 +8,15 @@ using WebsiteCrawler.Models.Requests;
 using System.Threading;
 using WebsiteCrawler.Model.Responses;
 using System.Collections.Concurrent;
+using System.Reflection;
 
 namespace WebsiteCrawler.Logic
 {
-    public class WebsiteParser
+    public class WebsiteParser : IDisposable
     {
-
         #region Private params
+        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         int? taskId;
         int maxDeep;        
         string baseUrl;
@@ -39,28 +41,36 @@ namespace WebsiteCrawler.Logic
             domainName = Url.GetDomain(WebsiteParserRequest.WebsiteUrl);
 
             DicAllInternalUrls = new Dictionary<string, int>();
-                        
-            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
-            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
+
+            //WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
+            //WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         } 
         #endregion
 
         public async Task Parse()
         {
-            System.Console.WriteLine($"Task id {taskId} start. Domain: {domainName}");
+            Console.WriteLine($"Task id {taskId} start. Domain: {domainName}");
 
             if (!WebRequestHelper.Check(baseUrl)) 
             {
-                System.Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
+                Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
                 return;
             } 
 
             pageParser = new PageParser(baseUrl);
             pageParser.Page = new Page();
 
-            await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+            try
+            {
+                await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+            }
+            catch (Exception ex)
+            {
+                log.Error("RecursiveParseInnerPages", ex);
+                throw ex;
+            }
 
-            System.Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
+            Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
@@ -76,7 +86,7 @@ namespace WebsiteCrawler.Logic
 
             if (IsContainInnerPages(pageParser.Page))
             {
-                await GetHomepageContent(pageParser.Page.HtmlPageContent);
+                await GetHomepageContent(pageParser.Page.HtmlPageContent, Deep);
 
                 SetExternalWebsite(pageParser.Page.InnerPages);
 
@@ -91,12 +101,15 @@ namespace WebsiteCrawler.Logic
             }            
         }
 
-        private async Task GetHomepageContent(string HtmlPageContent)
+        private async Task GetHomepageContent(string HtmlPageContent, int deep)
         {
-            pageDataParser = new PageDataParser(HtmlPageContent);
-            pageDataParser.Start(domainName);
+            if (deep == 0)
+            {
+                pageDataParser = new PageDataParser(HtmlPageContent);
+                pageDataParser.Start(domainName);
 
-            await FileData.Save<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse);
+                await FileData.Save<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse);
+            }            
         }
 
         private bool IsContainInnerPages(Page Page)
@@ -153,20 +166,29 @@ namespace WebsiteCrawler.Logic
             {
                 var pageUrl = pages.ElementAt(i).Url;
                 
-                var url = new Uri(pageUrl);
-                var baseUrl = url.GetLeftPart(UriPartial.Authority);
-                var domainName = Url.GetDomain(baseUrl);
+                var url = Url.GetUri(pageUrl);
 
-                if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && Url.IsContainExtention(domainName, domainExtentions))
+                if (url != null)
                 {
-                    WebSitesConcurrentQueue.WebSites.Enqueue(domainName);
-                    WebSitesConcurrentQueue.AllWebSites.Enqueue(domainName);
+                    var baseUrl = url.GetLeftPart(UriPartial.Authority);
+                    var domainName = Url.GetDomain(baseUrl);
 
-                    Console.WriteLine($"New website added: {domainName}");
+                    if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && Url.IsContainExtention(domainName, domainExtentions))
+                    {
+                        WebSitesConcurrentQueue.WebSites.Enqueue(domainName);
+                        WebSitesConcurrentQueue.AllWebSites.Enqueue(domainName);
 
-                    FileData.Save("websites.txt", domainName);                    
-                }
+                        Console.WriteLine($"New website added: {domainName}");
+
+                        FileData.Save("websites.txt", domainName);
+                    }
+                }    
             }
+        }
+
+        public void Dispose()
+        {
+            pageParser.Dispose();
         }
     }
 }

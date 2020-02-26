@@ -14,6 +14,7 @@ namespace WebsiteCrawler.Logic
     {
         #region Properties
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         string url;
         string baseUrl;
         HttpClient httpClient;
@@ -41,8 +42,8 @@ namespace WebsiteCrawler.Logic
             try
             {
                 httpClient = new HttpClient();
-                //var htmlPageContent = await httpClient.GetStringAsync(this.url);
-
+                var response = await httpClient.GetAsync(this.url);
+                
                 var contentBytes = await httpClient.GetByteArrayAsync(this.url);
                 
                 string htmlPageContent = Encoding.UTF8.GetString(contentBytes);

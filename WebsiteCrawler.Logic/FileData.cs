@@ -29,7 +29,8 @@ namespace WebsiteCrawler.Logic
             }
             finally
             {
-                readerWriterLockSlim.ExitWriteLock();
+                if (readerWriterLockSlim.IsWriteLockHeld)
+                    readerWriterLockSlim.ExitWriteLock();
             }         
         }
 
@@ -65,7 +66,8 @@ namespace WebsiteCrawler.Logic
             }
             finally
             {
-                readerWriterLockSlim.ExitWriteLock();
+                if (readerWriterLockSlim.IsWriteLockHeld)
+                    readerWriterLockSlim.ExitWriteLock();
             }            
         }
     }

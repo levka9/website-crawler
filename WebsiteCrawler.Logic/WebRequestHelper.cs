@@ -12,11 +12,11 @@ namespace WebsiteCrawler.Logic
 
         public static bool Check(string Url)
         {
-            var request = (HttpWebRequest)WebRequest.Create(Url);
-            request.Method = "HEAD";
-
             try
             {
+                var request = (HttpWebRequest)WebRequest.Create(Url);
+                request.Method = "HEAD";
+
                 using (var response = (HttpWebResponse)request.GetResponse())
                 {
                     return response.StatusCode == HttpStatusCode.OK;

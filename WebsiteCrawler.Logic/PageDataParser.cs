@@ -28,13 +28,13 @@ namespace WebsiteCrawler.Logic
         } 
         #endregion
 
-        public void Start(string WebsiteUrl)
+        public void Start(string domainName)
         {
             if (this.htmlDocument == null) return;
 
             PageDataParserResponse = new PageDataParserResponse();
 
-            PageDataParserResponse.DomainName = Url.GetDomain(WebsiteUrl);
+            PageDataParserResponse.DomainName = domainName;
             PageDataParserResponse.Title = GetTitle();
             PageDataParserResponse.Description = GetDescription();
             PageDataParserResponse.Keywords = GetKeywords();

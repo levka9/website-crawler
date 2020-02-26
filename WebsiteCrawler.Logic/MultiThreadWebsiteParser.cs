@@ -12,7 +12,7 @@ namespace WebsiteCrawler.Logic
     public class MultiThreadWebsiteParser
     {
         #region Properties
-        const int MAX_TASK_QUANTITY = 50;
+        const int MAX_TASK_QUANTITY = 1;
 
         int maxDeep;
         List<Task> tasks;
@@ -43,23 +43,33 @@ namespace WebsiteCrawler.Logic
 
                     if (!string.IsNullOrEmpty(websiteName))
                     {                        
-                        tasks.Add(CreateWebsiteParser(websiteName, taskCounter++));
+                        tasks.Add(CreateWebsiteParser(websiteName, taskCounter++));                        
                     }                    
                 }
 
                 var completedTask = await Task.WhenAny(tasks.ToArray());                
                 tasks.Remove(completedTask);
 
-                System.Console.WriteLine($"Task id: {completedTask.Id} completed");                
-            }                
+                Thread.Sleep(200);
+
+                System.Console.WriteLine($"Task id: {completedTask.Id} completed");
+            }
         }
 
         private async Task CreateWebsiteParser(string WebsiteName, int? taskCounter)
         {
             var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
 
-            var websiteParser = new WebsiteParser(websiteParserRequest);
-            await websiteParser.Parse();
+            try
+            {
+                var websiteParser = new WebsiteParser(websiteParserRequest);
+                await websiteParser.Parse();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }            
         }
 
         private WebsiteParserRequest GetWebsiteParserRequest(string WebsiteName, int? TaskId)

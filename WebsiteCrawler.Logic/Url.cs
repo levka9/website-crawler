@@ -37,11 +37,24 @@ namespace WebsiteCrawler.Logic
         {            
             try
             {
-                return new System.Uri(BaseUrl).Host;
+                var uri = new System.Uri(BaseUrl);
+                return (uri != null) ? uri.Host : string.Empty;
             }
             catch
             {
                 return string.Empty;
+            }
+        }
+
+        public static Uri GetUri(string Url)
+        {
+            try
+            {
+                return new System.Uri(Url);
+            }
+            catch
+            {
+                return null;
             }
         }
 
