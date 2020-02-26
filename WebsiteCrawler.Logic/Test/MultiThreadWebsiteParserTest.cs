@@ -68,7 +68,7 @@ namespace WebsiteCrawler.Logic
         {
             return new WebsiteParserRequest()
             {
-                WebsiteUrl = WebsiteName,
+                DomainName = WebsiteName,
                 MaxDeep = maxDeep,
                 DomainExtentions = domainExtentions,
                 TaskId = TaskId

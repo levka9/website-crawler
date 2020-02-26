@@ -14,7 +14,7 @@ namespace WebsiteCrawler.Console
         {
             var websiteParserRequest = new WebsiteParserRequest()
             {
-                WebsiteUrl = "http://www.lainyan.co.il",
+                DomainName = "http://www.lainyan.co.il",
                 MaxDeep = 2,
                 DomainExtentions = new List<string>()
                 {

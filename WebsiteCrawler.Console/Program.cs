@@ -34,7 +34,7 @@ namespace WebsiteCrawler.Console
             var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
             multiThreadWebsiteParserRequest.WebsiteUrls = new List<string>()
             {
-                "https://www.2net.co.il",
+                "www.2net.co.il",
                 //"http://www.lainyan.co.il",
                 //"https://www.a.co.il",
                 //"http://www.startpage.co.il"

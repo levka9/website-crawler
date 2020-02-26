@@ -29,7 +29,7 @@ namespace WebsiteCrawler.Logic
         public WebsiteParserTest(WebsiteParserRequest WebsiteParserRequest)
         {
             taskId = WebsiteParserRequest.TaskId;
-            baseUrl = WebsiteParserRequest.WebsiteUrl;
+            baseUrl = WebsiteParserRequest.DomainName;
             maxDeep = WebsiteParserRequest.MaxDeep;
             domainExtentions = WebsiteParserRequest.DomainExtentions;
 

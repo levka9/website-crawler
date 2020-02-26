@@ -38,12 +38,12 @@ namespace WebsiteCrawler.Logic
             {
                 while (tasks.Count < MAX_TASK_QUANTITY)
                 {
-                    var websiteName = string.Empty;
-                    WebSitesConcurrentQueue.WebSites.TryDequeue(out websiteName);
+                    var domainName = string.Empty;
+                    WebSitesConcurrentQueue.WebSites.TryDequeue(out domainName);
 
-                    if (!string.IsNullOrEmpty(websiteName))
+                    if (!string.IsNullOrEmpty(domainName))
                     {                        
-                        tasks.Add(CreateWebsiteParser(websiteName, taskCounter++));                        
+                        tasks.Add(CreateWebsiteParser(domainName, taskCounter++));                        
                     }                    
                 }
 
@@ -72,11 +72,11 @@ namespace WebsiteCrawler.Logic
             }            
         }
 
-        private WebsiteParserRequest GetWebsiteParserRequest(string WebsiteName, int? TaskId)
+        private WebsiteParserRequest GetWebsiteParserRequest(string DomainName, int? TaskId)
         {
             return new WebsiteParserRequest()
             {
-                WebsiteUrl = WebsiteName,
+                DomainName = DomainName,
                 MaxDeep = maxDeep,
                 DomainExtentions = domainExtentions,
                 TaskId = TaskId

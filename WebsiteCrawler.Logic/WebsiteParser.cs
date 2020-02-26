@@ -35,10 +35,10 @@ namespace WebsiteCrawler.Logic
         public WebsiteParser(WebsiteParserRequest WebsiteParserRequest)
         {
             taskId = WebsiteParserRequest.TaskId;
-            baseUrl = WebsiteParserRequest.WebsiteUrl;
+            baseUrl = WebsiteParserRequest.DomainName;
             maxDeep = WebsiteParserRequest.MaxDeep;
             domainExtentions = WebsiteParserRequest.DomainExtentions;
-            domainName = Url.GetDomain(WebsiteParserRequest.WebsiteUrl);
+            domainName = WebsiteParserRequest.DomainName;
 
             DicAllInternalUrls = new Dictionary<string, int>();
 
@@ -50,6 +50,8 @@ namespace WebsiteCrawler.Logic
         public async Task Parse()
         {
             Console.WriteLine($"Task id {taskId} start. Domain: {domainName}");
+
+            baseUrl = GetBaseUrl();
 
             if (!WebRequestHelper.Check(baseUrl)) 
             {
@@ -71,6 +73,11 @@ namespace WebsiteCrawler.Logic
             }
 
             Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
+        }
+
+        private string GetBaseUrl()
+        {
+            return WebRequestHelper.Check($"http://{domainName}") ? $"http://{domainName}" : $"https://{domainName}";
         }
 
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
