@@ -40,7 +40,7 @@ namespace WebsiteCrawler.Logic
 
             try
             {
-                using (TextWriter tw = new StreamWriter(FileName))
+                using (TextWriter tw = new StreamWriter(FileName, true))
                 {
                     var objectToFile = JsonConvert.SerializeObject(Object);
                     await tw.WriteLineAsync(objectToFile);

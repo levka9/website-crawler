@@ -14,15 +14,20 @@ namespace WebsiteCrawler.Logic
 
             try
             {
-                var host = new System.Uri(Url).Host;
+                var url = new System.Uri(Url);
 
-                if (string.IsNullOrEmpty(host))
+                if (url != null)
                 {
-                    result = false;
-                }
-                else if (!BaseUrl.Contains(host))
-                {
-                    result = true;
+                    var host = url.Host;
+
+                    if (string.IsNullOrEmpty(host))
+                    {
+                        result = false;
+                    }
+                    else if (!BaseUrl.Contains(host))
+                    {
+                        result = true;
+                    }                    
                 }
 
                 return result;

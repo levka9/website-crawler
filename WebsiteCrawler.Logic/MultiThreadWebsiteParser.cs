@@ -12,7 +12,7 @@ namespace WebsiteCrawler.Logic
     public class MultiThreadWebsiteParser
     {
         #region Properties
-        const int MAX_TASK_QUANTITY = 1;
+        const int MAX_TASK_QUANTITY = 20;
 
         int maxDeep;
         List<Task> tasks;
@@ -49,10 +49,11 @@ namespace WebsiteCrawler.Logic
 
                 var completedTask = await Task.WhenAny(tasks.ToArray());                
                 tasks.Remove(completedTask);
-
+                
                 Thread.Sleep(200);
 
                 System.Console.WriteLine($"Task id: {completedTask.Id} completed");
+                System.Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
             }
         }
 
@@ -67,7 +68,6 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }            
         }
