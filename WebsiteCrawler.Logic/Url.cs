@@ -18,7 +18,7 @@ namespace WebsiteCrawler.Logic
 
                 if (url != null)
                 {
-                    var host = url.Host;
+                    var host = url.Host.Replace("www.", "");
 
                     if (string.IsNullOrEmpty(host))
                     {
@@ -71,6 +71,23 @@ namespace WebsiteCrawler.Logic
             }
 
             return false;
+        }
+
+        public static string GetBaseUrl(string DomainName)
+        {
+            return WebRequestHelper.Check($"http://{DomainName}") ? $"http://{DomainName}" : $"https://{DomainName}";
+        }
+
+        public static string GetFullUrl(string DomainName, string PageUrl)
+        {
+            var baseUrl = Url.GetBaseUrl(DomainName);
+
+            if (!PageUrl.Contains(DomainName))
+            {
+                PageUrl = $"{baseUrl}//{PageUrl}";
+            }
+
+            return PageUrl;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace WebsiteCrawler.Logic
     public class MultiThreadWebsiteParser
     {
         #region Properties
-        const int MAX_TASK_QUANTITY = 20;
+        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        const int MAX_TASK_QUANTITY = 6;
 
         int maxDeep;
         List<Task> tasks;
@@ -61,14 +64,15 @@ namespace WebsiteCrawler.Logic
         {
             var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
 
+            var websiteParser = new WebsiteParser(websiteParserRequest);
+
             try
             {
-                var websiteParser = new WebsiteParser(websiteParserRequest);
                 await websiteParser.Parse();
             }
             catch (Exception ex)
             {
-                throw ex;
+                log.Error("MultiThreadWebsiteParser - CreateWebsiteParser", ex);                
             }            
         }
 

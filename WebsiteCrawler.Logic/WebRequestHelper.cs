@@ -24,7 +24,7 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-                log.Error("WebRequestHelper-Check", ex);
+                log.Error($"WebRequestHelper - Check: {Url}", ex);
                 return false;
             }
         }

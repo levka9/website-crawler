@@ -34,7 +34,7 @@ namespace WebsiteCrawler.Logic
             }         
         }
 
-        public static async Task Save<T>(string FileName, T Object)
+        public static async Task SaveAsync<T>(string FileName, T Object)
         {
             readerWriterLockSlim.EnterWriteLock();
 
@@ -50,6 +50,15 @@ namespace WebsiteCrawler.Logic
             {
                 if(readerWriterLockSlim.IsWriteLockHeld)
                     readerWriterLockSlim.ExitWriteLock();
+            }
+        }
+
+        public static async Task Save<T>(string FileName, T Object)
+        {
+            using (TextWriter tw = new StreamWriter(FileName, true))
+            {
+                var objectToFile = JsonConvert.SerializeObject(Object);
+                await tw.WriteLineAsync(objectToFile);
             }
         }
 

@@ -52,7 +52,7 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-                log.Error("GetHtmlPage", ex);
+                log.Error($"PageParser - GetHtmlPage: {this.url}", ex);
                 return null;
                 //throw ex;
             }
@@ -70,25 +70,27 @@ namespace WebsiteCrawler.Logic
             {
                 var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(HtmlPageContent);
-                
-                var links = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
 
-                for (int i = 0, lenght = links.Count(); i < lenght; i++)
+                var links = htmlDocument.DocumentNode.SelectNodes("//a");//.ToArray();
+
+                if (links == null) return null;
+
+                foreach (var link in links)
                 {
-                    if (links[i].Attributes["href"] != null)
+                    if (link.Attributes["href"] != null)
                     {
                         Page.InnerPages.Add(new Page()
                         {
-                            Url = links[i].Attributes["href"].Value,
+                            Url = link.Attributes["href"].Value,
                             Deep = Deep,
-                            IsExternal = Url.IsExternal(baseUrl, links[i].Attributes["href"].Value)
+                            IsExternal = Url.IsExternal(baseUrl, link.Attributes["href"].Value)
                         });
-                    }
+                    }                    
                 }
             }
             catch (Exception ex)
             {
-                log.Error("GetAllLinks ", ex);                
+                log.Error("PageParser - GetAllLinks ", ex);                
             }
 
             return Page;

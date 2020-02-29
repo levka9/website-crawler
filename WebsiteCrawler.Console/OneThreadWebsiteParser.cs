@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WebsiteCrawler.Logic;
 using System.Linq;
 using WebsiteCrawler.Models.Requests;
+using System.Collections.Concurrent;
 
 namespace WebsiteCrawler.Console
 {
@@ -14,7 +15,7 @@ namespace WebsiteCrawler.Console
         {
             var websiteParserRequest = new WebsiteParserRequest()
             {
-                DomainName = "http://www.lainyan.co.il",
+                DomainName = "www.sport5.co.il",
                 MaxDeep = 2,
                 DomainExtentions = new List<string>()
                 {
@@ -22,6 +23,9 @@ namespace WebsiteCrawler.Console
                     "org.il"
                 }
             };
+
+            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
+            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();            
 
             using (var websiteParser = new WebsiteParser(websiteParserRequest))
             {

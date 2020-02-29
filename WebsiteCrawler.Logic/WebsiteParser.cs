@@ -41,9 +41,6 @@ namespace WebsiteCrawler.Logic
             domainName = WebsiteParserRequest.DomainName;
 
             DicAllInternalUrls = new Dictionary<string, int>();
-
-            //WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
-            //WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         } 
         #endregion
 
@@ -51,7 +48,7 @@ namespace WebsiteCrawler.Logic
         {
             Console.WriteLine($"Task id {taskId} start. Domain: {domainName}");
 
-            baseUrl = GetBaseUrl();
+            baseUrl = Url.GetBaseUrl(domainName);
 
             if (!WebRequestHelper.Check(baseUrl)) 
             {
@@ -62,24 +59,21 @@ namespace WebsiteCrawler.Logic
             pageParser = new PageParser(baseUrl);
             pageParser.Page = new Page();
 
-            try
-            {
-                await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
-            }
-            catch (Exception ex)
-            {
-                log.Error("RecursiveParseInnerPages", ex);
-                throw ex;
-            }
+            await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+
+            //try
+            //{
+            //    //await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+            //}
+            //catch (LockRecursionException ex)
+            //{
+            //    log.Error("WebsiteParser - RecursiveParseInnerPages", ex);
+            //    throw ex;
+            //}
 
             Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
         }
-
-        private string GetBaseUrl()
-        {
-            return WebRequestHelper.Check($"http://{domainName}") ? $"http://{domainName}" : $"https://{domainName}";
-        }
-
+        
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
         {
             if (Deep > maxDeep)
@@ -93,7 +87,7 @@ namespace WebsiteCrawler.Logic
 
             if (IsContainInnerPages(pageParser.Page))
             {
-                await GetHomepageContent(pageParser.Page.HtmlPageContent, Deep);
+                await GetHomepageContent(pageParser.Page.HtmlPageContent, pageParser.Page.InnerPages, Deep);
 
                 SetExternalWebsite(pageParser.Page.InnerPages);
 
@@ -107,13 +101,13 @@ namespace WebsiteCrawler.Logic
                 }
             }            
         }
-
-        private async Task GetHomepageContent(string HtmlPageContent, int deep)
+                
+        private async Task GetHomepageContent(string HtmlPageContent, IEnumerable<Page> Pages, int deep)
         {
             if (deep == 0)
             {
-                pageDataParser = new PageDataParser(HtmlPageContent);
-                pageDataParser.Start(domainName);
+                pageDataParser = new PageDataParser(domainName, HtmlPageContent, Pages);
+                await pageDataParser.Start(domainName);
 
                 await FileData.Save<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse);
             }            
@@ -121,7 +115,9 @@ namespace WebsiteCrawler.Logic
 
         private bool IsContainInnerPages(Page Page)
         {
-            return pageParser.Page != null && pageParser.Page.InnerPages != null;
+            return pageParser.Page != null && 
+                   pageParser.Page.InnerPages != null && 
+                   pageParser.Page.InnerPages.Count > 0;
         }
 
         private string GetPageUrl(string pageUrl)
@@ -178,16 +174,20 @@ namespace WebsiteCrawler.Logic
                 if (url != null)
                 {
                     var baseUrl = url.GetLeftPart(UriPartial.Authority);
-                    var domainName = Url.GetDomain(baseUrl);
 
-                    if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && Url.IsContainExtention(domainName, domainExtentions))
+                    if (!string.IsNullOrEmpty(baseUrl))
                     {
-                        WebSitesConcurrentQueue.WebSites.Enqueue(domainName);
-                        WebSitesConcurrentQueue.AllWebSites.Enqueue(domainName);
+                        var domainName = Url.GetDomain(baseUrl);
 
-                        Console.WriteLine($"New website added: {domainName}");
+                        if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && Url.IsContainExtention(domainName, domainExtentions))
+                        {
+                            WebSitesConcurrentQueue.WebSites.Enqueue(domainName);
+                            WebSitesConcurrentQueue.AllWebSites.Enqueue(domainName);
 
-                        FileData.Save("websites.txt", domainName);
+                            Console.WriteLine($"New website added: {domainName}");
+
+                            FileData.Save("websites.txt", domainName);
+                        }
                     }
                 }    
             }

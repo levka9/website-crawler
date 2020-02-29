@@ -46,7 +46,7 @@ namespace WebsiteCrawler.Console
                 "org.il"
             };
 
-            multiThreadWebsiteParserRequest.MaxDeep = 1;
+            multiThreadWebsiteParserRequest.MaxDeep = 0;
 
             var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
             await multiThreadWebsiteParser.Start();

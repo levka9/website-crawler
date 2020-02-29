@@ -5,20 +5,23 @@ using System.Text;
 using WebsiteCrawler.Model.Responses;
 using System.Linq;
 using System.Reflection;
+using WebsiteCrawler.Models;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace WebsiteCrawler.Logic
 {
-    public class PageDataParser
+    public class PageDataParser : ParseContactPage
     {
         #region Properties
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        HtmlDocument htmlDocument;
+        HtmlDocument htmlDocument;        
         public PageDataParserResponse PageDataParserResponse { get; set; }
         #endregion
 
         #region Constructors
-        public PageDataParser(string HtmlContent)
+        public PageDataParser(string domainName, string HtmlContent, IEnumerable<Page> Pages) : base(domainName, Pages)
         {
             if (!string.IsNullOrEmpty(HtmlContent))
             {
@@ -28,7 +31,7 @@ namespace WebsiteCrawler.Logic
         } 
         #endregion
 
-        public void Start(string domainName)
+        public async Task Start(string domainName)
         {
             if (this.htmlDocument == null) return;
 
@@ -39,6 +42,10 @@ namespace WebsiteCrawler.Logic
             PageDataParserResponse.Description = GetDescription();
             PageDataParserResponse.Keywords = GetKeywords();
             //PageDataParserResponse.Links = GetAllLinks();
+
+            await base.StartParseContactPage();
+            PageDataParserResponse.Emails = base.ParseContactPageResponse.Emails;
+            PageDataParserResponse.Phones = base.ParseContactPageResponse.Phones;
         }
 
         private string GetTitle()
@@ -76,6 +83,8 @@ namespace WebsiteCrawler.Logic
                 var links = new List<string>();
                 var linksNode = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
 
+                if (linksNode == null) return null;
+
                 for (int i = 0, lenght = linksNode.Count(); i < lenght; i++)
                 {
                     if (linksNode[i].Attributes["href"] != null)
@@ -93,5 +102,7 @@ namespace WebsiteCrawler.Logic
                 return null;
             }
         }
+
+        
     }
 }
