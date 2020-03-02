@@ -9,6 +9,7 @@ using System.Threading;
 using WebsiteCrawler.Model.Responses;
 using System.Collections.Concurrent;
 using System.Reflection;
+using WebsiteCrawler.Model.Enums;
 
 namespace WebsiteCrawler.Logic
 {
@@ -21,6 +22,7 @@ namespace WebsiteCrawler.Logic
         int maxDeep;        
         string baseUrl;
         string domainName;
+        EDomainLevel domainLevel;
         PageParser pageParser;
         PageDataParser pageDataParser;
         IEnumerable<string> domainExtentions;        
@@ -39,6 +41,7 @@ namespace WebsiteCrawler.Logic
             maxDeep = WebsiteParserRequest.MaxDeep;
             domainExtentions = WebsiteParserRequest.DomainExtentions;
             domainName = WebsiteParserRequest.DomainName;
+            domainLevel = WebsiteParserRequest.DomainLevel;
 
             DicAllInternalUrls = new Dictionary<string, int>();
         } 
@@ -179,7 +182,9 @@ namespace WebsiteCrawler.Logic
                     {
                         var domainName = Url.GetDomain(baseUrl);
 
-                        if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && Url.IsContainExtention(domainName, domainExtentions))
+                        if (!WebSitesConcurrentQueue.AllWebSites.Contains(domainName) && 
+                            Url.IsContainExtention(domainName, domainExtentions) &&
+                            Url.IsCorrectDomainLevel(domainName, Model.Enums.EDomainLevel.SecondLevel))
                         {
                             WebSitesConcurrentQueue.WebSites.Enqueue(domainName);
                             WebSitesConcurrentQueue.AllWebSites.Enqueue(domainName);

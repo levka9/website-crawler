@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic;
+using WebsiteCrawler.Model.Enums;
 using WebsiteCrawler.Models.Requests;
 
 namespace WebsiteCrawler.Logic
@@ -18,6 +19,7 @@ namespace WebsiteCrawler.Logic
         const int MAX_TASK_QUANTITY = 6;
 
         int maxDeep;
+        EDomainLevel domainLevel;
         List<Task> tasks;
         IEnumerable<string> domainExtentions;
         #endregion
@@ -27,6 +29,7 @@ namespace WebsiteCrawler.Logic
             tasks = new List<Task>();
 
             maxDeep = MultiThreadWebsiteParserRequest.MaxDeep;
+            domainLevel = MultiThreadWebsiteParserRequest.EDomainLevel;
             domainExtentions = MultiThreadWebsiteParserRequest.DomainExtentions;
 
             WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>(MultiThreadWebsiteParserRequest.WebsiteUrls);
@@ -82,6 +85,7 @@ namespace WebsiteCrawler.Logic
             {
                 DomainName = DomainName,
                 MaxDeep = maxDeep,
+                DomainLevel = domainLevel,
                 DomainExtentions = domainExtentions,
                 TaskId = TaskId
             };

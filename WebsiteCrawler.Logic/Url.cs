@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WebsiteCrawler.Model.Enums;
 
 namespace WebsiteCrawler.Logic
 {
@@ -49,6 +50,24 @@ namespace WebsiteCrawler.Logic
             {
                 return string.Empty;
             }
+        }
+
+        public static bool IsCorrectDomainLevel(string domainName, EDomainLevel EDomainLevel)
+        {
+            bool result = false;
+            domainName = domainName.Replace("www.", "");
+
+            switch (EDomainLevel)
+            {
+                case EDomainLevel.SecondLevel:
+                    result = domainName.Split('.').Length == 3;
+                    break;
+                case EDomainLevel.ThirdLevel:
+                    result = domainName.Split('.').Length == 4;
+                    break;
+            }
+
+            return result;
         }
 
         public static Uri GetUri(string Url)

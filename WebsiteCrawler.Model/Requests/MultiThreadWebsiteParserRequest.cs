@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WebsiteCrawler.Model.Enums;
 
 namespace WebsiteCrawler.Models.Requests
 {
@@ -8,6 +9,7 @@ namespace WebsiteCrawler.Models.Requests
     {
         public IEnumerable<string> WebsiteUrls { get; set; }
         public int MaxDeep { get; set; }
+        public EDomainLevel EDomainLevel { get; set; }
         /// <summary>
         /// Limit domain extentions
         /// </summary>

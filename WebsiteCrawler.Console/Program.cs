@@ -48,6 +48,8 @@ namespace WebsiteCrawler.Console
 
             multiThreadWebsiteParserRequest.MaxDeep = 0;
 
+            multiThreadWebsiteParserRequest.EDomainLevel = Model.Enums.EDomainLevel.SecondLevel;
+
             var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
             await multiThreadWebsiteParser.Start();
 
