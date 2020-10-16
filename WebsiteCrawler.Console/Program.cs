@@ -46,7 +46,7 @@ namespace WebsiteCrawler.Console
                 "org.il"
             };
 
-            multiThreadWebsiteParserRequest.MaxDeep = 0;
+            multiThreadWebsiteParserRequest.MaxDeep = 1;
 
             multiThreadWebsiteParserRequest.EDomainLevel = Model.Enums.EDomainLevel.SecondLevel;
 

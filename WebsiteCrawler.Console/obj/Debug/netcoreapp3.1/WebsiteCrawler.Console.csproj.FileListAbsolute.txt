@@ -40,3 +40,5 @@ F:\asp.net\WebsiteCrawler\WebsiteCrawler.Console\obj\Debug\netcoreapp3.1\Website
 F:\asp.net\WebsiteCrawler\WebsiteCrawler.Console\obj\Debug\netcoreapp3.1\WebsiteCrawler.Console.csproj.CopyComplete
 F:\asp.net\WebsiteCrawler\WebsiteCrawler.Console\obj\Debug\netcoreapp3.1\WebsiteCrawler.Console.dll
 F:\asp.net\WebsiteCrawler\WebsiteCrawler.Console\obj\Debug\netcoreapp3.1\WebsiteCrawler.Console.pdb
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Console\bin\Debug\netcoreapp3.1\WebsiteCrawler.Helper.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Console\bin\Debug\netcoreapp3.1\WebsiteCrawler.Helper.pdb

@@ -1,0 +1,8 @@
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\bin\Debug\netcoreapp3.1\WebsiteCrawler.Helper.deps.json
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\bin\Debug\netcoreapp3.1\WebsiteCrawler.Helper.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\bin\Debug\netcoreapp3.1\WebsiteCrawler.Helper.pdb
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\obj\Debug\netcoreapp3.1\WebsiteCrawler.Helper.csprojAssemblyReference.cache
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\obj\Debug\netcoreapp3.1\WebsiteCrawler.Helper.AssemblyInfoInputs.cache
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\obj\Debug\netcoreapp3.1\WebsiteCrawler.Helper.AssemblyInfo.cs
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\obj\Debug\netcoreapp3.1\WebsiteCrawler.Helper.dll
+D:\Learn\WebsiteCrawler\WebsiteCrawler.Helper\obj\Debug\netcoreapp3.1\WebsiteCrawler.Helper.pdb

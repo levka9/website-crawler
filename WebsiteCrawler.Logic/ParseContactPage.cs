@@ -8,6 +8,8 @@ using System.Linq;
 using HtmlAgilityPack;
 using WebsiteCrawler.Model.Responses;
 using System.Reflection;
+using System.Text.RegularExpressions;
+using WebsiteCrawler.Helper;
 
 namespace WebsiteCrawler.Logic
 {
@@ -42,31 +44,65 @@ namespace WebsiteCrawler.Logic
         {
             ParseContactPageResponse.Phones = new List<string>();
 
-            var phoneLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'tel:')]");
+            #region MatchByHtmlAgilityPack
+            //var phoneLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'tel:')]");
 
-            if (phoneLinks == null) return;
+            //foreach (var phoneLink in phoneLinks)
+            //{
+            //    //var phone = phoneLink.Attributes["tel"]
+            //    if (!ParseContactPageResponse.Phones.Contains(phoneLink))
+            //    {
+            //        ParseContactPageResponse.Phones.Add(phoneMatche.Value);
+            //    }
+            //} 
+            #endregion
 
-            foreach (var link in phoneLinks)
+            #region MatchByRegex
+            var phoneMatches = Regex.Matches(htmlDocument.Text, RegexPatterns.PhoneNumber, RegexOptions.Singleline);
+
+            if (phoneMatches == null || phoneMatches.Count == 0) return;
+
+            foreach (Match phoneMatche in phoneMatches)
             {
-                var phone = link.Attributes["href"].Value.ToLower().Replace("tel:", "");
-                
-                ParseContactPageResponse.Phones.Add(phone);
-            }
+                if (!ParseContactPageResponse.Phones.Contains(phoneMatche.Value))
+                {
+                    ParseContactPageResponse.Phones.Add(phoneMatche.Value);
+                }
+            } 
+            #endregion
         }
+
+        //private void SetEmails()
+        //{
+        //    ParseContactPageResponse.Emails = new List<string>();
+
+        //    var emailLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'mailTo:') or starts-with(@href, 'mailto:')]");
+
+        //    if (emailLinks == null) return; 
+
+        //    foreach (var emailLink in emailLinks)
+        //    {
+        //        var email = emailLink.Attributes["href"].Value.ToLower().Replace("mailto:", "");
+
+        //        ParseContactPageResponse.Emails.Add(email);
+        //    }
+        //}
 
         private void SetEmails()
         {
             ParseContactPageResponse.Emails = new List<string>();
 
-            var emailLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'mailTo:') or starts-with(@href, 'mailto:')]");
+            //var emailLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'mailTo:') or starts-with(@href, 'mailto:')]");
+            var emailsMatched = Regex.Matches(htmlDocument.Text, RegexPatterns.Email, RegexOptions.Singleline);
 
-            if (emailLinks == null) return; 
+            if (emailsMatched == null && emailsMatched.Count != 0) return;
 
-            foreach (var emailLink in emailLinks)
+            foreach (Match emailLink in emailsMatched)
             {
-                var email = emailLink.Attributes["href"].Value.ToLower().Replace("mailto:", "");
-
-                ParseContactPageResponse.Emails.Add(email);
+                if (!ParseContactPageResponse.Emails.Contains(emailLink.Value))
+                {
+                    ParseContactPageResponse.Emails.Add(emailLink.Value);
+                }                
             }
         }
 

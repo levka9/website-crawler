@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj" />
     <ProjectReference Include="..\WebsiteCrawler.Model\WebsiteCrawler.Model.csproj" />
   </ItemGroup>
 
