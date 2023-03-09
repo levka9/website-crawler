@@ -9,6 +9,7 @@ using WebsiteCrawler.Models;
 using System.Threading.Tasks;
 using System.Net.Http;
 using WebsiteCrawler.Helper;
+using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic
 {
@@ -33,14 +34,12 @@ namespace WebsiteCrawler.Logic
         } 
         #endregion
 
-        //public async Task StartAsync(string domainName)
         public async Task StartAsync()
         {
             if (this._htmlDocument == null) return;
 
             PageDataParserResponse = new PageDataParserResponse();
 
-            // PageDataParserResponse.DomainName = domainName;
             PageDataParserResponse.DomainName = base.domainName;
             PageDataParserResponse.Encoding = GetEncoding();
             PageDataParserResponse.Title = GetTitle();
@@ -53,27 +52,11 @@ namespace WebsiteCrawler.Logic
             PageDataParserResponse.Phones = base.ParseContactPageResponse.Phones;
         }
 
-        private Encoding GetEncoding()
+        private Encoding? GetEncoding()
         {
-            var charset = Encoding.UTF8;
-            var charsetNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='charset']");
+            var EncodingModule = new EncodingModule(_htmlDocument.DocumentNode, base.domainName);
 
-            if(charsetNode == null)
-            {
-                charsetNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@http-equiv,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='content-type']");
-                
-                if( charsetNode != null &&
-                    charsetNode.Attributes["content"].Value.ToLower().Contains("windows-1255"))
-                {
-                    charset = EncodingHelper.GetEncoding("windows-1255");
-                }
-            }
-            else if(charsetNode.InnerText.ToLower().Contains("windows-1255"))
-            {
-                charset = EncodingHelper.GetEncoding("windows-1255");
-            }
-
-            return charset;
+            return EncodingModule.GetEncoding();
         }
 
         private string GetTitle()

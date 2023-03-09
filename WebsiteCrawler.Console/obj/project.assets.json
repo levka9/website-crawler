@@ -496,32 +496,34 @@
     ]
   },
   "packageFolders": {
-    "/home/moti/.nuget/packages/": {}
+    "C:\\Users\\Shlomi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
+      "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
       "projectName": "WebsiteCrawler.Console",
-      "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
-      "packagesPath": "/home/moti/.nuget/packages/",
-      "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/obj/",
+      "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
+      "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+      "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/moti/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {
-              "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj"
+            "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+              "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj"
             }
           }
         }
@@ -557,7 +559,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
