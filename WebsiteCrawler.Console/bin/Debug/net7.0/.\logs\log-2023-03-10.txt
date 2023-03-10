@@ -1,0 +1,266 @@
+ERROR 08:23:18 PageParser - GetHtmlPage: http://www.walla.co.il/https://walla.co.il/magazine
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:23:23 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:YitPaywall.openLoginPopUp(false,{ redirect_to_plus : true })
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:23:36 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=23
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:23:39 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:void(0);
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:23:57 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:02 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:06 WebRequestHelper - Check: http://www.10bis.co.il
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at WebsiteCrawler.Logic.WebRequestHelper.Check(String Url) in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebRequestHelper.cs:line 20
+ERROR 08:24:06 WebRequestHelper - Check: https://www.10bis.co.il
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at WebsiteCrawler.Logic.WebRequestHelper.Check(String Url) in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebRequestHelper.cs:line 20
+ERROR 08:24:07 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/israeltrip/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:12 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/days/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:16 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=577
+System.Net.Http.HttpRequestException: Name or service not known (www.autodidact.co.il:80)
+ ---> System.Net.Sockets.SocketException (0xFFFDFFFF): Name or service not known
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 45
+ERROR 08:24:17 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=456
+System.Net.Http.HttpRequestException: Resource temporarily unavailable (www.meidaat.co.il:80)
+ ---> System.Net.Sockets.SocketException (11): Resource temporarily unavailable
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 45
+ERROR 08:24:17 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/gui/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:22 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/atraction/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:27 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/rest/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:31 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/sleep/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:35 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/laps/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:40 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/category/%d7%91%d7%9c%d7%95%d7%92-%d7%98%d7%99%d7%95%d7%9c%d7%99%d7%9d/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:24:59 PageParser - GetHtmlPage: http://www.baliletayel.co.il/http://baliletayel.co.il/israeltrip/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:25:19 PageParser - GetHtmlPage: http://www.baliletayel.co.il/http://baliletayel.co.il/category/%d7%91%d7%9c%d7%95%d7%92-%d7%98%d7%99%d7%95%d7%9c%d7%99%d7%9d/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:25:30 PageParser - GetHtmlPage: http://www.baliletayel.co.il/http://baliletayel.co.il/atraction/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:25:41 PageParser - GetHtmlPage: http://www.zap.co.il/old/UserControls/NewUI/HomePage/Cubes/zap.co.il/models.aspx?sog=h-gardenfurniture
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:25:47 PageParser - GetHtmlPage: http://www.baliletayel.co.il/http://baliletayel.co.il/gui/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:25:52 WebRequestHelper - Check: http://www.tripadvisor.co.il
+System.Net.WebException: The operation has timed out.
+   at System.Net.HttpWebRequest.GetResponse()
+   at WebsiteCrawler.Logic.WebRequestHelper.Check(String Url) in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebRequestHelper.cs:line 20
+ERROR 08:25:59 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=477
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 45
+ERROR 08:26:49 PageParser - GetHtmlPage: http://www.walla.co.il/https://walla.co.il/magazine
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:26:50 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:YitPaywall.openLoginPopUp(false,{ redirect_to_plus : true })
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:26:58 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:void(0);
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:26:58 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=23
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:27:28 PageParser - GetHtmlPage: http://www.walla.co.il/https://walla.co.il/magazine
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:27:30 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:YitPaywall.openLoginPopUp(false,{ redirect_to_plus : true })
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:27:35 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=23
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:27:37 PageParser - GetHtmlPage: http://www.ynet.co.il/javascript:void(0);
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:27:58 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:28:02 WebRequestHelper - Check: http://www.10bis.co.il
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at WebsiteCrawler.Logic.WebRequestHelper.Check(String Url) in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebRequestHelper.cs:line 20
+ERROR 08:28:03 WebRequestHelper - Check: https://www.10bis.co.il
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at WebsiteCrawler.Logic.WebRequestHelper.Check(String Url) in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebRequestHelper.cs:line 20
+ERROR 08:28:03 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:28:06 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=577
+System.Net.Http.HttpRequestException: Name or service not known (www.autodidact.co.il:80)
+ ---> System.Net.Sockets.SocketException (0xFFFDFFFF): Name or service not known
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 45
+ERROR 08:28:07 PageParser - GetHtmlPage: http://www.startpage.co.il/go/redir.asp?link=456
+System.Net.Http.HttpRequestException: Resource temporarily unavailable (www.meidaat.co.il:80)
+ ---> System.Net.Sockets.SocketException (11): Resource temporarily unavailable
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 45
+ERROR 08:28:08 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/israeltrip/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:28:13 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/days/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47
+ERROR 08:28:18 PageParser - GetHtmlPage: http://www.baliletayel.co.il/https://baliletayel.co.il/gui/
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetByteArrayAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at WebsiteCrawler.Logic.PageParser.GetHtmlPage() in /home/moti/Documents/website-crawler/WebsiteCrawler.Logic/PageParser.cs:line 47

@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {}
+    "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {}
   },
   "projects": {
-    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
+    "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
+        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
         "projectName": "WebsiteCrawler.Helper",
-        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
-        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\obj\\",
+        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
+        "packagesPath": "/home/moti/.nuget/packages/",
+        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/moti/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -41,14 +35,16 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,43 +53,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+    "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj",
         "projectName": "WebsiteCrawler.Logic",
-        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
-        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Logic\\obj\\",
+        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj",
+        "packagesPath": "/home/moti/.nuget/packages/",
+        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/moti/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
-                "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj"
+              "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {
+                "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj"
               },
-              "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
-                "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
+              "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj": {
+                "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj"
               }
             }
           }
@@ -105,19 +95,20 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "HtmlAgilityPack": {
               "target": "Package",
-              "version": "[1.11.18, )"
+              "version": "[1.11.46, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.3, )"
+              "version": "[13.0.3, )"
             },
             "log4net": {
               "target": "Package",
-              "version": "[2.0.8, )"
+              "version": "[2.0.15, )"
             }
           },
           "imports": [
@@ -126,7 +117,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -135,37 +127,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+    "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj",
         "projectName": "WebsiteCrawler.Model",
-        "projectPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
-        "packagesPath": "C:\\Users\\user9\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn\\WebsiteCrawler\\WebsiteCrawler.Model\\obj\\",
+        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj",
+        "packagesPath": "/home/moti/.nuget/packages/",
+        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/moti/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -176,14 +162,16 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -192,7 +180,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

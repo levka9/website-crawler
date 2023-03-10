@@ -1,0 +1,12 @@
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/bin/Debug/net7.0/WebsiteCrawler.Helper.deps.json
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/bin/Debug/net7.0/WebsiteCrawler.Helper.dll
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/bin/Debug/net7.0/WebsiteCrawler.Helper.pdb
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.csproj.AssemblyReference.cache
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.GeneratedMSBuildEditorConfig.editorconfig
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.AssemblyInfoInputs.cache
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.AssemblyInfo.cs
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.csproj.CoreCompileInputs.cache
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.dll
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/refint/WebsiteCrawler.Helper.dll
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/WebsiteCrawler.Helper.pdb
+/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/Debug/net7.0/ref/WebsiteCrawler.Helper.dll
