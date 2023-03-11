@@ -12,38 +12,38 @@ namespace WebsiteCrawler.Logic
     {
         static ReaderWriterLockSlim readerWriterLockSlim = new ReaderWriterLockSlim();
 
-        public static async Task Save<T>(string FileName, IEnumerable<T> List)
+        // public static async Task SaveAsync<T>(string FileName, IEnumerable<T> List)
+        // {
+        //     readerWriterLockSlim.EnterWriteLock();
+
+        //     try
+        //     {
+        //         using (TextWriter tw = new StreamWriter(new FileStream(FileName, FileMode.Append), Encoding.UTF8))
+        //         {
+        //             foreach (var item in List)
+        //             {
+        //                 var objectToFile = JsonConvert.SerializeObject(item);
+        //                 await tw.WriteLineAsync($"{objectToFile}{separatorSymbol}");
+        //             }
+        //         }
+        //     }
+        //     finally
+        //     {
+        //         if (readerWriterLockSlim.IsWriteLockHeld)
+        //             readerWriterLockSlim.ExitWriteLock();
+        //     }         
+        // }
+
+        public static async Task SaveAsync<T>(string FileName, T Object, string separatorSymbol = "")
         {
             readerWriterLockSlim.EnterWriteLock();
 
             try
             {
-                using (TextWriter tw = new StreamWriter(FileName))
-                {
-                    foreach (var item in List)
-                    {
-                        var objectToFile = JsonConvert.SerializeObject(item);
-                        await tw.WriteLineAsync(objectToFile);
-                    }
-                }
-            }
-            finally
-            {
-                if (readerWriterLockSlim.IsWriteLockHeld)
-                    readerWriterLockSlim.ExitWriteLock();
-            }         
-        }
-
-        public static async Task SaveAsync<T>(string FileName, T Object)
-        {
-            readerWriterLockSlim.EnterWriteLock();
-
-            try
-            {
-                using (TextWriter tw = new StreamWriter(FileName, true))
+                using (TextWriter tw = new StreamWriter(new FileStream(FileName, FileMode.Append), Encoding.UTF8))
                 {
                     var objectToFile = JsonConvert.SerializeObject(Object);
-                    await tw.WriteLineAsync(objectToFile);
+                    await tw.WriteLineAsync($"{objectToFile}{separatorSymbol}");
                 }
             }
             finally
@@ -53,22 +53,13 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        public static async Task Save<T>(string FileName, T Object)
-        {
-            using (TextWriter tw = new StreamWriter(FileName, true))
-            {
-                var objectToFile = JsonConvert.SerializeObject(Object);
-                await tw.WriteLineAsync(objectToFile);
-            }
-        }
-
         public static void Save(string FileName, string Content)
         {
             readerWriterLockSlim.EnterWriteLock();
 
             try
             {
-                using (TextWriter tw = new StreamWriter(FileName, true))
+                using (TextWriter tw = new StreamWriter(new FileStream(FileName, FileMode.Append), Encoding.UTF8))
                 {
                     tw.WriteLine(Content);
                 }

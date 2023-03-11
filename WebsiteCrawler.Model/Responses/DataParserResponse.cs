@@ -7,6 +7,8 @@ namespace WebsiteCrawler.Model.Responses
     public class PageDataParserResponse
     {
         public string DomainName { get; set; }
+        // webpage charset
+        public Encoding Encoding { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public List<string> Keywords { get; set; }

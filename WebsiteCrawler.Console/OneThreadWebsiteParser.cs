@@ -31,7 +31,7 @@ namespace WebsiteCrawler.Console
             {
                 await websiteParser.Parse();
 
-                await FileData.Save<object>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));
+                await FileData.SaveAsync<IEnumerable<object>>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));
             }            
         }
     }

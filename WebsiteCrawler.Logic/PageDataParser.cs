@@ -8,36 +8,41 @@ using System.Reflection;
 using WebsiteCrawler.Models;
 using System.Threading.Tasks;
 using System.Net.Http;
+using WebsiteCrawler.Helper;
 
 namespace WebsiteCrawler.Logic
 {
     public class PageDataParser : ParseContactPage
     {
         #region Properties
-        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        HtmlDocument htmlDocument;        
+        HtmlDocument _htmlDocument;        
         public PageDataParserResponse PageDataParserResponse { get; set; }
         #endregion
 
         #region Constructors
-        public PageDataParser(string domainName, string HtmlContent, IEnumerable<Page> Pages) : base(domainName, Pages)
+        public PageDataParser(string domainName, string htmlContent, IEnumerable<Page> Pages = null) 
+                : base(domainName, Pages)
         {
-            if (!string.IsNullOrEmpty(HtmlContent))
+            if (!string.IsNullOrEmpty(htmlContent))
             {
-                htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(HtmlContent);
+                _htmlDocument = new HtmlDocument();
+                _htmlDocument.LoadHtml(htmlContent);
             }
         } 
         #endregion
 
-        public async Task Start(string domainName)
+        //public async Task StartAsync(string domainName)
+        public async Task StartAsync()
         {
-            if (this.htmlDocument == null) return;
+            if (this._htmlDocument == null) return;
 
             PageDataParserResponse = new PageDataParserResponse();
 
-            PageDataParserResponse.DomainName = domainName;
+            // PageDataParserResponse.DomainName = domainName;
+            PageDataParserResponse.DomainName = base.domainName;
+            PageDataParserResponse.Encoding = GetEncoding();
             PageDataParserResponse.Title = GetTitle();
             PageDataParserResponse.Description = GetDescription();
             PageDataParserResponse.Keywords = GetKeywords();
@@ -48,9 +53,32 @@ namespace WebsiteCrawler.Logic
             PageDataParserResponse.Phones = base.ParseContactPageResponse.Phones;
         }
 
+        private Encoding GetEncoding()
+        {
+            var charset = Encoding.UTF8;
+            var charsetNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='charset']");
+
+            if(charsetNode == null)
+            {
+                charsetNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@http-equiv,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='content-type']");
+                
+                if( charsetNode != null &&
+                    charsetNode.Attributes["content"].Value.ToLower().Contains("windows-1255"))
+                {
+                    charset = EncodingHelper.GetEncoding("windows-1255");
+                }
+            }
+            else if(charsetNode.InnerText.ToLower().Contains("windows-1255"))
+            {
+                charset = EncodingHelper.GetEncoding("windows-1255");
+            }
+
+            return charset;
+        }
+
         private string GetTitle()
         {
-            var titleNode = htmlDocument.DocumentNode.SelectSingleNode("//title");
+            var titleNode = _htmlDocument.DocumentNode.SelectSingleNode("//title");
 
             if (titleNode != null)
             {
@@ -62,7 +90,7 @@ namespace WebsiteCrawler.Logic
 
         private string GetDescription()
         {
-            var desciptionNode = htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='description']");
+            var desciptionNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='description']");
 
             return (desciptionNode != null) ? desciptionNode.Attributes["content"].Value
                                             : string.Empty;
@@ -70,7 +98,7 @@ namespace WebsiteCrawler.Logic
 
         private List<string> GetKeywords()
         {
-            var desciptionNode = htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='keywords']");
+            var desciptionNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='keywords']");
 
             return (desciptionNode != null) ? desciptionNode.Attributes["content"].Value.Split(',').ToList()
                                             : null;
@@ -81,7 +109,7 @@ namespace WebsiteCrawler.Logic
             try
             {
                 var links = new List<string>();
-                var linksNode = htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
+                var linksNode = _htmlDocument.DocumentNode.SelectNodes("//a").ToArray();
 
                 if (linksNode == null) return null;
 
@@ -97,12 +125,10 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-                log.Error("GetAllLinks ", ex);
+                _log.Error("GetAllLinks ", ex);
 
                 return null;
             }
         }
-
-        
     }
 }

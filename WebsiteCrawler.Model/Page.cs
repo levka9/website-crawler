@@ -12,5 +12,16 @@ namespace WebsiteCrawler.Models
         public bool IsExternal { get; set; }
         public bool IsParsed { get; set; }
         public List<Page> InnerPages { get; set; }
+
+        public static List<string> ContactPageNames = new List<string> 
+                                                        {
+                                                            "contact",
+                                                            "contacts",
+                                                            "contactus",
+                                                            "contact-us",
+                                                            "support",
+                                                            "צור-קשר",
+                                                            "יצירת-קשר"
+                                                        };
     }
 }

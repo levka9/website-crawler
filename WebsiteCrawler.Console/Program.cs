@@ -11,6 +11,7 @@ using System.Threading;
 using System.Collections.Concurrent;
 using WebsiteCrawler.Models.Requests;
 using System.Linq;
+using WebsiteCrawler.Logic.Services;
 
 namespace WebsiteCrawler.Console
 {
@@ -28,6 +29,13 @@ namespace WebsiteCrawler.Console
             log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
             #endregion
 
+            // var encoding =  await WebSiteEncodingService.GetEncodingAsync("https://www.lainyan.co.il/");
+
+            // using(var webPageParser = new WebPageParser("www.lainyan.co.il", encoding))
+            // {
+            //     await webPageParser.Parse("https://www.lainyan.co.il/", 0);
+            // }
+            
             /* Website Parser */
             //await OneThreadWebsiteParser.Start();
 

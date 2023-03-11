@@ -17,7 +17,7 @@ namespace WebsiteCrawler.Logic
     {
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        string domainName;
+        protected string domainName;
         IEnumerable<Page> pages;
         HtmlDocument htmlDocument;
         public ParseContactPageResponse ParseContactPageResponse { get; set; }
@@ -108,7 +108,8 @@ namespace WebsiteCrawler.Logic
 
         private async Task GetDataFromContactPage()
         {
-            var page = pages.Where(x => x.IsExternal == false && x.Url.ToLower().Contains("contact")).FirstOrDefault();
+            var page = pages?.Where(x => x.IsExternal == false && x.Url.ToLower().Contains("contact"))
+                             .FirstOrDefault();
 
             if (page == null) return;
 

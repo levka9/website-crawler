@@ -10,6 +10,7 @@ using WebsiteCrawler.Model.Responses;
 using System.Collections.Concurrent;
 using System.Reflection;
 using WebsiteCrawler.Model.Enums;
+using WebsiteCrawler.Logic.Services;
 
 namespace WebsiteCrawler.Logic
 {
@@ -22,8 +23,9 @@ namespace WebsiteCrawler.Logic
         int maxDeep;        
         string baseUrl;
         string domainName;
+        Encoding encoding;
         EDomainLevel domainLevel;
-        PageParser pageParser;
+        WebPageParser webPageParser;
         PageDataParser pageDataParser;
         IEnumerable<string> domainExtentions;        
         #endregion
@@ -42,7 +44,7 @@ namespace WebsiteCrawler.Logic
             domainExtentions = WebsiteParserRequest.DomainExtentions;
             domainName = WebsiteParserRequest.DomainName;
             domainLevel = WebsiteParserRequest.DomainLevel;
-
+            
             DicAllInternalUrls = new Dictionary<string, int>();
         } 
         #endregion
@@ -59,14 +61,16 @@ namespace WebsiteCrawler.Logic
                 return;
             } 
 
-            pageParser = new PageParser(baseUrl);
-            pageParser.Page = new Page();
+            encoding =  await WebSiteEncodingService.GetEncodingAsync(baseUrl);
 
-            await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+            webPageParser = new WebPageParser(baseUrl, encoding);
+            webPageParser.Page = new Page();
+
+            await RecursiveParseInnerPages(baseUrl, 0, webPageParser.Page);
 
             //try
             //{
-            //    //await RecursiveParseInnerPages(baseUrl, 0, pageParser.Page);
+            //    //await RecursiveParseInnerPages(baseUrl, 0, WebPageParser.Page);
             //}
             //catch (LockRecursionException ex)
             //{
@@ -86,15 +90,15 @@ namespace WebsiteCrawler.Logic
 
             TotalPagesParsed++;
             Console.WriteLine($"{TotalPagesParsed} - Parse: {Url}");            
-            await pageParser.Parse(Url, Deep);
+            await webPageParser.Parse(Url, Deep);
 
-            if (IsContainInnerPages(pageParser.Page))
+            if (IsContainInnerPages(webPageParser.Page))
             {
-                await GetHomepageContent(pageParser.Page.HtmlPageContent, pageParser.Page.InnerPages, Deep);
+                await GetHomepageContent(webPageParser.Page.HtmlPageContent, webPageParser.Page.InnerPages, Deep);
 
-                SetExternalWebsite(pageParser.Page.InnerPages);
+                SetExternalWebsite(webPageParser.Page.InnerPages);
 
-                Page.InnerPages = GetOnlyNewInternalPages(pageParser.Page.InnerPages, Deep);
+                Page.InnerPages = GetOnlyNewInternalPages(webPageParser.Page.InnerPages, Deep);
                 
                 for (int i = 0, length = Page.InnerPages.Count(); i < length; i++)
                 {
@@ -110,17 +114,17 @@ namespace WebsiteCrawler.Logic
             if (deep == 0)
             {
                 pageDataParser = new PageDataParser(domainName, HtmlPageContent, Pages);
-                await pageDataParser.Start(domainName);
+                await pageDataParser.StartAsync();
 
-                await FileData.Save<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse);
+                await FileData.SaveAsync<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse, ",");
             }            
         }
 
         private bool IsContainInnerPages(Page Page)
         {
-            return pageParser.Page != null && 
-                   pageParser.Page.InnerPages != null && 
-                   pageParser.Page.InnerPages.Count > 0;
+            return webPageParser.Page != null && 
+                   webPageParser.Page.InnerPages != null && 
+                   webPageParser.Page.InnerPages.Count > 0;
         }
 
         private string GetPageUrl(string pageUrl)
@@ -200,7 +204,7 @@ namespace WebsiteCrawler.Logic
 
         public void Dispose()
         {
-            pageParser.Dispose();
+            webPageParser.Dispose();
         }
     }
 }
