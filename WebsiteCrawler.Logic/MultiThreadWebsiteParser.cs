@@ -79,15 +79,15 @@ namespace WebsiteCrawler.Logic
             }            
         }
 
-        private WebsiteParserRequest GetWebsiteParserRequest(string DomainName, int? TaskId)
+        private WebsiteParserRequest GetWebsiteParserRequest(string domainName, int? taskId)
         {
             return new WebsiteParserRequest()
             {
-                DomainName = DomainName,
+                DomainName = domainName,
                 MaxDeep = maxDeep,
                 DomainLevel = domainLevel,
                 DomainExtentions = domainExtentions,
-                TaskId = TaskId
+                TaskId = taskId
             };
         }
     }
