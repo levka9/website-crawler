@@ -111,13 +111,15 @@ namespace WebsiteCrawler.Logic
                 
         private async Task GetHomepageContent(string HtmlPageContent, IEnumerable<Page> Pages, int deep)
         {
-            if (deep == 0)
+            if (!IsHomepage(deep)) 
             {
-                pageDataParser = new PageDataParser(domainName, HtmlPageContent, Pages);
-                await pageDataParser.StartAsync();
+                return;
+            }
 
-                await FileData.SaveAsync<PageDataParserResponse>("websites-content.txt", pageDataParser.PageDataParserResponse, ",");
-            }            
+            pageDataParser = new PageDataParser(domainName, HtmlPageContent, Pages);
+            await pageDataParser.StartAsync();
+
+            await FileData.SaveAsync("websites-content.txt", pageDataParser.PageDataParserResponse.ToString(), ",");            
         }
 
         private bool IsContainInnerPages(Page Page)
@@ -125,6 +127,11 @@ namespace WebsiteCrawler.Logic
             return webPageParser.Page != null && 
                    webPageParser.Page.InnerPages != null && 
                    webPageParser.Page.InnerPages.Count > 0;
+        }
+
+        private bool IsHomepage(int deep)
+        {
+            return deep == 0;
         }
 
         private string GetPageUrl(string pageUrl)

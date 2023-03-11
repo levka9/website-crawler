@@ -72,22 +72,6 @@ namespace WebsiteCrawler.Logic
             #endregion
         }
 
-        //private void SetEmails()
-        //{
-        //    ParseContactPageResponse.Emails = new List<string>();
-
-        //    var emailLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'mailTo:') or starts-with(@href, 'mailto:')]");
-
-        //    if (emailLinks == null) return; 
-
-        //    foreach (var emailLink in emailLinks)
-        //    {
-        //        var email = emailLink.Attributes["href"].Value.ToLower().Replace("mailto:", "");
-
-        //        ParseContactPageResponse.Emails.Add(email);
-        //    }
-        //}
-
         private void SetEmails()
         {
             ParseContactPageResponse.Emails = new List<string>();
@@ -108,12 +92,15 @@ namespace WebsiteCrawler.Logic
 
         private async Task GetDataFromContactPage()
         {
-            var page = pages?.Where(x => x.IsExternal == false && x.Url.ToLower().Contains("contact"))
+            var page = pages?.Where(x => x.IsExternal == false && 
+                                         Page.ContactPageNames.Any(y => x.Url.ToLower().Contains(y)))
                              .FirstOrDefault();
 
             if (page == null) return;
 
             page.Url = Url.GetFullUrl(domainName, page.Url);
+
+            Console.WriteLine($"Parse contact page {page.Url}");
 
             var contactPageContent = await GetHtmlPage(page.Url);
 

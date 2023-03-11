@@ -48,10 +48,7 @@ namespace WebsiteCrawler.Logic
                 response.EnsureSuccessStatusCode();
 
                 var htmlPageContent = await response.Content.ReadAsStringAsync(_encoding);
-                //var contentBytes = await httpClient.GetByteArrayAsync(this.url);
                 
-                //string htmlPageContent = Encoding.UTF8.GetString(contentBytes);
-
                 return htmlPageContent;
             }
             catch (Exception ex)

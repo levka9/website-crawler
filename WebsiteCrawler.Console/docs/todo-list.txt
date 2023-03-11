@@ -1,0 +1,3 @@
+1. improve regex 
+2. check with benchmark http client performance vs other http requests 
+3. 
