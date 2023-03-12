@@ -1,3 +1,6 @@
-1. improve regex 
-2. check with benchmark http client performance vs other http requests 
-3. 
+1. Improve regex for email, phone, address, firm name
+    check it site by site.
+2. Check with benchmark http client performance vs other http requests 
+3. Add dependency injection
+4. Organize all services in the different folder
+5. Add additional parameter internalLinksMax for parsing website in deep.

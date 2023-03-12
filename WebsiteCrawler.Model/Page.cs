@@ -21,6 +21,7 @@ namespace WebsiteCrawler.Models
                                                             "contact-us",
                                                             "support",
                                                             "צור-קשר",
+                                                            "צרו-קשר",
                                                             "יצירת-קשר"
                                                         };
     }
