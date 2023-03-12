@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {}
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {}
   },
   "projects": {
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
         "projectName": "WebsiteCrawler.Helper",
-        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
-        "packagesPath": "/home/moti/.nuget/packages/",
-        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
+        "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/moti/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

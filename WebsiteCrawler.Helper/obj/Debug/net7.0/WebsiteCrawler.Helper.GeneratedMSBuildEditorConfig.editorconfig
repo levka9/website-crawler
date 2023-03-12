@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteCrawler.Helper
-build_property.ProjectDir = /home/moti/Documents/website-crawler/WebsiteCrawler.Helper/
+build_property.ProjectDir = C:\MyCode\website-crawler\WebsiteCrawler.Helper\

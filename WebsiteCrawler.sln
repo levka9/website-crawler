@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29609.76
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebsiteCrawler.Console", "WebsiteCrawler.Console\WebsiteCrawler.Console.csproj", "{693DFB79-7361-44D3-A8EA-C1939C68BAD1}"
 EndProject
@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebsiteCrawler.Logic", "Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebsiteCrawler.Model", "WebsiteCrawler.Model\WebsiteCrawler.Model.csproj", "{EF7BD8C2-23AD-4F35-8A72-A97915DB0505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteCrawler.Helper", "WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj", "{D9FDE987-21F1-41AC-BD51-45927C389D08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebsiteCrawler.Helper", "WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj", "{D9FDE987-21F1-41AC-BD51-45927C389D08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2FA634DA-A187-489C-8E2D-5A8FFDF6B972}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,6 +10,7 @@ namespace WebsiteCrawler.Helper
     // that support unsupported encoding types like windows-1255  
     public static class EncodingHelper
     {
+
         public static Encoding GetEncoding(string encodingName)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
