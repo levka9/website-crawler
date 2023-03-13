@@ -13,19 +13,21 @@ using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic
 {
-    public class PageDataParser : ParseContactPage
+    public class PageDataParser
     {
         #region Properties
-        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        HtmlDocument _htmlDocument;        
+        private HtmlDocument _htmlDocument;
+        private ParseContactPage _parseContactPage;
         public PageDataParserResponse PageDataParserResponse { get; set; }
         #endregion
 
         #region Constructors
-        public PageDataParser(string domainName, string htmlContent, IEnumerable<Page> Pages = null) 
-                : base(domainName, Pages)
+        public PageDataParser(string domainName, string htmlContent, IEnumerable<Page> Pages = null)
         {
+            _parseContactPage = new ParseContactPage(domainName, Pages);
+
             if (!string.IsNullOrEmpty(htmlContent))
             {
                 _htmlDocument = new HtmlDocument();
@@ -40,21 +42,22 @@ namespace WebsiteCrawler.Logic
 
             PageDataParserResponse = new PageDataParserResponse();
 
-            PageDataParserResponse.DomainName = base.domainName;
+            PageDataParserResponse.DomainName = _parseContactPage.DomainName;
             PageDataParserResponse.Encoding = GetEncoding();
             PageDataParserResponse.Title = GetTitle();
             PageDataParserResponse.Description = GetDescription();
             PageDataParserResponse.Keywords = GetKeywords();
             //PageDataParserResponse.Links = GetAllLinks();
 
-            await base.StartParseContactPage();
-            PageDataParserResponse.Emails = base.ParseContactPageResponse.Emails;
-            PageDataParserResponse.Phones = base.ParseContactPageResponse.Phones;
+            await _parseContactPage.StartParseContactPage();
+            PageDataParserResponse.Emails = _parseContactPage.ParseContactPageResponse.Emails;
+            PageDataParserResponse.Phones = _parseContactPage.ParseContactPageResponse.Phones;
+            PageDataParserResponse.IsContactPageParsed = _parseContactPage.IsParsed;
         }
 
         private Encoding? GetEncoding()
         {
-            var EncodingModule = new EncodingModule(_htmlDocument.DocumentNode, base.domainName);
+            var EncodingModule = new EncodingModule(_htmlDocument.DocumentNode, _parseContactPage.DomainName);
 
             return EncodingModule.GetEncoding();
         }

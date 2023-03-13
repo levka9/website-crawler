@@ -19,6 +19,7 @@ public class PageDataParserResponse
     public List<string> Emails { get; set; }
     public List<string> Phones { get; set; }
     public List<string> Links { get; set; }
+    public bool IsContactPageParsed { get; set; }
 
     public override string ToString()
     {
@@ -33,8 +34,9 @@ public class PageDataParserResponse
                 Emails = Emails,
                 Phones = Phones,
                 Links = Links,
-                Address = Address
-            }, 
+                Address = Address,
+                IsContactPageParsed = IsContactPageParsed
+        }, 
             new JsonSerializerOptions() 
             {
                 Encoder = JavaScriptEncoder.Create(new TextEncoderSettings(UnicodeRanges.All)),

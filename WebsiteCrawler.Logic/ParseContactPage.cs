@@ -21,6 +21,12 @@ namespace WebsiteCrawler.Logic
         IEnumerable<Page> pages;
         HtmlDocument htmlDocument;
         public ParseContactPageResponse ParseContactPageResponse { get; set; }
+        public string DomainName 
+        { 
+            get { return domainName; } 
+            set {  domainName = value; }
+        }
+        public bool IsParsed { get; set; }
 
         public ParseContactPage(string DomainName, IEnumerable<Page> Pages)
         {            
@@ -97,7 +103,7 @@ namespace WebsiteCrawler.Logic
                              .FirstOrDefault();
 
             if (page == null) return;
-
+            
             page.Url = Url.GetFullUrl(domainName, page.Url);
 
             Console.WriteLine($"Parse contact page {page.Url}");
@@ -107,7 +113,8 @@ namespace WebsiteCrawler.Logic
             if (!string.IsNullOrEmpty(contactPageContent))
             {
                 htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(contactPageContent);                
+                htmlDocument.LoadHtml(contactPageContent);
+                IsParsed = true;
             }
         }
 

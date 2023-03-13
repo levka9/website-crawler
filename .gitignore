@@ -11,3 +11,8 @@
 /WebsiteCrawler.Logic/obj/
 /WebsiteCrawler.Model/bin/
 /WebsiteCrawler.Model/obj/
+
+/Tests/WebsiteCrawler.BenchmarkTests/bin/
+/Tests/WebsiteCrawler.BenchmarkTests/obj/
+/Tests/WebsiteCrawler.XUnitTests/bin/
+/Tests/WebsiteCrawler.XUnitTests/obj/
