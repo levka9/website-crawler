@@ -8,24 +8,26 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Helper;
+using WebsiteCrawler.Logic.Interfaces;
 
 namespace WebsiteCrawler.Logic.Modules
 {
-    public class EncodingModule
+    public class EncodingModule : IEncodingModule
     {
         static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private HtmlNode _documentNode;
         private string _domainName;
 
-        public EncodingModule(HtmlNode documentNode, string domainName = "")
+        public EncodingModule()
         {
-            _documentNode = documentNode;
-            _domainName = domainName;
+            
         }
 
-        public Encoding? GetEncoding()
+        public Encoding? GetEncoding(HtmlNode documentNode, string domainName = "")
         {
+            Init(documentNode, domainName);
+
             var encoding = GetFromCharset();
 
             encoding = GetFromContentType(encoding);
@@ -33,6 +35,12 @@ namespace WebsiteCrawler.Logic.Modules
             return encoding ?? Encoding.UTF8;
         }
    
+        private void Init(HtmlNode documentNode, string domainName = "")
+        {
+            _documentNode = documentNode;
+            _domainName = domainName;
+        }
+
         private Encoding? GetFromContentType(Encoding? encoding)
         {
             if (encoding != null) return encoding;

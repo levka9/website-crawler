@@ -12,6 +12,13 @@ using System.Collections.Concurrent;
 using WebsiteCrawler.Models.Requests;
 using System.Linq;
 using WebsiteCrawler.Logic.Services;
+using Microsoft.Extensions.Configuration;
+using Serilog;
+using Serilog.Settings.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Console.Configuration;
+using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Console
 {
@@ -19,6 +26,18 @@ namespace WebsiteCrawler.Console
     {
         static async Task Main(string[] args)
         {
+            var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                                                          .AddJsonFile("appsettings.json")
+                                                          .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", true)
+                                                          .Build();
+
+
+            var logger = new LoggerConfiguration().ReadFrom
+                                                  .Configuration(configuration)
+                                                  .CreateLogger();
+
+            
+
             #region Log4Net Configuration
             XmlDocument log4netConfig = new XmlDocument();
             log4netConfig.Load(File.OpenRead("log4net.config"));
@@ -58,8 +77,8 @@ namespace WebsiteCrawler.Console
 
             multiThreadWebsiteParserRequest.EDomainLevel = Model.Enums.EDomainLevel.SecondLevel;
 
-            var multiThreadWebsiteParser = new MultiThreadWebsiteParser(multiThreadWebsiteParserRequest);
-            await multiThreadWebsiteParser.Start();
+            IMultiThreadWebsiteParserModule multiThreadWebsiteParser = new MultiThreadWebsiteParserModule();
+            await multiThreadWebsiteParser.StartAsync(multiThreadWebsiteParserRequest);
 
             System.Console.ReadKey();
         }

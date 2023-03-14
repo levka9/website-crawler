@@ -10,40 +10,48 @@ using WebsiteCrawler.Model.Responses;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using WebsiteCrawler.Helper;
+using WebsiteCrawler.Logic.Interfaces;
 
-namespace WebsiteCrawler.Logic
+namespace WebsiteCrawler.Logic.Modules
 {
-    public class ParseContactPage
+    public class ContactPageModule : IContactPageModule
     {
-        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        protected string domainName;
-        IEnumerable<Page> pages;
-        HtmlDocument htmlDocument;
-        public ParseContactPageResponse ParseContactPageResponse { get; set; }
-        public string DomainName 
-        { 
-            get { return domainName; } 
-            set {  domainName = value; }
-        }
-        public bool IsParsed { get; set; }
+        protected string _domainName;
+        IEnumerable<Page> _pages;
+        HtmlDocument _htmlDocument;
+        private bool _isParsed;
 
-        public ParseContactPage(string DomainName, IEnumerable<Page> Pages)
-        {            
-            pages = Pages;
-            domainName = DomainName;
-            ParseContactPageResponse = new ParseContactPageResponse();
-        }
-
-        public async Task StartParseContactPage()
+        public ContactPageModuleResponse ParseContactPageResponse { get; set; }
+        public string DomainName
         {
+            get { return _domainName; }
+            set { _domainName = value; }
+        }
+        public bool IsParsed
+        {
+            get { return _isParsed; }
+        }
+
+        public async Task StartParseContactPage(string domainName, IEnumerable<Page> pages)
+        {
+            Init(domainName, pages);
+
             await GetDataFromContactPage();
 
-            if (htmlDocument != null)
+            if (_htmlDocument != null)
             {
                 SetEmails();
                 SetPhoneNumbers();
-            }            
+            }
+        }
+
+        private void Init(string domainName, IEnumerable<Page> pages)
+        {
+            _pages = pages;
+            _domainName = domainName;
+            ParseContactPageResponse = new ContactPageModuleResponse();
         }
 
         private void SetPhoneNumbers()
@@ -64,7 +72,7 @@ namespace WebsiteCrawler.Logic
             #endregion
 
             #region MatchByRegex
-            var phoneMatches = Regex.Matches(htmlDocument.Text, RegexPatterns.PhoneNumber, RegexOptions.Singleline);
+            var phoneMatches = Regex.Matches(_htmlDocument.Text, RegexPatterns.PhoneNumber, RegexOptions.Singleline);
 
             if (phoneMatches == null || phoneMatches.Count == 0) return;
 
@@ -74,7 +82,7 @@ namespace WebsiteCrawler.Logic
                 {
                     ParseContactPageResponse.Phones.Add(phoneMatche.Value);
                 }
-            } 
+            }
             #endregion
         }
 
@@ -83,7 +91,7 @@ namespace WebsiteCrawler.Logic
             ParseContactPageResponse.Emails = new List<string>();
 
             //var emailLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'mailTo:') or starts-with(@href, 'mailto:')]");
-            var emailsMatched = Regex.Matches(htmlDocument.Text, RegexPatterns.Email, RegexOptions.Singleline);
+            var emailsMatched = Regex.Matches(_htmlDocument.Text, RegexPatterns.Email, RegexOptions.Singleline);
 
             if (emailsMatched == null && emailsMatched.Count != 0) return;
 
@@ -92,19 +100,19 @@ namespace WebsiteCrawler.Logic
                 if (!ParseContactPageResponse.Emails.Contains(emailLink.Value))
                 {
                     ParseContactPageResponse.Emails.Add(emailLink.Value);
-                }                
+                }
             }
         }
 
         private async Task GetDataFromContactPage()
         {
-            var page = pages?.Where(x => x.IsExternal == false && 
+            var page = _pages?.Where(x => x.IsExternal == false &&
                                          Page.ContactPageNames.Any(y => x.Url.ToLower().Contains(y)))
                              .FirstOrDefault();
 
             if (page == null) return;
-            
-            page.Url = Url.GetFullUrl(domainName, page.Url);
+
+            page.Url = Url.GetFullUrl(_domainName, page.Url);
 
             Console.WriteLine($"Parse contact page {page.Url}");
 
@@ -112,9 +120,9 @@ namespace WebsiteCrawler.Logic
 
             if (!string.IsNullOrEmpty(contactPageContent))
             {
-                htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(contactPageContent);
-                IsParsed = true;
+                _htmlDocument = new HtmlDocument();
+                _htmlDocument.LoadHtml(contactPageContent);
+                _isParsed = true;
             }
         }
 
@@ -135,7 +143,7 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-                log.Error($"PageDataParser - GetHtmlPage: {Url}", ex);
+                _log.Error($"PageDataParser - GetHtmlPage: {Url}", ex);
                 return null;
             }
         }

@@ -6,7 +6,7 @@ using System.Text.Unicode;
 
 namespace WebsiteCrawler.Model.Responses;
 
-public class PageDataParserResponse
+public class PageDataParserModuleResponse
 {
     public string? DomainName { get; set; }
         // webpage charset

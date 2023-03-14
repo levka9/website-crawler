@@ -11,6 +11,7 @@ using System.Collections.Concurrent;
 using System.Reflection;
 using WebsiteCrawler.Model.Enums;
 using WebsiteCrawler.Logic.Services;
+using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic
 {
@@ -26,7 +27,7 @@ namespace WebsiteCrawler.Logic
         Encoding encoding;
         EDomainLevel domainLevel;
         WebPageParser webPageParser;
-        PageDataParser pageDataParser;
+        PageDataParserModule pageDataParser;
         IEnumerable<string> domainExtentions;        
         #endregion
 
@@ -67,17 +68,7 @@ namespace WebsiteCrawler.Logic
             webPageParser.Page = new Page();
 
             await RecursiveParseInnerPages(baseUrl, 0, webPageParser.Page);
-
-            //try
-            //{
-            //    //await RecursiveParseInnerPages(baseUrl, 0, WebPageParser.Page);
-            //}
-            //catch (LockRecursionException ex)
-            //{
-            //    log.Error("WebsiteParser - RecursiveParseInnerPages", ex);
-            //    throw ex;
-            //}
-
+            
             Console.WriteLine($"Task id {taskId} ended. Domain: {domainName}");
         }
         
@@ -109,15 +100,15 @@ namespace WebsiteCrawler.Logic
             }            
         }
                 
-        private async Task GetHomepageContent(string HtmlPageContent, IEnumerable<Page> Pages, int deep)
+        private async Task GetHomepageContent(string htmlPageContent, IEnumerable<Page> pages, int deep)
         {
             if (!IsHomepage(deep)) 
             {
                 return;
             }
 
-            pageDataParser = new PageDataParser(domainName, HtmlPageContent, Pages);
-            await pageDataParser.StartAsync();
+            pageDataParser = new PageDataParserModule();
+            await pageDataParser.StartAsync(domainName, htmlPageContent, pages);
 
             await FileData.SaveAsync("websites-content.txt", pageDataParser.PageDataParserResponse.ToString(), ",");            
         }

@@ -9,57 +9,65 @@ using WebsiteCrawler.Models;
 using System.Threading.Tasks;
 using System.Net.Http;
 using WebsiteCrawler.Helper;
-using WebsiteCrawler.Logic.Modules;
+using WebsiteCrawler.Logic.Interfaces;
 
-namespace WebsiteCrawler.Logic
+namespace WebsiteCrawler.Logic.Modules
 {
-    public class PageDataParser
+    public class PageDataParserModule : IPageDataParserModule
     {
         #region Properties
         private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private HtmlDocument _htmlDocument;
-        private ParseContactPage _parseContactPage;
-        public PageDataParserResponse PageDataParserResponse { get; set; }
+        private ContactPageModule _contactPageModule;
+        public PageDataParserModuleResponse PageDataParserResponse { get; set; }
         #endregion
 
-        #region Constructors
-        public PageDataParser(string domainName, string htmlContent, IEnumerable<Page> Pages = null)
+        public async Task StartAsync(string domainName, string htmlContent, IEnumerable<Page> pages = null)
         {
-            _parseContactPage = new ParseContactPage(domainName, Pages);
+            Init(domainName, htmlContent, pages);
 
-            if (!string.IsNullOrEmpty(htmlContent))
-            {
-                _htmlDocument = new HtmlDocument();
-                _htmlDocument.LoadHtml(htmlContent);
-            }
-        } 
-        #endregion
+            if (_htmlDocument == null) return;
 
-        public async Task StartAsync()
+            await _contactPageModule.StartParseContactPage(domainName, pages);
+
+            PrepareResponse();
+        }
+
+        private void PrepareResponse()
         {
-            if (this._htmlDocument == null) return;
+            PageDataParserResponse = new PageDataParserModuleResponse();
 
-            PageDataParserResponse = new PageDataParserResponse();
-
-            PageDataParserResponse.DomainName = _parseContactPage.DomainName;
+            PageDataParserResponse.DomainName = _contactPageModule.DomainName;
             PageDataParserResponse.Encoding = GetEncoding();
             PageDataParserResponse.Title = GetTitle();
             PageDataParserResponse.Description = GetDescription();
             PageDataParserResponse.Keywords = GetKeywords();
             //PageDataParserResponse.Links = GetAllLinks();
 
-            await _parseContactPage.StartParseContactPage();
-            PageDataParserResponse.Emails = _parseContactPage.ParseContactPageResponse.Emails;
-            PageDataParserResponse.Phones = _parseContactPage.ParseContactPageResponse.Phones;
-            PageDataParserResponse.IsContactPageParsed = _parseContactPage.IsParsed;
+
+            PageDataParserResponse.Emails = _contactPageModule.ParseContactPageResponse.Emails;
+            PageDataParserResponse.Phones = _contactPageModule.ParseContactPageResponse.Phones;
+            PageDataParserResponse.IsContactPageParsed = _contactPageModule.IsParsed;
+        }
+
+        private void Init(string domainName, string htmlContent, IEnumerable<Page> pages = null)
+        {
+
+            _contactPageModule = new ContactPageModule();
+
+            if (!string.IsNullOrEmpty(htmlContent))
+            {
+                _htmlDocument = new HtmlDocument();
+                _htmlDocument.LoadHtml(htmlContent);
+            }
         }
 
         private Encoding? GetEncoding()
         {
-            var EncodingModule = new EncodingModule(_htmlDocument.DocumentNode, _parseContactPage.DomainName);
+            var encodingModule = new EncodingModule();
 
-            return EncodingModule.GetEncoding();
+            return encodingModule.GetEncoding(_htmlDocument.DocumentNode, _contactPageModule.DomainName);
         }
 
         private string GetTitle()
@@ -78,7 +86,7 @@ namespace WebsiteCrawler.Logic
         {
             var desciptionNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='description']");
 
-            return (desciptionNode != null) ? desciptionNode.Attributes["content"].Value
+            return desciptionNode != null ? desciptionNode.Attributes["content"].Value
                                             : string.Empty;
         }
 
@@ -86,7 +94,7 @@ namespace WebsiteCrawler.Logic
         {
             var desciptionNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='keywords']");
 
-            return (desciptionNode != null) ? desciptionNode.Attributes["content"].Value.Split(',').ToList()
+            return desciptionNode != null ? desciptionNode.Attributes["content"].Value.Split(',').ToList()
                                             : null;
         }
 

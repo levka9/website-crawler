@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic.Extensions;
+using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic.Services
 {
@@ -15,9 +16,9 @@ namespace WebsiteCrawler.Logic.Services
         public static async Task<Encoding> GetEncodingAsync(string url)
         {
             var htmlContent = await GetHtmlPageContentAsync(url);
-            var pageDataParser = new PageDataParser(string.Empty, htmlContent);
+            var pageDataParser = new PageDataParserModule();
             
-            await pageDataParser.StartAsync();
+            await pageDataParser.StartAsync(string.Empty, htmlContent);
 
             return pageDataParser.PageDataParserResponse.Encoding;
         }

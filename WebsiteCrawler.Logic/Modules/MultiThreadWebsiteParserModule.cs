@@ -5,13 +5,13 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using WebsiteCrawler.Logic;
+using WebsiteCrawler.Logic.Interfaces;
 using WebsiteCrawler.Model.Enums;
 using WebsiteCrawler.Models.Requests;
 
-namespace WebsiteCrawler.Logic
+namespace WebsiteCrawler.Logic.Modules
 {
-    public class MultiThreadWebsiteParser
+    public class MultiThreadWebsiteParserModule : IMultiThreadWebsiteParserModule
     {
         #region Properties
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -24,20 +24,10 @@ namespace WebsiteCrawler.Logic
         IEnumerable<string> domainExtentions;
         #endregion
 
-        public MultiThreadWebsiteParser(MultiThreadWebsiteParserRequest MultiThreadWebsiteParserRequest)
+        public async Task StartAsync(MultiThreadWebsiteParserRequest multiThreadWebsiteParserRequest)
         {
-            tasks = new List<Task>();
+            Init(multiThreadWebsiteParserRequest);
 
-            maxDeep = MultiThreadWebsiteParserRequest.MaxDeep;
-            domainLevel = MultiThreadWebsiteParserRequest.EDomainLevel;
-            domainExtentions = MultiThreadWebsiteParserRequest.DomainExtentions;
-
-            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>(MultiThreadWebsiteParserRequest.WebsiteUrls);
-            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
-        }
-
-        public async Task Start()
-        {
             var taskCounter = 0;
 
             while (true)
@@ -48,19 +38,31 @@ namespace WebsiteCrawler.Logic
                     WebSitesConcurrentQueue.WebSites.TryDequeue(out domainName);
 
                     if (!string.IsNullOrEmpty(domainName))
-                    {                        
-                        tasks.Add(CreateWebsiteParser(domainName, taskCounter++));                        
-                    }                    
+                    {
+                        tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
+                    }
                 }
 
-                var completedTask = await Task.WhenAny(tasks.ToArray());                
+                var completedTask = await Task.WhenAny(tasks.ToArray());
                 tasks.Remove(completedTask);
-                
+
                 Thread.Sleep(200);
 
-                System.Console.WriteLine($"Task id: {completedTask.Id} completed");
-                System.Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
+                Console.WriteLine($"Task id: {completedTask.Id} completed");
+                Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
             }
+        }
+
+        private void Init(MultiThreadWebsiteParserRequest multiThreadWebsiteParserRequest)
+        {
+            tasks = new List<Task>();
+
+            maxDeep = multiThreadWebsiteParserRequest.MaxDeep;
+            domainLevel = multiThreadWebsiteParserRequest.EDomainLevel;
+            domainExtentions = multiThreadWebsiteParserRequest.DomainExtentions;
+
+            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>(multiThreadWebsiteParserRequest.WebsiteUrls);
+            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         }
 
         private async Task CreateWebsiteParser(string WebsiteName, int? taskCounter)
@@ -75,8 +77,8 @@ namespace WebsiteCrawler.Logic
             }
             catch (Exception ex)
             {
-                log.Error("MultiThreadWebsiteParser - CreateWebsiteParser", ex);                
-            }            
+                log.Error("MultiThreadWebsiteParser - CreateWebsiteParser", ex);
+            }
         }
 
         private WebsiteParserRequest GetWebsiteParserRequest(string domainName, int? taskId)

@@ -7,6 +7,48 @@ namespace WebsiteCrawler.Logic
 {
     public static class Url
     {
+        public static string GetDomain(string BaseUrl)
+        {
+            try
+            {
+                var uri = new System.Uri(BaseUrl);
+                return (uri != null) ? uri.Host : string.Empty;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        public static Uri GetUri(string Url)
+        {
+            try
+            {
+                return new System.Uri(Url);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static string GetBaseUrl(string DomainName)
+        {
+            return WebRequestHelper.Check($"http://{DomainName}") ? $"http://{DomainName}" : $"https://{DomainName}";
+        }
+
+        public static string GetFullUrl(string DomainName, string PageUrl)
+        {
+            var baseUrl = Url.GetBaseUrl(DomainName);
+
+            if (!PageUrl.Contains(DomainName))
+            {
+                PageUrl = $"{baseUrl}//{PageUrl}";
+            }
+
+            return PageUrl;
+        }
+
         public static bool IsExternal(string BaseUrl, string Url)
         {
             bool result = false;
@@ -39,19 +81,6 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        public static string GetDomain(string BaseUrl)
-        {            
-            try
-            {
-                var uri = new System.Uri(BaseUrl);
-                return (uri != null) ? uri.Host : string.Empty;
-            }
-            catch
-            {
-                return string.Empty;
-            }
-        }
-
         public static bool IsCorrectDomainLevel(string domainName, EDomainLevel EDomainLevel)
         {
             bool result = false;
@@ -70,18 +99,6 @@ namespace WebsiteCrawler.Logic
             return result;
         }
 
-        public static Uri GetUri(string Url)
-        {
-            try
-            {
-                return new System.Uri(Url);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
         public static bool IsContainExtention(string Url, IEnumerable<string> DomainExtentions)
         {
             foreach (var domainExtention in DomainExtentions)
@@ -90,23 +107,6 @@ namespace WebsiteCrawler.Logic
             }
 
             return false;
-        }
-
-        public static string GetBaseUrl(string DomainName)
-        {
-            return WebRequestHelper.Check($"http://{DomainName}") ? $"http://{DomainName}" : $"https://{DomainName}";
-        }
-
-        public static string GetFullUrl(string DomainName, string PageUrl)
-        {
-            var baseUrl = Url.GetBaseUrl(DomainName);
-
-            if (!PageUrl.Contains(DomainName))
-            {
-                PageUrl = $"{baseUrl}//{PageUrl}";
-            }
-
-            return PageUrl;
         }
     }
 }
