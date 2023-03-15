@@ -10,18 +10,24 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using WebsiteCrawler.Helper;
 using WebsiteCrawler.Logic.Interfaces;
+using log4net.Core;
+using Microsoft.Extensions.Logging;
 
 namespace WebsiteCrawler.Logic.Modules
 {
     public class PageDataParserModule : IPageDataParserModule
     {
         #region Properties
-        private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+        private ILogger<PageDataParserModule> _log;
         private HtmlDocument _htmlDocument;
         private ContactPageModule _contactPageModule;
         public PageDataParserModuleResponse PageDataParserResponse { get; set; }
         #endregion
+
+        public PageDataParserModule(ILogger<PageDataParserModule> logger)
+        {
+            _log = logger;
+        }
 
         public async Task StartAsync(string domainName, string htmlContent, IEnumerable<Page> pages = null)
         {
@@ -119,7 +125,7 @@ namespace WebsiteCrawler.Logic.Modules
             }
             catch (Exception ex)
             {
-                _log.Error("GetAllLinks ", ex);
+                _log.LogError(ex, "GetAllLinks ");
 
                 return null;
             }

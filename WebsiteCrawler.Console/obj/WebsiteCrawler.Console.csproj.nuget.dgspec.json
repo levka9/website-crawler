@@ -60,6 +60,14 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Serilog.Settings.Configuration": {
               "target": "Package",
               "version": "[3.4.0, )"
@@ -198,6 +206,10 @@
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.46, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

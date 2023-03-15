@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YOVSFCXe0Fkt4prvuaFcdJVSllBoxOC05NoYvekVHMXuXyq87mKGvMdKts85FI6ovstATr0QCphRdtVNXk1kuA==",
+  "dgSpecHash": "Gf9QKH20AhgiTmm7YMNvD+JBfWgN+fUO/kXZNnddWNKnkCyE42Oie1JdpNa4UNjIV1viuenCyAH6AK3TLt2IgA==",
   "success": true,
   "projectFilePath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
   "expectedPackageFiles": [
@@ -17,10 +17,14 @@
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\Shlomi\\.nuget\\packages\\serilog.extensions.logging\\3.1.0\\serilog.extensions.logging.3.1.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\serilog.settings.configuration\\3.4.0\\serilog.settings.configuration.3.4.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",

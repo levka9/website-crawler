@@ -3,6 +3,7 @@
 ################################################################################
 
 /.vs/
+/Logs/
 /WebsiteCrawler.Console/bin/
 /WebsiteCrawler.Console/obj/
 /WebsiteCrawler.Helper/bin/

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gJVqTFThxCHQ28sQzR8Lxo+sy6Nr2YYvaXxGeByh7YtEgsTgM8WbSKO60y3Jt8xQjoWasxkTZW04169gaUKmQg==",
+  "dgSpecHash": "R8FZibQoVK8ibuBT/m9ndAx1BB1Z6ZUSYsnHA48JPn4HbAA3DT9KVRaz7DZZ1ja5V2qYgPRHPp57/iP49FMdmw==",
   "success": true,
   "projectFilePath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shlomi\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
+    "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Shlomi\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",

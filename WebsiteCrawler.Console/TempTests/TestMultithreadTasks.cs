@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebsiteCrawler.Console
+namespace WebsiteCrawler.Console.TempTests
 {
     public class TestMultithreadTasks
     {
@@ -39,10 +39,10 @@ namespace WebsiteCrawler.Console
         {
             var counter = Counter;
 
-            while (counter == 1 || counter == 2 || counter == 3 )
-            {                
+            while (counter == 1 || counter == 2 || counter == 3)
+            {
                 System.Console.Write("Counter value is {0}\r\n", counter);
-                
+
                 Thread.Sleep(2000);
             }
 

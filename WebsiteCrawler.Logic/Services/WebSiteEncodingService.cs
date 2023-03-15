@@ -1,3 +1,5 @@
+using log4net.Core;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic.Extensions;
+using WebsiteCrawler.Logic.Interfaces;
 using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic.Services
@@ -13,14 +16,13 @@ namespace WebsiteCrawler.Logic.Services
     {
         static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public static async Task<Encoding> GetEncodingAsync(string url)
+        public static async Task<Encoding> GetEncodingAsync(string url, IPageDataParserModule pageDataParserModule)
         {
             var htmlContent = await GetHtmlPageContentAsync(url);
-            var pageDataParser = new PageDataParserModule();
             
-            await pageDataParser.StartAsync(string.Empty, htmlContent);
+            await pageDataParserModule.StartAsync(string.Empty, htmlContent);
 
-            return pageDataParser.PageDataParserResponse.Encoding;
+            return pageDataParserModule.PageDataParserResponse.Encoding;
         }
 
         private static async Task<string> GetHtmlPageContentAsync(string url)

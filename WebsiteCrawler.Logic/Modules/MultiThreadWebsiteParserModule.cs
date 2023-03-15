@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
@@ -14,15 +15,23 @@ namespace WebsiteCrawler.Logic.Modules
     public class MultiThreadWebsiteParserModule : IMultiThreadWebsiteParserModule
     {
         #region Properties
-        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private ILogger<MultiThreadWebsiteParserModule> _log;
+        private int _maxDeep;
+        private int _maxTaskQuantity;
+        private EDomainLevel _domainLevel;
+        private List<Task> _tasks;
+        private IEnumerable<string> _domainExtentions;
 
-        const int MAX_TASK_QUANTITY = 6;
-
-        int maxDeep;
-        EDomainLevel domainLevel;
-        List<Task> tasks;
-        IEnumerable<string> domainExtentions;
+        private IPageDataParserModule _pageDataParserModule;
         #endregion
+
+        public MultiThreadWebsiteParserModule(IPageDataParserModule pageDataParserModule, 
+                                              ILogger<MultiThreadWebsiteParserModule> log)
+        {
+            _log = log;
+
+            _pageDataParserModule = pageDataParserModule;
+        }
 
         public async Task StartAsync(MultiThreadWebsiteParserRequest multiThreadWebsiteParserRequest)
         {
@@ -32,19 +41,19 @@ namespace WebsiteCrawler.Logic.Modules
 
             while (true)
             {
-                while (tasks.Count < MAX_TASK_QUANTITY)
+                while (_tasks.Count < _maxTaskQuantity)
                 {
                     var domainName = string.Empty;
                     WebSitesConcurrentQueue.WebSites.TryDequeue(out domainName);
 
                     if (!string.IsNullOrEmpty(domainName))
                     {
-                        tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
+                        _tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
                     }
                 }
 
-                var completedTask = await Task.WhenAny(tasks.ToArray());
-                tasks.Remove(completedTask);
+                var completedTask = await Task.WhenAny(_tasks.ToArray());
+                _tasks.Remove(completedTask);
 
                 Thread.Sleep(200);
 
@@ -55,11 +64,12 @@ namespace WebsiteCrawler.Logic.Modules
 
         private void Init(MultiThreadWebsiteParserRequest multiThreadWebsiteParserRequest)
         {
-            tasks = new List<Task>();
+            _tasks = new List<Task>();
 
-            maxDeep = multiThreadWebsiteParserRequest.MaxDeep;
-            domainLevel = multiThreadWebsiteParserRequest.EDomainLevel;
-            domainExtentions = multiThreadWebsiteParserRequest.DomainExtentions;
+            _maxDeep = multiThreadWebsiteParserRequest.MaxDeep;
+            _domainLevel = multiThreadWebsiteParserRequest.EDomainLevel;
+            _domainExtentions = multiThreadWebsiteParserRequest.DomainExtentions;
+            _maxTaskQuantity = multiThreadWebsiteParserRequest.MaxTaskQuantity;
 
             WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>(multiThreadWebsiteParserRequest.WebsiteUrls);
             WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
@@ -69,7 +79,7 @@ namespace WebsiteCrawler.Logic.Modules
         {
             var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
 
-            var websiteParser = new WebsiteParser(websiteParserRequest);
+            var websiteParser = new WebsiteParser(websiteParserRequest, _pageDataParserModule);
 
             try
             {
@@ -77,7 +87,7 @@ namespace WebsiteCrawler.Logic.Modules
             }
             catch (Exception ex)
             {
-                log.Error("MultiThreadWebsiteParser - CreateWebsiteParser", ex);
+                _log.LogError(ex, "MultiThreadWebsiteParser - CreateWebsiteParser");
             }
         }
 
@@ -86,9 +96,9 @@ namespace WebsiteCrawler.Logic.Modules
             return new WebsiteParserRequest()
             {
                 DomainName = domainName,
-                MaxDeep = maxDeep,
-                DomainLevel = domainLevel,
-                DomainExtentions = domainExtentions,
+                MaxDeep = _maxDeep,
+                DomainLevel = _domainLevel,
+                DomainExtentions = _domainExtentions,
                 TaskId = taskId
             };
         }

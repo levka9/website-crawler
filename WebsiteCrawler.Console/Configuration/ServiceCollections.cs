@@ -8,18 +8,32 @@ using WebsiteCrawler.Logic.Interfaces;
 using WebsiteCrawler.Logic;
 using WebsiteCrawler.Logic.Modules;
 
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Settings.Configuration;
+
 namespace WebsiteCrawler.Console.Configuration
 {
     public static class ServiceCollections
     {
-        public static void Add() 
+        public static void ConfigureServices(IServiceCollection services) 
         {
-            var serviceProvider = new ServiceCollection()
-                                        .AddTransient<IMultiThreadWebsiteParserModule, MultiThreadWebsiteParserModule>()
-                                        .AddTransient<IPageDataParserModule, PageDataParserModule>()
-                                        .AddTransient<IContactPageModule, ContactPageModule>()
-                                        .AddTransient<IEncodingModule, EncodingModule>()
-                                        .BuildServiceProvider();
+            services.AddLogging(configure => configure.AddSerilog())
+                    .AddTransient<IMultiThreadWebsiteParserModule, MultiThreadWebsiteParserModule>()
+                    .AddTransient<IPageDataParserModule, PageDataParserModule>()
+                    .AddTransient<IContactPageModule, ContactPageModule>()
+                    .AddTransient<IEncodingModule, EncodingModule>()
+                    .BuildServiceProvider();
+
+            //services.addl
+
+            //var serviceProvider = new ServiceCollection()
+            //                            .AddTransient<IMultiThreadWebsiteParserModule, MultiThreadWebsiteParserModule>()
+            //                            .AddTransient<IPageDataParserModule, PageDataParserModule>()
+            //                            .AddTransient<IContactPageModule, ContactPageModule>()
+            //                            .AddTransient<IEncodingModule, EncodingModule>()
+            //                            .BuildServiceProvider();
         }
     }
 }

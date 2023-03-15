@@ -75,3 +75,7 @@ C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Microsoft.Exte
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\appsettings.json
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Serilog.Extensions.Logging.dll

@@ -36,7 +36,11 @@ namespace WebsiteCrawler.Console
                                                   .Configuration(configuration)
                                                   .CreateLogger();
 
-            
+            var serviceCollection = new ServiceCollection();
+            ServiceCollections.ConfigureServices(serviceCollection);
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            var multiThreadWebsiteParser = serviceProvider.GetService<IMultiThreadWebsiteParserModule>();
 
             #region Log4Net Configuration
             XmlDocument log4netConfig = new XmlDocument();
@@ -47,13 +51,6 @@ namespace WebsiteCrawler.Console
 
             log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
             #endregion
-
-            // var encoding =  await WebSiteEncodingService.GetEncodingAsync("https://www.lainyan.co.il/");
-
-            // using(var webPageParser = new WebPageParser("www.lainyan.co.il", encoding))
-            // {
-            //     await webPageParser.Parse("https://www.lainyan.co.il/", 0);
-            // }
             
             /* Website Parser */
             //await OneThreadWebsiteParser.Start();
@@ -67,17 +64,11 @@ namespace WebsiteCrawler.Console
                 "www.startpage.co.il"
             };
 
-            multiThreadWebsiteParserRequest.DomainExtentions = new List<string>()
-            {
-                "co.il",
-                "org.il"
-            };
-
-            multiThreadWebsiteParserRequest.MaxDeep = 1;
-
+            multiThreadWebsiteParserRequest.DomainExtentions = configuration.GetSection("Parser:WebsiteParse:DomainExtentions").Get<string[]>();
+            multiThreadWebsiteParserRequest.MaxDeep = configuration.GetValue<int>("Parser:WebsiteParse:MaxDeep");
+            multiThreadWebsiteParserRequest.MaxTaskQuantity = configuration.GetValue<int>("Parser:MultithreadParser:MaxTaskQuantity");
             multiThreadWebsiteParserRequest.EDomainLevel = Model.Enums.EDomainLevel.SecondLevel;
 
-            IMultiThreadWebsiteParserModule multiThreadWebsiteParser = new MultiThreadWebsiteParserModule();
             await multiThreadWebsiteParser.StartAsync(multiThreadWebsiteParserRequest);
 
             System.Console.ReadKey();
