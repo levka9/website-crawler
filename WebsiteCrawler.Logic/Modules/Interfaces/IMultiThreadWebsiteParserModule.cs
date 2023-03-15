@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Models.Requests;
 
-namespace WebsiteCrawler.Logic.Interfaces
+namespace WebsiteCrawler.Logic.Modules.Interfaces
 {
     public  interface IMultiThreadWebsiteParserModule
     {

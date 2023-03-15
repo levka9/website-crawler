@@ -9,7 +9,7 @@ using WebsiteCrawler.Models;
 using System.Threading.Tasks;
 using System.Net.Http;
 using WebsiteCrawler.Helper;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 using log4net.Core;
 using Microsoft.Extensions.Logging;
 
@@ -20,13 +20,14 @@ namespace WebsiteCrawler.Logic.Modules
         #region Properties
         private ILogger<PageDataParserModule> _log;
         private HtmlDocument _htmlDocument;
-        private ContactPageModule _contactPageModule;
+        private IContactPageModule _contactPageModule;
         public PageDataParserModuleResponse PageDataParserResponse { get; set; }
         #endregion
 
-        public PageDataParserModule(ILogger<PageDataParserModule> logger)
+        public PageDataParserModule(IContactPageModule contactPageModule, ILogger<PageDataParserModule> logger)
         {
             _log = logger;
+            _contactPageModule = contactPageModule;
         }
 
         public async Task StartAsync(string domainName, string htmlContent, IEnumerable<Page> pages = null)
@@ -59,9 +60,6 @@ namespace WebsiteCrawler.Logic.Modules
 
         private void Init(string domainName, string htmlContent, IEnumerable<Page> pages = null)
         {
-
-            _contactPageModule = new ContactPageModule();
-
             if (!string.IsNullOrEmpty(htmlContent))
             {
                 _htmlDocument = new HtmlDocument();

@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using WebsiteCrawler.Model.Enums;
+using Microsoft.Extensions.Logging;
 
 namespace WebsiteCrawler.Logic
 {
     public static class Url
     {
-        public static string GetDomain(string BaseUrl)
+        public static string GetDomain(string baseUrl)
         {
             try
             {
-                var uri = new System.Uri(BaseUrl);
+                var uri = new System.Uri(baseUrl);
                 return (uri != null) ? uri.Host : string.Empty;
             }
             catch
@@ -20,11 +21,11 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        public static Uri GetUri(string Url)
+        public static Uri GetUri(string url)
         {
             try
             {
-                return new System.Uri(Url);
+                return new System.Uri(url);
             }
             catch
             {
@@ -32,21 +33,21 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        public static string GetBaseUrl(string DomainName)
+        public static string GetBaseUrl<T>(string domainName, ILogger<T> log)
         {
-            return WebRequestHelper.Check($"http://{DomainName}") ? $"http://{DomainName}" : $"https://{DomainName}";
+            return WebRequestHelper.IsUrlAvailable<T>($"http://{domainName}", log) ? $"http://{domainName}" : $"https://{domainName}";
         }
 
-        public static string GetFullUrl(string DomainName, string PageUrl)
+        public static string GetFullUrl<T>(string domainName, string pageUrl, ILogger<T> log)
         {
-            var baseUrl = Url.GetBaseUrl(DomainName);
+            var baseUrl = Url.GetBaseUrl<T>(domainName, log);
 
-            if (!PageUrl.Contains(DomainName))
+            if (!pageUrl.Contains(domainName))
             {
-                PageUrl = $"{baseUrl}//{PageUrl}";
+                pageUrl = $"{baseUrl}//{pageUrl}";
             }
 
-            return PageUrl;
+            return pageUrl;
         }
 
         public static bool IsExternal(string BaseUrl, string Url)

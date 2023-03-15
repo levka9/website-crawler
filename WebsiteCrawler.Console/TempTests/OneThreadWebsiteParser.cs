@@ -6,7 +6,7 @@ using WebsiteCrawler.Logic;
 using System.Linq;
 using WebsiteCrawler.Models.Requests;
 using System.Collections.Concurrent;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 
 namespace WebsiteCrawler.Console.TempTests
 {
@@ -14,7 +14,7 @@ namespace WebsiteCrawler.Console.TempTests
     {
         public static async Task Start(IPageDataParserModule pageDataParserModule)
         {
-            var websiteParserRequest = new WebsiteParserRequest()
+            var websiteParserModuleRequest = new WebsiteParserModuleRequest()
             {
                 DomainName = "www.sport5.co.il",
                 MaxDeep = 2,
@@ -25,15 +25,15 @@ namespace WebsiteCrawler.Console.TempTests
                 }
             };
 
-            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
-            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
+            // WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
+            // WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
 
-            using (var websiteParser = new WebsiteParser(websiteParserRequest, pageDataParserModule))
-            {
-                await websiteParser.Parse();
+            // using (var websiteParser = new WebsiteParserModule(websiteParserModuleRequest, pageDataParserModule))
+            // {
+            //     await websiteParser.Parse();
 
-                await FileData.SerializeAndSaveAsync<IEnumerable<object>>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));
-            }
+            //     await FileData.SerializeAndSaveAsync<IEnumerable<object>>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));
+            // }
         }
     }
 }

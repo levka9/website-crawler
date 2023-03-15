@@ -18,9 +18,6 @@
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebsiteCrawler.Logic\WebsiteCrawler.Logic.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -30,5 +27,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="docs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebsiteCrawler.Logic\WebsiteCrawler.Logic.csproj" />
   </ItemGroup>
 </Project>

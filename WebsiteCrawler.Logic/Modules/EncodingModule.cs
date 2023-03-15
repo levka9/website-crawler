@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Helper;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 
 namespace WebsiteCrawler.Logic.Modules
 {

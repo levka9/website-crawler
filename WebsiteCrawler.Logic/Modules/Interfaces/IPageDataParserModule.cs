@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WebsiteCrawler.Model.Responses;
 using WebsiteCrawler.Models;
 
-namespace WebsiteCrawler.Logic.Interfaces
+namespace WebsiteCrawler.Logic.Modules.Interfaces
 {
     public interface IPageDataParserModule
     {

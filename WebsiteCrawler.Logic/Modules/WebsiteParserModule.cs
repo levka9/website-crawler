@@ -12,25 +12,25 @@ using System.Reflection;
 using WebsiteCrawler.Model.Enums;
 using WebsiteCrawler.Logic.Services;
 using WebsiteCrawler.Logic.Modules;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace WebsiteCrawler.Logic
 {
-    public class WebsiteParser : IDisposable
+    public class WebsiteParserModule : IWebsiteParserModule, IDisposable
     {
         #region Private params
-        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
-        int? _taskId;
-        int _maxDeep;
+        private int? _taskId;
+        private int _maxDeep;
         private int _maxInternalLinks;
-        string _baseUrl;
-        string _domainName;
-        Encoding _encoding;
-        EDomainLevel _domainLevel;
-        WebPageParser _webPageParser;
-        IPageDataParserModule _pageDataParserModule;
-        IEnumerable<string> _domainExtentions;        
+        private string _baseUrl;
+        private string _domainName;
+        private Encoding _encoding;
+        private EDomainLevel _domainLevel;
+        private WebPageParser _webPageParser;
+        private IPageDataParserModule _pageDataParserModule;
+        private IEnumerable<string> _domainExtentions; 
+        private ILogger<WebsiteParserModule> _log;       
         #endregion
 
         #region Public params
@@ -39,30 +39,25 @@ namespace WebsiteCrawler.Logic
         #endregion
 
         #region Constructors
-        public WebsiteParser(WebsiteParserRequest WebsiteParserRequest, IPageDataParserModule pageDataParserModule)
+        public WebsiteParserModule( 
+                            IPageDataParserModule pageDataParserModule,
+                            ILogger<WebsiteParserModule> logger)
         {
             _pageDataParserModule = pageDataParserModule;
-
-            _taskId = WebsiteParserRequest.TaskId;
-            _baseUrl = WebsiteParserRequest.DomainName;
-            _maxDeep = WebsiteParserRequest.MaxDeep;
-            _domainExtentions = WebsiteParserRequest.DomainExtentions;
-            _domainName = WebsiteParserRequest.DomainName;
-            _domainLevel = WebsiteParserRequest.DomainLevel;
-            
-            DicAllInternalUrls = new Dictionary<string, int>();
+            _log = logger;
         } 
         #endregion
 
-        public async Task Parse()
+        public async Task Parse(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
+            Init(websiteParserModuleRequest);
             Console.WriteLine($"Task id {_taskId} start. Domain: {_domainName}");
 
-            _baseUrl = Url.GetBaseUrl(_domainName);
+            _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(_domainName, _log);
 
-            if (!WebRequestHelper.Check(_baseUrl)) 
+            if (!WebRequestHelper.IsUrlAvailable<WebsiteParserModule>(_baseUrl, _log)) 
             {
-                Console.WriteLine($"Task id {_taskId} ended. Domain: {_domainName}");
+                Console.WriteLine($"Task id {_taskId} ended. Domain: {_baseUrl} invalid.");
                 return;
             } 
 
@@ -74,6 +69,18 @@ namespace WebsiteCrawler.Logic
             await RecursiveParseInnerPages(_baseUrl, 0, _webPageParser.Page);
             
             Console.WriteLine($"Task id {_taskId} ended. Domain: {_domainName}");
+        }
+
+        private void Init(WebsiteParserModuleRequest websiteParserModuleRequest)
+        {
+            _taskId = websiteParserModuleRequest.TaskId;
+            _baseUrl = websiteParserModuleRequest.DomainName;
+            _maxDeep = websiteParserModuleRequest.MaxDeep;
+            _domainExtentions = websiteParserModuleRequest.DomainExtentions;
+            _domainName = websiteParserModuleRequest.DomainName;
+            _domainLevel = websiteParserModuleRequest.DomainLevel;
+            
+            DicAllInternalUrls = new Dictionary<string, int>();
         }
         
         private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)

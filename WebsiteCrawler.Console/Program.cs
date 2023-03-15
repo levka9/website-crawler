@@ -16,7 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Settings.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 using WebsiteCrawler.Console.Configuration;
 using WebsiteCrawler.Logic.Modules;
 

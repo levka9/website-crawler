@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebsiteCrawler.Logic.Interfaces
+namespace WebsiteCrawler.Logic.Modules.Interfaces
 {
     public interface IEncodingModule
     {

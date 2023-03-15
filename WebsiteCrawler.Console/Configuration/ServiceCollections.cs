@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebsiteCrawler.Logic.Interfaces;
 using WebsiteCrawler.Logic;
 using WebsiteCrawler.Logic.Modules;
+using WebsiteCrawler.Logic.Services;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -24,6 +25,7 @@ namespace WebsiteCrawler.Console.Configuration
                     .AddTransient<IPageDataParserModule, PageDataParserModule>()
                     .AddTransient<IContactPageModule, ContactPageModule>()
                     .AddTransient<IEncodingModule, EncodingModule>()
+                    .AddTransient<IWebsiteParserModule, WebsiteParserModule>()
                     .BuildServiceProvider();
 
             //services.addl

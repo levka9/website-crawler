@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 using WebsiteCrawler.Model.Enums;
 using WebsiteCrawler.Models.Requests;
 
@@ -23,13 +23,16 @@ namespace WebsiteCrawler.Logic.Modules
         private IEnumerable<string> _domainExtentions;
 
         private IPageDataParserModule _pageDataParserModule;
+        private IWebsiteParserModule _websiteParserModule;
         #endregion
 
-        public MultiThreadWebsiteParserModule(IPageDataParserModule pageDataParserModule, 
+        public MultiThreadWebsiteParserModule(IPageDataParserModule pageDataParserModule,
+                                              IWebsiteParserModule websiteParserModule, 
                                               ILogger<MultiThreadWebsiteParserModule> log)
         {
             _log = log;
 
+            _websiteParserModule = websiteParserModule;
             _pageDataParserModule = pageDataParserModule;
         }
 
@@ -79,11 +82,9 @@ namespace WebsiteCrawler.Logic.Modules
         {
             var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
 
-            var websiteParser = new WebsiteParser(websiteParserRequest, _pageDataParserModule);
-
             try
             {
-                await websiteParser.Parse();
+                await _websiteParserModule.Parse(websiteParserRequest);
             }
             catch (Exception ex)
             {
@@ -91,9 +92,9 @@ namespace WebsiteCrawler.Logic.Modules
             }
         }
 
-        private WebsiteParserRequest GetWebsiteParserRequest(string domainName, int? taskId)
+        private WebsiteParserModuleRequest GetWebsiteParserRequest(string domainName, int? taskId)
         {
-            return new WebsiteParserRequest()
+            return new WebsiteParserModuleRequest()
             {
                 DomainName = domainName,
                 MaxDeep = _maxDeep,

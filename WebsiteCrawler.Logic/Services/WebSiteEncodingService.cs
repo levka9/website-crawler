@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WebsiteCrawler.Logic.Extensions;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic.Services

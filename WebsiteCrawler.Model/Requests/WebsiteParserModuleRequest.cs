@@ -6,7 +6,7 @@ using WebsiteCrawler.Model.Enums;
 
 namespace WebsiteCrawler.Models.Requests
 {
-    public class WebsiteParserRequest
+    public class WebsiteParserModuleRequest
     {
         public string DomainName { get; set; }
         public int MaxDeep { get; set; }

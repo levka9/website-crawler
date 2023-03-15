@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7xWYWTAuRTmshRaSxYhogA4BMlqAiP8Qr8kmrHRFiSrKSqJjWXQFRwrZLmqmlnzd+u+Tyla5GhtVmwHsClFlPQ==",
+  "dgSpecHash": "5d3/xYjNAI5XqHeEk3uaIxoZJcvrNTxElw9+DiTJkjbxhaaZN9qtw1O9f15pidOLQza5L+Q05zNB1zN/1vWNcg==",
   "success": true,
-  "projectFilePath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+  "projectFilePath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

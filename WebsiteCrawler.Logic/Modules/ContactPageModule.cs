@@ -10,19 +10,18 @@ using WebsiteCrawler.Model.Responses;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using WebsiteCrawler.Helper;
-using WebsiteCrawler.Logic.Interfaces;
+using WebsiteCrawler.Logic.Modules.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace WebsiteCrawler.Logic.Modules
 {
     public class ContactPageModule : IContactPageModule
     {
-        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         protected string _domainName;
         IEnumerable<Page> _pages;
         HtmlDocument _htmlDocument;
         private bool _isParsed;
-
+        private ILogger<ContactPageModule> _log;
         public ContactPageModuleResponse ParseContactPageResponse { get; set; }
         public string DomainName
         {
@@ -32,6 +31,11 @@ namespace WebsiteCrawler.Logic.Modules
         public bool IsParsed
         {
             get { return _isParsed; }
+        }
+
+        public ContactPageModule(ILogger<ContactPageModule> logger)
+        {
+            _log = logger;
         }
 
         public async Task StartParseContactPage(string domainName, IEnumerable<Page> pages)
@@ -112,7 +116,7 @@ namespace WebsiteCrawler.Logic.Modules
 
             if (page == null) return;
 
-            page.Url = Url.GetFullUrl(_domainName, page.Url);
+            page.Url = Url.GetFullUrl<ContactPageModule>(_domainName, page.Url, _log);
 
             Console.WriteLine($"Parse contact page {page.Url}");
 
@@ -143,7 +147,7 @@ namespace WebsiteCrawler.Logic.Modules
             }
             catch (Exception ex)
             {
-                _log.Error($"PageDataParser - GetHtmlPage: {Url}", ex);
+                _log.LogError(ex, $"PageDataParser - GetHtmlPage: {Url}");
                 return null;
             }
         }
