@@ -3,8 +3,13 @@
     1.1 AddressModule 
 2. Check with benchmark http client performance vs other http requests      : done
 3. Add dependency injection                                                 : done
-4. Organize all services in the different folder
+4. Organize all services in the different folder                            : done
 5. Add additional parameter internalLinksMax for parsing website in deep.
 6. Store everything in DB MongoDB
 7. Change log4net with Serilog                                              : done
 8. Write function FilterUrls in WebPageParserModule
+9. Improve parser bags: 
+   Sometime it parse with error like, 
+   http://www.google.co.il/https://www.lainyan.co.il/mainlinks/radio-lainyan.html
+   http://www.zap.co.il/http://www.lainyan.co.il/mainlinks/love3.htm
+   http://www.winner.co.il/https://www.google.co.il/intl/iw/about/products?tab=wh

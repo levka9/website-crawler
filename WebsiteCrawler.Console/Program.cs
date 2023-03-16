@@ -56,8 +56,10 @@ namespace WebsiteCrawler.Console
             };
 
             multiThreadWebsiteParserRequest.DomainExtentions = configuration.GetSection("Parser:WebsiteParse:DomainExtentions").Get<string[]>();
-            multiThreadWebsiteParserRequest.MaxDeep = configuration.GetValue<int>("Parser:WebsiteParse:MaxDeep");
             multiThreadWebsiteParserRequest.MaxTaskQuantity = configuration.GetValue<int>("Parser:MultithreadParser:MaxTaskQuantity");
+            multiThreadWebsiteParserRequest.WebsiteParserLimits = new WebsiteParserLimitsRequest();
+            multiThreadWebsiteParserRequest.WebsiteParserLimits.MaxDeep = configuration.GetValue<int>("Parser:WebsiteParse:MaxDeep");
+            multiThreadWebsiteParserRequest.WebsiteParserLimits.MaxInternalLinks = configuration.GetValue<int>("Parser:WebsiteParse:MaxInternalLinks");
             multiThreadWebsiteParserRequest.EDomainLevel = Model.Enums.EDomainLevel.SecondLevel;
 
             await multiThreadWebsiteParser.StartAsync(multiThreadWebsiteParserRequest);

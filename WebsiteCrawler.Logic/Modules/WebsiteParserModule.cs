@@ -75,7 +75,8 @@ namespace WebsiteCrawler.Logic
         {
             _taskId = websiteParserModuleRequest.TaskId;
             _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(websiteParserModuleRequest.DomainName, _log); ;
-            _maxDeep = websiteParserModuleRequest.MaxDeep;
+            _maxDeep = websiteParserModuleRequest.WebsiteParserLimitsRequest.MaxDeep;
+            _maxInternalLinks = websiteParserModuleRequest.WebsiteParserLimitsRequest.MaxInternalLinks;
             _domainExtentions = websiteParserModuleRequest.DomainExtentions;
             _domainName = websiteParserModuleRequest.DomainName;
             _domainLevel = websiteParserModuleRequest.DomainLevel;
@@ -85,7 +86,7 @@ namespace WebsiteCrawler.Logic
         
         private async Task RecursiveParseInnerPages(string url, int deep, Page page)
         {
-            if (deep > _maxDeep)
+            if (deep > _maxDeep || TotalPagesParsed > _maxInternalLinks)
             {
                 return;
             }
@@ -104,7 +105,7 @@ namespace WebsiteCrawler.Logic
 
                 page.InnerPages = GetOnlyNewInternalPages(_webPageParserModule.Page.InnerPages, deep);
                 
-                for (int i = 0, length = page.InnerPages.Count(); i < length; i++)
+                for (int i = 0, length = page.InnerPages.Count(); i < length && _maxInternalLinks < TotalPagesParsed; i++)
                 {
                     var pageUrl = GetPageUrl(page.InnerPages.ElementAt(i).Url);
 

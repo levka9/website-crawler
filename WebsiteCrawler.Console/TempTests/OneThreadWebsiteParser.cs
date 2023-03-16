@@ -17,7 +17,11 @@ namespace WebsiteCrawler.Console.TempTests
             var websiteParserModuleRequest = new WebsiteParserModuleRequest()
             {
                 DomainName = "www.sport5.co.il",
-                MaxDeep = 2,
+                WebsiteParserLimitsRequest = new WebsiteParserLimitsRequest()
+                {
+                    MaxDeep = 2,
+                    MaxInternalLinks = 20
+                },
                 DomainExtentions = new List<string>()
                 {
                     "co.il",

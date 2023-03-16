@@ -40,7 +40,8 @@ namespace WebsiteCrawler.Logic.Modules
 
             GetAllLinks(htmlPageContent, deep);
 
-            // TODO: FilterUrls();
+            // TODO: FilterUrls()
+            // remove urls with javascript:void(0);
         }
 
         private async Task<string> GetHtmlPageAsync()
@@ -67,13 +68,15 @@ namespace WebsiteCrawler.Logic.Modules
         private Page GetAllLinks(string htmlPageContent, int deep)
         {
             if (string.IsNullOrEmpty(htmlPageContent)) return null;
-
-            Page = new Page();
+            
+            var Page = new Page();
             Page.HtmlPageContent = htmlPageContent;
             Page.InnerPages = new List<Page>();
 
             try
             {
+                
+
                 var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(htmlPageContent);
 

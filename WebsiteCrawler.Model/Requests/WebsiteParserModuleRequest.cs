@@ -9,7 +9,7 @@ namespace WebsiteCrawler.Models.Requests
     public class WebsiteParserModuleRequest
     {
         public string DomainName { get; set; }
-        public int MaxDeep { get; set; }
+        public WebsiteParserLimitsRequest WebsiteParserLimitsRequest { get; set; }
         public EDomainLevel DomainLevel { get; set; }
         /// <summary>
         /// Limit domain extentions

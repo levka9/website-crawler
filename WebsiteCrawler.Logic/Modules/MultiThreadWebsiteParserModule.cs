@@ -16,9 +16,9 @@ namespace WebsiteCrawler.Logic.Modules
     {
         #region Properties
         private ILogger<MultiThreadWebsiteParserModule> _log;
-        private int _maxDeep;
         private int _maxTaskQuantity;
         private EDomainLevel _domainLevel;
+        private WebsiteParserLimitsRequest _websiteParserLimitsRequest;
         private List<Task> _tasks;
         private IEnumerable<string> _domainExtentions;
 
@@ -29,7 +29,6 @@ namespace WebsiteCrawler.Logic.Modules
                                               ILogger<MultiThreadWebsiteParserModule> log)
         {
             _log = log;
-
             _websiteParserModule = websiteParserModule;
         }
 
@@ -53,11 +52,16 @@ namespace WebsiteCrawler.Logic.Modules
                 }
 
                 var completedTask = await Task.WhenAny(_tasks.ToArray());
+
+                //if(completedTask.IsCompleted)
+                //{
+                    
+                //}
+
                 _tasks.Remove(completedTask);
+                Console.WriteLine($"Task id: {completedTask.Id} completed");
 
                 Thread.Sleep(200);
-
-                Console.WriteLine($"Task id: {completedTask.Id} completed");
                 Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
             }
         }
@@ -66,10 +70,12 @@ namespace WebsiteCrawler.Logic.Modules
         {
             _tasks = new List<Task>();
 
-            _maxDeep = multiThreadWebsiteParserRequest.MaxDeep;
             _domainLevel = multiThreadWebsiteParserRequest.EDomainLevel;
             _domainExtentions = multiThreadWebsiteParserRequest.DomainExtentions;
             _maxTaskQuantity = multiThreadWebsiteParserRequest.MaxTaskQuantity;
+            _websiteParserLimitsRequest = new WebsiteParserLimitsRequest();
+            _websiteParserLimitsRequest.MaxDeep = multiThreadWebsiteParserRequest.WebsiteParserLimits.MaxDeep;
+            _websiteParserLimitsRequest.MaxInternalLinks = multiThreadWebsiteParserRequest.WebsiteParserLimits.MaxInternalLinks;
 
             WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>(multiThreadWebsiteParserRequest.WebsiteUrls);
             WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
@@ -94,8 +100,8 @@ namespace WebsiteCrawler.Logic.Modules
             return new WebsiteParserModuleRequest()
             {
                 DomainName = domainName,
-                MaxDeep = _maxDeep,
                 DomainLevel = _domainLevel,
+                WebsiteParserLimitsRequest = _websiteParserLimitsRequest,
                 DomainExtentions = _domainExtentions,
                 TaskId = taskId
             };
