@@ -7,3 +7,4 @@
 5. Add additional parameter internalLinksMax for parsing website in deep.
 6. Store everything in DB MongoDB
 7. Change log4net with Serilog                                              : done
+8. Write function FilterUrls in WebPageParserModule

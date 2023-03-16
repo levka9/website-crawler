@@ -348,6 +348,22 @@
           }
         }
       },
+      "Serilog.Expressions/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.10.0"
+        },
+        "compile": {
+          "lib/net5.0/Serilog.Expressions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.Expressions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Serilog.Extensions.Logging/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -361,6 +377,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog.Formatting.Compact/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.8.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
             "related": ".xml"
           }
         }
@@ -1171,6 +1203,24 @@
         "serilog.nuspec"
       ]
     },
+    "Serilog.Expressions/3.4.1": {
+      "sha512": "0gcR+7/0g4WYQlbxWWuTNYdUkrwHdnD60it4kY9yX3Djm1DFcrHRO6gynYaxPb8vcPFuGRZwpA2mowCFRm6MYg==",
+      "type": "package",
+      "path": "serilog.expressions/3.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net5.0/Serilog.Expressions.dll",
+        "lib/net5.0/Serilog.Expressions.xml",
+        "lib/netstandard2.0/Serilog.Expressions.dll",
+        "lib/netstandard2.0/Serilog.Expressions.xml",
+        "lib/netstandard2.1/Serilog.Expressions.dll",
+        "lib/netstandard2.1/Serilog.Expressions.xml",
+        "serilog.expressions.3.4.1.nupkg.sha512",
+        "serilog.expressions.nuspec"
+      ]
+    },
     "Serilog.Extensions.Logging/3.1.0": {
       "sha512": "IWfem7wfrFbB3iw1OikqPFNPEzfayvDuN4WP7Ue1AVFskalMByeWk3QbtUXQR34SBkv1EbZ3AySHda/ErDgpcg==",
       "type": "package",
@@ -1183,6 +1233,23 @@
         "serilog-extension-nuget.png",
         "serilog.extensions.logging.3.1.0.nupkg.sha512",
         "serilog.extensions.logging.nuspec"
+      ]
+    },
+    "Serilog.Formatting.Compact/1.1.0": {
+      "sha512": "pNroKVjo+rDqlxNG5PXkRLpfSCuDOBY0ri6jp9PLe505ljqwhwZz8ospy2vWhQlFu5GkIesh3FcDs4n7sWZODA==",
+      "type": "package",
+      "path": "serilog.formatting.compact/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/Serilog.Formatting.Compact.dll",
+        "lib/net452/Serilog.Formatting.Compact.xml",
+        "lib/netstandard1.1/Serilog.Formatting.Compact.dll",
+        "lib/netstandard1.1/Serilog.Formatting.Compact.xml",
+        "lib/netstandard2.0/Serilog.Formatting.Compact.dll",
+        "lib/netstandard2.0/Serilog.Formatting.Compact.xml",
+        "serilog.formatting.compact.1.1.0.nupkg.sha512",
+        "serilog.formatting.compact.nuspec"
       ]
     },
     "Serilog.Settings.Configuration/3.4.0": {
@@ -1543,7 +1610,9 @@
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
+      "Serilog.Expressions >= 3.4.1",
       "Serilog.Extensions.Logging >= 3.1.0",
+      "Serilog.Formatting.Compact >= 1.1.0",
       "Serilog.Settings.Configuration >= 3.4.0",
       "Serilog.Sinks.Console >= 4.1.0",
       "Serilog.Sinks.File >= 5.0.0",
@@ -1552,32 +1621,34 @@
     ]
   },
   "packageFolders": {
-    "/home/moti/.nuget/packages/": {}
+    "C:\\Users\\Shlomi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
+      "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
       "projectName": "WebsiteCrawler.Console",
-      "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
-      "packagesPath": "/home/moti/.nuget/packages/",
-      "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/obj/",
+      "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
+      "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+      "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/moti/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {
-              "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj"
+            "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+              "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj"
             }
           }
         }
@@ -1612,9 +1683,17 @@
             "target": "Package",
             "version": "[7.0.0, )"
           },
+          "Serilog.Expressions": {
+            "target": "Package",
+            "version": "[3.4.1, )"
+          },
           "Serilog.Extensions.Logging": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "Serilog.Formatting.Compact": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Serilog.Settings.Configuration": {
             "target": "Package",
@@ -1649,7 +1728,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

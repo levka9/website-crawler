@@ -19,6 +19,9 @@ using Microsoft.Extensions.DependencyInjection;
 using WebsiteCrawler.Logic.Modules.Interfaces;
 using WebsiteCrawler.Console.Configuration;
 using WebsiteCrawler.Logic.Modules;
+using Serilog.Formatting.Compact;
+using System.Text;
+using Serilog.Events;
 
 namespace WebsiteCrawler.Console
 {
@@ -32,26 +35,14 @@ namespace WebsiteCrawler.Console
                                                           .Build();
 
 
-            var logger = new LoggerConfiguration().ReadFrom
-                                                  .Configuration(configuration)
-                                                  .CreateLogger();
+            var logger = SerilogConfig.Get(configuration);
 
             var serviceCollection = new ServiceCollection();
-            ServiceCollections.ConfigureServices(serviceCollection);
-
+            ServiceCollections.ConfigureServices(serviceCollection, logger);
+            
             var serviceProvider = serviceCollection.BuildServiceProvider();
             var multiThreadWebsiteParser = serviceProvider.GetService<IMultiThreadWebsiteParserModule>();
 
-            #region Log4Net Configuration
-            XmlDocument log4netConfig = new XmlDocument();
-            log4netConfig.Load(File.OpenRead("log4net.config"));
-
-            var logRepository = log4net.LogManager.CreateRepository(
-                Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
-
-            log4net.Config.XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);
-            #endregion
-            
             /* Website Parser */
             //await OneThreadWebsiteParser.Start();
 

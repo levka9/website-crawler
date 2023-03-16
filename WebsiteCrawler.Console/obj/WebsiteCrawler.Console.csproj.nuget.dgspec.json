@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj": {}
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {}
   },
   "projects": {
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj": {
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
         "projectName": "WebsiteCrawler.Console",
-        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/WebsiteCrawler.Console.csproj",
-        "packagesPath": "/home/moti/.nuget/packages/",
-        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Console/obj/",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\WebsiteCrawler.Console.csproj",
+        "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/moti/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {
-                "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj"
+              "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
+                "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj"
               }
             }
           }
@@ -62,9 +64,17 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Serilog.Expressions": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            },
             "Serilog.Extensions.Logging": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Serilog.Formatting.Compact": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             },
             "Serilog.Settings.Configuration": {
               "target": "Package",
@@ -99,26 +109,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
         "projectName": "WebsiteCrawler.Helper",
-        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj",
-        "packagesPath": "/home/moti/.nuget/packages/",
-        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/obj/",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
+        "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/moti/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -152,37 +164,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj": {
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj",
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
         "projectName": "WebsiteCrawler.Logic",
-        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/WebsiteCrawler.Logic.csproj",
-        "packagesPath": "/home/moti/.nuget/packages/",
-        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Logic/obj/",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj",
+        "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/moti/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj": {
-                "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Helper/WebsiteCrawler.Helper.csproj"
+              "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
+                "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj"
               },
-              "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj": {
-                "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj"
+              "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+                "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
               }
             }
           }
@@ -230,26 +244,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj": {
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj",
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
         "projectName": "WebsiteCrawler.Model",
-        "projectPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/WebsiteCrawler.Model.csproj",
-        "packagesPath": "/home/moti/.nuget/packages/",
-        "outputPath": "/home/moti/Documents/website-crawler/WebsiteCrawler.Model/obj/",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+        "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/moti/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -283,7 +299,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

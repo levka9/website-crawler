@@ -14,4 +14,7 @@
     <ProjectReference Include="..\WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj" />
     <ProjectReference Include="..\WebsiteCrawler.Model\WebsiteCrawler.Model.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
 </Project>

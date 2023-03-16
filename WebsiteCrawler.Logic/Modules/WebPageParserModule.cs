@@ -8,29 +8,33 @@ using System.Collections.Generic;
 using WebsiteCrawler.Models;
 using System.Text;
 using WebsiteCrawler.Logic.Extensions;
+using log4net.Core;
+using Microsoft.Extensions.Logging;
+using WebsiteCrawler.Logic.Modules.Interfaces;
 
-namespace WebsiteCrawler.Logic
+namespace WebsiteCrawler.Logic.Modules
 {
-    public class WebPageParser : IDisposable
+    public class WebPageParserModule : IWebPageParserModule, IDisposable
     {
         #region Properties
-        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
-        string _url;
-        string _baseUrl;
-        Encoding _encoding;
-        HttpClient _httpClient;
-        public Page Page { get; set; } 
+        private string _url;
+        private string _baseUrl;
+        private Encoding _encoding;
+        private HttpClient _httpClient;
+        private ILogger<WebPageParserModule> _log;
+        public Page Page { get; set; }
         #endregion
 
-        public WebPageParser(string baseUrl, Encoding encoding)
+        public WebPageParserModule(ILogger<WebPageParserModule> logger)
         {
-            _baseUrl = baseUrl;
+            _log = logger;
         }
 
-        public async Task Parse(string url, int deep)
+        public async Task Parse(string baseUrl, string url, int deep, Encoding encoding)
         {
             _url = url;
+            _baseUrl = baseUrl;
+            _encoding = encoding;
 
             var htmlPageContent = await GetHtmlPageAsync();
 
@@ -43,19 +47,20 @@ namespace WebsiteCrawler.Logic
         {
             try
             {
+                _log.LogInformation($"This url parsed:{_url}");
+                
                 _httpClient = new HttpClient();
                 var response = await _httpClient.GetAsync(_url);
                 response.EnsureSuccessStatusCode();
 
                 var htmlPageContent = await response.Content.ReadAsStringAsync(_encoding);
-                
+
                 return htmlPageContent;
             }
             catch (Exception ex)
             {
-                _log.Error($"WebPageParser - GetHtmlPage: {_url}", ex);
+                _log.LogError(ex, $"Url faild: {_url}");
                 return null;
-                //throw ex;
             }
         }
 
@@ -86,12 +91,12 @@ namespace WebsiteCrawler.Logic
                             Deep = deep,
                             IsExternal = Url.IsExternal(_baseUrl, link.Attributes["href"].Value)
                         });
-                    }                    
+                    }
                 }
             }
             catch (Exception ex)
             {
-                _log.Error("WebPageParser - GetAllLinks ", ex);                
+                _log.LogError(ex, "WebPageParser - GetAllLinks ");
             }
 
             return Page;

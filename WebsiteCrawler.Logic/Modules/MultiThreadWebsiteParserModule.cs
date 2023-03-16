@@ -22,18 +22,15 @@ namespace WebsiteCrawler.Logic.Modules
         private List<Task> _tasks;
         private IEnumerable<string> _domainExtentions;
 
-        private IPageDataParserModule _pageDataParserModule;
         private IWebsiteParserModule _websiteParserModule;
         #endregion
 
-        public MultiThreadWebsiteParserModule(IPageDataParserModule pageDataParserModule,
-                                              IWebsiteParserModule websiteParserModule, 
+        public MultiThreadWebsiteParserModule(IWebsiteParserModule websiteParserModule, 
                                               ILogger<MultiThreadWebsiteParserModule> log)
         {
             _log = log;
 
             _websiteParserModule = websiteParserModule;
-            _pageDataParserModule = pageDataParserModule;
         }
 
         public async Task StartAsync(MultiThreadWebsiteParserRequest multiThreadWebsiteParserRequest)
@@ -78,9 +75,9 @@ namespace WebsiteCrawler.Logic.Modules
             WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         }
 
-        private async Task CreateWebsiteParser(string WebsiteName, int? taskCounter)
+        private async Task CreateWebsiteParser(string websiteName, int? taskCounter)
         {
-            var websiteParserRequest = GetWebsiteParserRequest(WebsiteName, taskCounter);
+            var websiteParserRequest = GetWebsiteParserRequest(websiteName, taskCounter);
 
             try
             {

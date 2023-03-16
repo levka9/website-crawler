@@ -27,7 +27,7 @@ namespace WebsiteCrawler.Logic
         private string _domainName;
         private Encoding _encoding;
         private EDomainLevel _domainLevel;
-        private WebPageParser _webPageParser;
+        private IWebPageParserModule _webPageParserModule;
         private IPageDataParserModule _pageDataParserModule;
         private IEnumerable<string> _domainExtentions; 
         private ILogger<WebsiteParserModule> _log;       
@@ -39,10 +39,11 @@ namespace WebsiteCrawler.Logic
         #endregion
 
         #region Constructors
-        public WebsiteParserModule( 
-                            IPageDataParserModule pageDataParserModule,
-                            ILogger<WebsiteParserModule> logger)
+        public WebsiteParserModule(IWebPageParserModule webPageParserModule,
+                                   IPageDataParserModule pageDataParserModule,
+                                   ILogger<WebsiteParserModule> logger)
         {
+            _webPageParserModule = webPageParserModule;
             _pageDataParserModule = pageDataParserModule;
             _log = logger;
         } 
@@ -63,10 +64,9 @@ namespace WebsiteCrawler.Logic
 
             _encoding =  await WebSiteEncodingService.GetEncodingAsync(_baseUrl, _pageDataParserModule);
 
-            _webPageParser = new WebPageParser(_baseUrl, _encoding);
-            _webPageParser.Page = new Page();
+            _webPageParserModule.Page = new Page();
 
-            await RecursiveParseInnerPages(_baseUrl, 0, _webPageParser.Page);
+            await RecursiveParseInnerPages(_baseUrl, 0, _webPageParserModule.Page);
             
             Console.WriteLine($"Task id {_taskId} ended. Domain: {_domainName}");
         }
@@ -74,7 +74,7 @@ namespace WebsiteCrawler.Logic
         private void Init(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
             _taskId = websiteParserModuleRequest.TaskId;
-            _baseUrl = websiteParserModuleRequest.DomainName;
+            _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(websiteParserModuleRequest.DomainName, _log); ;
             _maxDeep = websiteParserModuleRequest.MaxDeep;
             _domainExtentions = websiteParserModuleRequest.DomainExtentions;
             _domainName = websiteParserModuleRequest.DomainName;
@@ -83,30 +83,32 @@ namespace WebsiteCrawler.Logic
             DicAllInternalUrls = new Dictionary<string, int>();
         }
         
-        private async Task RecursiveParseInnerPages(string Url, int Deep, Page Page)
+        private async Task RecursiveParseInnerPages(string url, int deep, Page page)
         {
-            if (Deep > _maxDeep)
+            if (deep > _maxDeep)
             {
                 return;
             }
 
             TotalPagesParsed++;
-            Console.WriteLine($"{TotalPagesParsed} - Parse: {Url}");            
-            await _webPageParser.Parse(Url, Deep);
+            Console.WriteLine($"{TotalPagesParsed} - Parse: {url}");
 
-            if (IsContainInnerPages(_webPageParser.Page))
+            //var fullUrl = GetPageUrl(url);
+            await _webPageParserModule.Parse(_baseUrl, url, deep, _encoding);
+
+            if (IsContainInnerPages(_webPageParserModule.Page))
             {
-                await GetHomepageContent(_webPageParser.Page.HtmlPageContent, _webPageParser.Page.InnerPages, Deep);
+                await GetHomepageContent(_webPageParserModule.Page.HtmlPageContent, _webPageParserModule.Page.InnerPages, deep);
 
-                SetExternalWebsite(_webPageParser.Page.InnerPages);
+                SetExternalWebsite(_webPageParserModule.Page.InnerPages);
 
-                Page.InnerPages = GetOnlyNewInternalPages(_webPageParser.Page.InnerPages, Deep);
+                page.InnerPages = GetOnlyNewInternalPages(_webPageParserModule.Page.InnerPages, deep);
                 
-                for (int i = 0, length = Page.InnerPages.Count(); i < length; i++)
+                for (int i = 0, length = page.InnerPages.Count(); i < length; i++)
                 {
-                    var pageUrl = GetPageUrl(Page.InnerPages.ElementAt(i).Url);
+                    var pageUrl = GetPageUrl(page.InnerPages.ElementAt(i).Url);
 
-                    await RecursiveParseInnerPages(pageUrl, Deep + 1, Page.InnerPages.ElementAt(i));
+                    await RecursiveParseInnerPages(pageUrl, deep + 1, page.InnerPages.ElementAt(i));
                 }
             }            
         }
@@ -125,9 +127,9 @@ namespace WebsiteCrawler.Logic
 
         private bool IsContainInnerPages(Page Page)
         {
-            return _webPageParser.Page != null && 
-                   _webPageParser.Page.InnerPages != null && 
-                   _webPageParser.Page.InnerPages.Count > 0;
+            return _webPageParserModule.Page != null &&
+                   _webPageParserModule.Page.InnerPages != null &&
+                   _webPageParserModule.Page.InnerPages.Count > 0;
         }
 
         private bool IsHomepage(int deep)
@@ -212,7 +214,7 @@ namespace WebsiteCrawler.Logic
 
         public void Dispose()
         {
-            _webPageParser.Dispose();
+            _webPageParserModule.Dispose();
         }
     }
 }

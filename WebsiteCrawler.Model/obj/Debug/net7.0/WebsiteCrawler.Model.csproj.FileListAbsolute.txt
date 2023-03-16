@@ -22,3 +22,15 @@ C:/MyCode/website-crawler/WebsiteCrawler.Model/obj/Debug/net7.0/ref/WebsiteCrawl
 /home/moti/Documents/website-crawler/WebsiteCrawler.Model/obj/Debug/net7.0/refint/WebsiteCrawler.Model.dll
 /home/moti/Documents/website-crawler/WebsiteCrawler.Model/obj/Debug/net7.0/WebsiteCrawler.Model.pdb
 /home/moti/Documents/website-crawler/WebsiteCrawler.Model/obj/Debug/net7.0/ref/WebsiteCrawler.Model.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Model\bin\Debug\net7.0\WebsiteCrawler.Model.deps.json
+C:\MyCode\website-crawler\WebsiteCrawler.Model\bin\Debug\net7.0\WebsiteCrawler.Model.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Model\bin\Debug\net7.0\WebsiteCrawler.Model.pdb
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.csproj.AssemblyReference.cache
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.AssemblyInfoInputs.cache
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.AssemblyInfo.cs
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.csproj.CoreCompileInputs.cache
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\refint\WebsiteCrawler.Model.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\WebsiteCrawler.Model.pdb
+C:\MyCode\website-crawler\WebsiteCrawler.Model\obj\Debug\net7.0\ref\WebsiteCrawler.Model.dll
