@@ -53,14 +53,17 @@ namespace WebsiteCrawler.Logic.Modules
             try
             {
                 _log.LogInformation($"This url parsed:{_url}");
-                
-                _httpClient = new HttpClient();
-                var response = await _httpClient.GetAsync(_url);
-                response.EnsureSuccessStatusCode();
 
-                var htmlPageContent = await response.Content.ReadAsStringAsync(_encoding);
+                using (_httpClient = new HttpClient())
+                {
+                    _httpClient.Timeout = new TimeSpan(0, 0, 5);
+                    var response = await _httpClient.GetAsync(_url);
+                    response.EnsureSuccessStatusCode();
 
-                return htmlPageContent;
+                    var htmlPageContent = await response.Content.ReadAsStringAsync(_encoding);
+
+                    return htmlPageContent;
+                }
             }
             catch (Exception ex)
             {
@@ -111,7 +114,7 @@ namespace WebsiteCrawler.Logic.Modules
 
         public void Dispose()
         {
-            _httpClient.Dispose();
+            _httpClient?.Dispose();
         }
     }
 }

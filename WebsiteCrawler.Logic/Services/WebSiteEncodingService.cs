@@ -22,7 +22,7 @@ namespace WebsiteCrawler.Logic.Services
             
             await pageDataParserModule.StartAsync(string.Empty, htmlContent);
 
-            return pageDataParserModule.PageDataParserResponse.Encoding;
+            return pageDataParserModule.PageDataParserResponse?.Encoding;
         }
 
         private static async Task<string> GetHtmlPageContentAsync(string url)
@@ -32,6 +32,7 @@ namespace WebsiteCrawler.Logic.Services
                 using(var httpClient = new HttpClient())
                 {
                     var response = await httpClient.GetAsync(url);
+                    httpClient.Timeout = new TimeSpan(0,0,5);
                     response.EnsureSuccessStatusCode();
 
                     var htmlPageContent = await response.Content.ReadAsStringUtf8Async();

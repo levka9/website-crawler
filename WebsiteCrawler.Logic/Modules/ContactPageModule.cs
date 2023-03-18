@@ -136,6 +136,7 @@ namespace WebsiteCrawler.Logic.Modules
             {
                 using (var httpClient = new HttpClient())
                 {
+                    httpClient.Timeout = new TimeSpan(0, 0, 2);
                     var response = await httpClient.GetAsync(Url);
 
                     var contentBytes = await httpClient.GetByteArrayAsync(Url);

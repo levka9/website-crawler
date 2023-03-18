@@ -23,7 +23,6 @@ namespace WebsiteCrawler.Logic.Modules
         private IEnumerable<string> _domainExtentions;
 
         private IWebsiteParserModule _websiteParserModule;
-        private Action<int> _getTaskIdAction;
         #endregion
 
         public MultiThreadWebsiteParserModule(IWebsiteParserModule websiteParserModule, 
@@ -37,7 +36,7 @@ namespace WebsiteCrawler.Logic.Modules
         {
             Init(multiThreadWebsiteParserRequest);
 
-            var taskCounter = 0;
+            var taskCounter = 1;
 
             while (true)
             {
@@ -48,8 +47,9 @@ namespace WebsiteCrawler.Logic.Modules
 
                     if (!string.IsNullOrEmpty(domainName))
                     {
-                        var task = new Task(delegate { CreateWebsiteParser(domainName, taskCounter++); });
-                        _tasks.Add(task);
+                        //var task = new Task(delegate { CreateWebsiteParser(domainName, taskCounter++); });
+                        
+                        _tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
                     }
                 }
 
@@ -84,7 +84,6 @@ namespace WebsiteCrawler.Logic.Modules
 
             try
             {
-                websiteParserRequest.TaskId = Task.CurrentId;
                 await _websiteParserModule.ParseAsync(websiteParserRequest);
             }
             catch (Exception ex)
@@ -101,12 +100,11 @@ namespace WebsiteCrawler.Logic.Modules
                 DomainLevel = _domainLevel,
                 WebsiteParserLimitsRequest = _websiteParserLimitsRequest,
                 DomainExtentions = _domainExtentions,
-                TaskId = Task.CurrentId,
                 TaskCounter = taskCounter
             };
         }
 
-        private int GetTaskIdAction(int taskId)
+        public int GetTaskIdInvoke(int taskId)
         {
             return taskId;
         }

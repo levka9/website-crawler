@@ -20,7 +20,6 @@ namespace WebsiteCrawler.Logic
     public class WebsiteParserModule : IWebsiteParserModule, IDisposable
     {
         #region Private params
-        private int? _taskId;
         private int? _taskCounter;
         private int _maxDeep;
         private int _maxInternalLinks;
@@ -55,13 +54,13 @@ namespace WebsiteCrawler.Logic
         public async Task ParseAsync(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
             Init(websiteParserModuleRequest);
-            Console.WriteLine($"TaskId {_taskId} start. TaskCounter: {_taskCounter} Domain: {_domainName}");
+            Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_domainName} starts");
 
             _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(_domainName, _log);
 
             if (!WebRequestHelper.IsUrlAvailable<WebsiteParserModule>(_baseUrl, _log)) 
             {
-                Console.WriteLine($"TaskId: {_taskId} ended. TaskCounter: {_taskCounter} Domain: {_baseUrl} invalid.");
+                Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_baseUrl} invalid.");
                 return;
             } 
 
@@ -69,14 +68,11 @@ namespace WebsiteCrawler.Logic
 
             await RecursiveParseInnerPages(_baseUrl, 0, new Page());
             
-            Console.WriteLine($"TaskId: {_taskId} ended. TaskCounter: {_taskCounter} Domain: {_domainName}");
+            Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_domainName} ended.");
         }
 
         private void Init(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
-            Thread.Sleep(1000);
-            
-            _taskId = Task.CurrentId;
             _taskCounter = websiteParserModuleRequest.TaskCounter;
             _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(websiteParserModuleRequest.DomainName, _log); ;
             _maxDeep = websiteParserModuleRequest.WebsiteParserLimitsRequest.MaxDeep;
@@ -98,7 +94,7 @@ namespace WebsiteCrawler.Logic
             }
 
             _totalPagesParsed++;
-            Console.WriteLine($"TaskId: {_taskId} TotalPagesParsed: {_totalPagesParsed} - Parse: {url}");
+            Console.WriteLine($"TotalPagesParsed: {_totalPagesParsed} - Parse: {url}");
 
             //var fullUrl = GetPageUrl(url);
             await _webPageParserModule.Parse(_baseUrl, url, deep, _encoding);

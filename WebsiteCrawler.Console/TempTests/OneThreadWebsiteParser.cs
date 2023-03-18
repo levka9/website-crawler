@@ -17,7 +17,6 @@ namespace WebsiteCrawler.Console.TempTests
         {
             var websiteParserModuleRequest = new WebsiteParserModuleRequest()
             {
-                TaskId = 1,
                 DomainName = "2net.co.il",
                 DomainLevel = Model.Enums.EDomainLevel.SecondLevel,
                 WebsiteParserLimitsRequest = new WebsiteParserLimitsRequest()

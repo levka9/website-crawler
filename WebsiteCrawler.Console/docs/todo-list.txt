@@ -29,3 +29,4 @@
     It also provide data related to the country.
 11. Create webite with data and order form
 12. Create articles for website
+13. Set httpClient.Timeout from appconfig

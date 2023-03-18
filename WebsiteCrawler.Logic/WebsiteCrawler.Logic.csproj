@@ -5,6 +5,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Services\Interfaces\**" />
+    <EmbeddedResource Remove="Services\Interfaces\**" />
+    <None Remove="Services\Interfaces\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
@@ -13,8 +18,5 @@
   <ItemGroup>
     <ProjectReference Include="..\WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj" />
     <ProjectReference Include="..\WebsiteCrawler.Model\WebsiteCrawler.Model.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 </Project>
