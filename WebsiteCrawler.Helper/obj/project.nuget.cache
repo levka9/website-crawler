@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TvIPJ+XGXi0zWxHHyWMOI7F9iJXG+F20/oDOweH0PUrT6yO+E6cwkPRoRRyTgMNI3fFbj62Upo6dvU894HiNWA==",
+  "dgSpecHash": "gimMklEklxZX2ntK7UUcpMYvkVcYlEIu2lC+N/KB9uIX3erYTIupwviCOhTXteGEBFxD+0p7OTjdXmJWAlDSAg==",
   "success": true,
-  "projectFilePath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
+  "projectFilePath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

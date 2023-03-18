@@ -9,7 +9,7 @@ namespace WebsiteCrawler.Logic.Modules.Interfaces
 {
     public interface IWebPageParserModule
     {
-        Page Page { get; set; }
+        Page Page { get; }
         Task Parse(string baseUrl, string url, int deep, Encoding encoding);
         void Dispose();
     }

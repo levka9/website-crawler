@@ -7,20 +7,24 @@ using System.Linq;
 using WebsiteCrawler.Models.Requests;
 using System.Collections.Concurrent;
 using WebsiteCrawler.Logic.Modules.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WebsiteCrawler.Console.TempTests
 {
     public static class OneThreadWebsiteParser
     {
-        public static async Task Start(IPageDataParserModule pageDataParserModule)
+        public static async Task Start(ServiceProvider serviceProvider)
         {
             var websiteParserModuleRequest = new WebsiteParserModuleRequest()
             {
-                DomainName = "www.sport5.co.il",
+                TaskId = 1,
+                DomainName = "2net.co.il",
+                DomainLevel = Model.Enums.EDomainLevel.SecondLevel,
                 WebsiteParserLimitsRequest = new WebsiteParserLimitsRequest()
                 {
                     MaxDeep = 2,
-                    MaxInternalLinks = 20
+                    MaxInternalLinks = 20,
+                    
                 },
                 DomainExtentions = new List<string>()
                 {
@@ -29,9 +33,14 @@ namespace WebsiteCrawler.Console.TempTests
                 }
             };
 
-            // WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
-            // WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
+            WebSitesConcurrentQueue.WebSites = new ConcurrentQueue<string>();
+            WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
 
+            var websiteParserModule = serviceProvider.GetService<IWebsiteParserModule>();
+
+            await websiteParserModule.ParseAsync(websiteParserModuleRequest);
+
+            System.Console.WriteLine("Finished");
             // using (var websiteParser = new WebsiteParserModule(websiteParserModuleRequest, pageDataParserModule))
             // {
             //     await websiteParser.Parse();

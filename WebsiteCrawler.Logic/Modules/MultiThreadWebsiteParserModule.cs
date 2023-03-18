@@ -23,6 +23,7 @@ namespace WebsiteCrawler.Logic.Modules
         private IEnumerable<string> _domainExtentions;
 
         private IWebsiteParserModule _websiteParserModule;
+        private Action<int> _getTaskIdAction;
         #endregion
 
         public MultiThreadWebsiteParserModule(IWebsiteParserModule websiteParserModule, 
@@ -47,19 +48,15 @@ namespace WebsiteCrawler.Logic.Modules
 
                     if (!string.IsNullOrEmpty(domainName))
                     {
-                        _tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
+                        var task = new Task(delegate { CreateWebsiteParser(domainName, taskCounter++); });
+                        _tasks.Add(task);
                     }
                 }
 
                 var completedTask = await Task.WhenAny(_tasks.ToArray());
 
-                //if(completedTask.IsCompleted)
-                //{
-                    
-                //}
-
                 _tasks.Remove(completedTask);
-                Console.WriteLine($"Task id: {completedTask.Id} completed");
+                Console.WriteLine($"Task id: {completedTask.Id} completed IsCompleted: {completedTask.IsCompleted}");
 
                 Thread.Sleep(200);
                 Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
@@ -81,13 +78,14 @@ namespace WebsiteCrawler.Logic.Modules
             WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         }
 
-        private async Task CreateWebsiteParser(string websiteName, int? taskCounter)
+        private async Task CreateWebsiteParser(string websiteName, int taskCounter)
         {
             var websiteParserRequest = GetWebsiteParserRequest(websiteName, taskCounter);
 
             try
             {
-                await _websiteParserModule.Parse(websiteParserRequest);
+                websiteParserRequest.TaskId = Task.CurrentId;
+                await _websiteParserModule.ParseAsync(websiteParserRequest);
             }
             catch (Exception ex)
             {
@@ -95,7 +93,7 @@ namespace WebsiteCrawler.Logic.Modules
             }
         }
 
-        private WebsiteParserModuleRequest GetWebsiteParserRequest(string domainName, int? taskId)
+        private WebsiteParserModuleRequest GetWebsiteParserRequest(string domainName, int taskCounter)
         {
             return new WebsiteParserModuleRequest()
             {
@@ -103,8 +101,14 @@ namespace WebsiteCrawler.Logic.Modules
                 DomainLevel = _domainLevel,
                 WebsiteParserLimitsRequest = _websiteParserLimitsRequest,
                 DomainExtentions = _domainExtentions,
-                TaskId = taskId
+                TaskId = Task.CurrentId,
+                TaskCounter = taskCounter
             };
+        }
+
+        private int GetTaskIdAction(int taskId)
+        {
+            return taskId;
         }
     }
 }

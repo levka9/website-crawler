@@ -17,5 +17,6 @@ namespace WebsiteCrawler.Models.Requests
         public IEnumerable<string> DomainExtentions { get; set; }
         public CancellationToken CancellationToken { get; set; }
         public int? TaskId { get; set; }
+        public int TaskCounter { get; set; }
     }
 }

@@ -13,3 +13,19 @@
    http://www.google.co.il/https://www.lainyan.co.il/mainlinks/radio-lainyan.html
    http://www.zap.co.il/http://www.lainyan.co.il/mainlinks/love3.htm
    http://www.winner.co.il/https://www.google.co.il/intl/iw/about/products?tab=wh
+10. Validate parsed data:                               task priority: low
+    10.1 Validate email address
+    if email address is valid we mark it as valid email 
+    if website has one or more valid emails other invalid emails we will remove
+
+    Verify the domain name, check for any DNS or SMTP errors.
+
+    10.2 Validate phone number
+    if the phone number is valid we mark it as valid phone number 
+    if website has one or more valid phone number and other phone numbers are invalid, 
+    then we will remove them
+
+    Utility that validate phone number is: PhoneInfoga
+    It also provide data related to the country.
+11. Create webite with data and order form
+12. Create articles for website

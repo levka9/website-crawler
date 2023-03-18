@@ -22,6 +22,7 @@ using WebsiteCrawler.Logic.Modules;
 using Serilog.Formatting.Compact;
 using System.Text;
 using Serilog.Events;
+using WebsiteCrawler.Console.TempTests;
 
 namespace WebsiteCrawler.Console
 {
@@ -44,7 +45,9 @@ namespace WebsiteCrawler.Console
             var multiThreadWebsiteParser = serviceProvider.GetService<IMultiThreadWebsiteParserModule>();
 
             /* Website Parser */
-            //await OneThreadWebsiteParser.Start();
+            //await OneThreadWebsiteParser.Start(serviceProvider);
+
+            //System.Console.ReadKey();
 
             var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
             multiThreadWebsiteParserRequest.WebsiteUrls = new List<string>()

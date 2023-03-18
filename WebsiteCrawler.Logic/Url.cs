@@ -50,25 +50,25 @@ namespace WebsiteCrawler.Logic
             return pageUrl;
         }
 
-        public static bool IsExternal(string BaseUrl, string Url)
+        public static bool IsExternal(string baseUrl, string url)
         {
             bool result = false;
 
-            BaseUrl = BaseUrl.Replace("www.", ".");
+            baseUrl = baseUrl.Replace("www.", ".");
 
             try
             {
-                var url = new System.Uri(Url);
+                var uri = new System.Uri(url);
 
-                if (url != null)
+                if (uri != null)
                 {
-                    var host = url.Host.Replace("www.", "");
+                    var host = uri.Host.Replace("www.", "");
 
                     if (string.IsNullOrEmpty(host))
                     {
                         result = false;
                     }
-                    else if (!BaseUrl.Contains(host))
+                    else if (!baseUrl.Contains(host))
                     {
                         result = true;
                     }                    
@@ -82,12 +82,19 @@ namespace WebsiteCrawler.Logic
             }
         }
 
-        public static bool IsCorrectDomainLevel(string domainName, EDomainLevel EDomainLevel)
+        public static bool IsJavascriptOrJumpToSection(string url)
+        {
+            var jumpToSectionIndex = url.IndexOf("#");
+            return url.Contains("javascript:") || 
+                  (jumpToSectionIndex != -1 && jumpToSectionIndex != url.Length);
+        }
+
+        public static bool IsCorrectDomainLevel(string domainName, EDomainLevel domainLevel)
         {
             bool result = false;
             domainName = domainName.Replace("www.", "");
 
-            switch (EDomainLevel)
+            switch (domainLevel)
             {
                 case EDomainLevel.SecondLevel:
                     result = domainName.Split('.').Length == 3;
@@ -100,11 +107,11 @@ namespace WebsiteCrawler.Logic
             return result;
         }
 
-        public static bool IsContainExtention(string Url, IEnumerable<string> DomainExtentions)
+        public static bool IsContainExtention(string url, IEnumerable<string> domainExtentions)
         {
-            foreach (var domainExtention in DomainExtentions)
+            foreach (var domainExtention in domainExtentions)
             {
-                if(Url.Contains(domainExtention) == true) return true;
+                if(url.Contains(domainExtention) == true) return true;
             }
 
             return false;

@@ -8,20 +8,30 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Shlomi\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+      "projectUniqueName": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
       "projectName": "WebsiteCrawler.Model",
-      "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
-      "packagesPath": "C:\\Users\\Shlomi\\.nuget\\packages\\",
-      "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\obj\\",
+      "projectPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Model\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Shlomi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -61,7 +71,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

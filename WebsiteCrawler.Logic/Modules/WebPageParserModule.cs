@@ -17,12 +17,16 @@ namespace WebsiteCrawler.Logic.Modules
     public class WebPageParserModule : IWebPageParserModule, IDisposable
     {
         #region Properties
+        private Page _page;
         private string _url;
         private string _baseUrl;
         private Encoding _encoding;
         private HttpClient _httpClient;
         private ILogger<WebPageParserModule> _log;
-        public Page Page { get; set; }
+        public Page Page 
+        {
+            get { return _page; }
+        }
         #endregion
 
         public WebPageParserModule(ILogger<WebPageParserModule> logger)
@@ -38,7 +42,7 @@ namespace WebsiteCrawler.Logic.Modules
 
             var htmlPageContent = await GetHtmlPageAsync();
 
-            GetAllLinks(htmlPageContent, deep);
+            SetAllLinks(htmlPageContent, deep);
 
             // TODO: FilterUrls()
             // remove urls with javascript:void(0);
@@ -65,13 +69,13 @@ namespace WebsiteCrawler.Logic.Modules
             }
         }
 
-        private Page GetAllLinks(string htmlPageContent, int deep)
+        private Page SetAllLinks(string htmlPageContent, int deep)
         {
             if (string.IsNullOrEmpty(htmlPageContent)) return null;
             
-            var Page = new Page();
-            Page.HtmlPageContent = htmlPageContent;
-            Page.InnerPages = new List<Page>();
+            _page = new Page();
+            _page.HtmlPageContent = htmlPageContent;
+            _page.InnerPages = new List<Page>();
 
             try
             {
@@ -88,7 +92,7 @@ namespace WebsiteCrawler.Logic.Modules
                 {
                     if (link.Attributes["href"] != null)
                     {
-                        Page.InnerPages.Add(new Page()
+                        _page.InnerPages.Add(new Page()
                         {
                             Url = link.Attributes["href"].Value,
                             Deep = deep,
@@ -102,7 +106,7 @@ namespace WebsiteCrawler.Logic.Modules
                 _log.LogError(ex, "WebPageParser - GetAllLinks ");
             }
 
-            return Page;
+            return _page;
         }
 
         public void Dispose()
