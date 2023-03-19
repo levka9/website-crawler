@@ -17,6 +17,7 @@ namespace WebsiteCrawler.Logic.Modules
         #region Properties
         private ILogger<MultiThreadWebsiteParserModule> _log;
         private int _maxTaskQuantity;
+        private int _totalWebsiteCompleted; 
         private EDomainLevel _domainLevel;
         private WebsiteParserLimitsRequest _websiteParserLimitsRequest;
         private List<Task> _tasks;
@@ -47,16 +48,29 @@ namespace WebsiteCrawler.Logic.Modules
 
                     if (!string.IsNullOrEmpty(domainName))
                     {
-                        //var task = new Task(delegate { CreateWebsiteParser(domainName, taskCounter++); });
-                        
-                        _tasks.Add(CreateWebsiteParser(domainName, taskCounter++));
+                        Func<int> getTaskIdAction = null;
+                        var task = new Task(async() => 
+                                    { 
+                                        await CreateWebsiteParser(domainName, taskCounter++,  getTaskIdAction); 
+                                    }, 
+                                    TaskCreationOptions.LongRunning);
+
+                        getTaskIdAction = delegate ()
+                        {
+                            return task.Id;
+                        };
+
+                        task.Start();
+                        _tasks.Add(task);
                     }
                 }
 
                 var completedTask = await Task.WhenAny(_tasks.ToArray());
 
                 _tasks.Remove(completedTask);
+
                 Console.WriteLine($"Task id: {completedTask.Id} completed IsCompleted: {completedTask.IsCompleted}");
+                Console.WriteLine($"Total completed {++_totalWebsiteCompleted} websites.");
 
                 Thread.Sleep(200);
                 Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
@@ -78,9 +92,9 @@ namespace WebsiteCrawler.Logic.Modules
             WebSitesConcurrentQueue.AllWebSites = new ConcurrentQueue<string>();
         }
 
-        private async Task CreateWebsiteParser(string websiteName, int taskCounter)
+        private async Task CreateWebsiteParser(string websiteName, int taskCounter, Func<int> getTaskIdAction)
         {
-            var websiteParserRequest = GetWebsiteParserRequest(websiteName, taskCounter);
+            var websiteParserRequest = GetWebsiteParserRequest(websiteName, taskCounter, getTaskIdAction);
 
             try
             {
@@ -92,10 +106,11 @@ namespace WebsiteCrawler.Logic.Modules
             }
         }
 
-        private WebsiteParserModuleRequest GetWebsiteParserRequest(string domainName, int taskCounter)
+        private WebsiteParserModuleRequest GetWebsiteParserRequest(string domainName, int taskCounter, Func<int> getTaskIdAction)
         {
             return new WebsiteParserModuleRequest()
             {
+                TaskId = getTaskIdAction.Invoke(),
                 DomainName = domainName,
                 DomainLevel = _domainLevel,
                 WebsiteParserLimitsRequest = _websiteParserLimitsRequest,

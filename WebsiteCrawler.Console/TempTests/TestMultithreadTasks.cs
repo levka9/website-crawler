@@ -8,8 +8,8 @@ namespace WebsiteCrawler.Console.TempTests
 {
     public class TestMultithreadTasks
     {
-        static int Counter = 0;
-        List<Task> tasks;
+        private static int Counter = 0;
+        private List<Task> tasks;
 
         public async Task Start()
         {
@@ -19,10 +19,16 @@ namespace WebsiteCrawler.Console.TempTests
             {
                 for (int i = 0; i < 5 && tasks.Count < 5; i++)
                 {
+                    Func<int> getTaskId = null;
                     Task worker = new Task(async () =>
                     {
-                        DoWork(Counter++);
+                        DoWork(Counter++, getTaskId);
                     }, TaskCreationOptions.LongRunning);
+
+                    getTaskId = delegate ()
+                    {
+                        return worker.Id;
+                    };
 
                     worker.Start();
                     tasks.Add(worker);
@@ -35,9 +41,12 @@ namespace WebsiteCrawler.Console.TempTests
             }
         }
 
-        private static void DoWork(int Counter)
+        private static void DoWork(int Counter, Func<int> getTaskId)
         {
             var counter = Counter;
+            int taskId = getTaskId.Invoke();
+
+            System.Console.WriteLine($"Task id: {taskId}");
 
             while (counter == 1 || counter == 2 || counter == 3)
             {

@@ -20,6 +20,7 @@ namespace WebsiteCrawler.Logic
     public class WebsiteParserModule : IWebsiteParserModule, IDisposable
     {
         #region Private params
+        private int _taskId;
         private int? _taskCounter;
         private int _maxDeep;
         private int _maxInternalLinks;
@@ -54,13 +55,13 @@ namespace WebsiteCrawler.Logic
         public async Task ParseAsync(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
             Init(websiteParserModuleRequest);
-            Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_domainName} starts");
+            Console.WriteLine($"TaskId: {_taskId} TaskCounter: {_taskCounter} Domain: {_domainName} starts");
 
             _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(_domainName, _log);
 
             if (!WebRequestHelper.IsUrlAvailable<WebsiteParserModule>(_baseUrl, _log)) 
             {
-                Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_baseUrl} invalid.");
+                Console.WriteLine($"TaskId: {_taskId} TaskCounter: {_taskCounter} Domain: {_baseUrl} invalid.");
                 return;
             } 
 
@@ -68,11 +69,12 @@ namespace WebsiteCrawler.Logic
 
             await RecursiveParseInnerPages(_baseUrl, 0, new Page());
             
-            Console.WriteLine($"TaskCounter: {_taskCounter} Domain: {_domainName} ended.");
+            Console.WriteLine($"TaskId: {_taskId} TaskCounter: {_taskCounter} Domain: {_domainName} ended.");
         }
 
         private void Init(WebsiteParserModuleRequest websiteParserModuleRequest)
         {
+            _taskId = websiteParserModuleRequest.TaskId;
             _taskCounter = websiteParserModuleRequest.TaskCounter;
             _baseUrl = Url.GetBaseUrl<WebsiteParserModule>(websiteParserModuleRequest.DomainName, _log); ;
             _maxDeep = websiteParserModuleRequest.WebsiteParserLimitsRequest.MaxDeep;

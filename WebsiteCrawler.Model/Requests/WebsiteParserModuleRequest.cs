@@ -8,6 +8,7 @@ namespace WebsiteCrawler.Models.Requests
 {
     public class WebsiteParserModuleRequest
     {
+        public int TaskId { get; set; }
         public string DomainName { get; set; }
         public WebsiteParserLimitsRequest WebsiteParserLimitsRequest { get; set; }
         public EDomainLevel DomainLevel { get; set; }

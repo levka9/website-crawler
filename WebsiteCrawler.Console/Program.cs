@@ -47,6 +47,9 @@ namespace WebsiteCrawler.Console
             /* Website Parser */
             //await OneThreadWebsiteParser.Start(serviceProvider);
 
+            //TestMultithreadTasks testMultithreadTasks = new TestMultithreadTasks();
+            //await testMultithreadTasks.Start();
+
             //System.Console.ReadKey();
 
             var multiThreadWebsiteParserRequest = new MultiThreadWebsiteParserRequest();
