@@ -69,11 +69,12 @@ namespace WebsiteCrawler.Logic.Modules
 
                 _tasks.Remove(completedTask);
 
+                //Thread.Sleep(200);
+                #region Write log then task complete
                 Console.WriteLine($"Task id: {completedTask.Id} completed IsCompleted: {completedTask.IsCompleted}");
                 Console.WriteLine($"Total completed {++_totalWebsiteCompleted} websites.");
-
-                Thread.Sleep(200);
                 Console.WriteLine($"Total webSites in queue: {WebSitesConcurrentQueue.WebSites.Count}");
+                #endregion
             }
         }
 

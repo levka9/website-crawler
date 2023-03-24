@@ -155,7 +155,6 @@ C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Serilog.Expres
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
 C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.exe
 C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\appsettings.json
-C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\log4net.config
 C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.deps.json
 C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.runtimeconfig.json
 C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.dll
