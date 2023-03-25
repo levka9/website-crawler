@@ -205,3 +205,7 @@ C:\my-programms\website-crawler\WebsiteCrawler.Console\obj\Debug\net7.0\refint\W
 C:\my-programms\website-crawler\WebsiteCrawler.Console\obj\Debug\net7.0\WebsiteCrawler.Console.pdb
 C:\my-programms\website-crawler\WebsiteCrawler.Console\obj\Debug\net7.0\WebsiteCrawler.Console.genruntimeconfig.cache
 C:\my-programms\website-crawler\WebsiteCrawler.Console\obj\Debug\net7.0\ref\WebsiteCrawler.Console.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elastic.Clients.Elasticsearch.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elastic.Transport.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Data.pdb

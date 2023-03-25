@@ -4,6 +4,78 @@
     "C:\\my-programms\\website-crawler\\WebsiteCrawler.Logic\\WebsiteCrawler.Logic.csproj": {}
   },
   "projects": {
+    "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
+        "projectName": "WebsiteCrawler.Data",
+        "projectPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\my-programms\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+                "projectPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Elastic.Clients.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\my-programms\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -97,6 +169,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj": {
+                "projectPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj"
+              },
               "C:\\my-programms\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
                 "projectPath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj"
               },

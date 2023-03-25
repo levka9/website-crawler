@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Elastic.Clients.Elasticsearch;
 
-namespace WebsiteCrawler.Data.Elasticsearch
+namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
 {
-    public class ElasticsearchRepository<T> : IElasticsearchRepository<T> where T : class
+    public class ElasticsearchGenericRepository<T> : IElasticsearchGenericRepository<T> where T : class
     {
         private readonly ElasticsearchClient _client;
         private readonly string _indexName;
 
-        public ElasticsearchRepository(ElasticsearchClient client, string defaultIndexName)
+        public ElasticsearchGenericRepository(ElasticsearchClient client, string defaultIndexName)
         {
             _client = client;
             _indexName = defaultIndexName;

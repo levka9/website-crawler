@@ -23,6 +23,8 @@ using Serilog.Formatting.Compact;
 using System.Text;
 using Serilog.Events;
 using WebsiteCrawler.Console.TempTests;
+using Elastic.Clients.Elasticsearch;
+using WebsiteCrawler.Data.Elasticsearch;
 
 namespace WebsiteCrawler.Console
 {
@@ -39,13 +41,17 @@ namespace WebsiteCrawler.Console
             var logger = SerilogConfig.Get(configuration);
 
             var serviceCollection = new ServiceCollection();
-            ServiceCollections.ConfigureServices(serviceCollection, logger);
+            ServiceCollections.ConfigureServices(serviceCollection, configuration, logger);
             
             var serviceProvider = serviceCollection.BuildServiceProvider();
             var multiThreadWebsiteParser = serviceProvider.GetService<IMultiThreadWebsiteParserModule>();
 
+            var pageDataParserRepository = serviceProvider.GetService<IPageDataParserRepository>(); 
+            var elasticsearchTest = new ElasticsearchTest(pageDataParserRepository);
+            await elasticsearchTest.AddAsync();
+
             /* Website Parser */
-            //await OneThreadWebsiteParser.Start(serviceProvider);
+            await OneThreadWebsiteParser.Start(serviceProvider);
 
             //TestMultithreadTasks testMultithreadTasks = new TestMultithreadTasks();
             //await testMultithreadTasks.Start();

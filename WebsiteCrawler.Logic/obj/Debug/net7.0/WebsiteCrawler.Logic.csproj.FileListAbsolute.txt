@@ -66,3 +66,5 @@ C:\my-programms\website-crawler\WebsiteCrawler.Logic\obj\Debug\net7.0\WebsiteCra
 C:\my-programms\website-crawler\WebsiteCrawler.Logic\obj\Debug\net7.0\refint\WebsiteCrawler.Logic.dll
 C:\my-programms\website-crawler\WebsiteCrawler.Logic\obj\Debug\net7.0\WebsiteCrawler.Logic.pdb
 C:\my-programms\website-crawler\WebsiteCrawler.Logic\obj\Debug\net7.0\ref\WebsiteCrawler.Logic.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Logic\bin\Debug\net7.0\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Logic\bin\Debug\net7.0\WebsiteCrawler.Data.pdb

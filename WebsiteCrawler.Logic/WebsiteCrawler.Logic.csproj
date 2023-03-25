@@ -16,6 +16,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebsiteCrawler.Data\WebsiteCrawler.Data.csproj" />
     <ProjectReference Include="..\WebsiteCrawler.Helper\WebsiteCrawler.Helper.csproj" />
     <ProjectReference Include="..\WebsiteCrawler.Model\WebsiteCrawler.Model.csproj" />
   </ItemGroup>

@@ -63,6 +63,8 @@ namespace WebsiteCrawler.Logic.Modules
                         task.Start();
                         _tasks.Add(task);
                     }
+
+                    Thread.Sleep(1000);
                 }
 
                 var completedTask = await Task.WhenAny(_tasks.ToArray());

@@ -1,0 +1,15 @@
+C:\my-programms\website-crawler\WebsiteCrawler.Data\bin\Debug\net7.0\WebsiteCrawler.Data.deps.json
+C:\my-programms\website-crawler\WebsiteCrawler.Data\bin\Debug\net7.0\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Data\bin\Debug\net7.0\WebsiteCrawler.Data.pdb
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.csproj.AssemblyReference.cache
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.AssemblyInfoInputs.cache
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.AssemblyInfo.cs
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.csproj.CoreCompileInputs.cache
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\refint\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.pdb
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\ref\WebsiteCrawler.Data.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Data\bin\Debug\net7.0\WebsiteCrawler.Model.dll
+C:\my-programms\website-crawler\WebsiteCrawler.Data\bin\Debug\net7.0\WebsiteCrawler.Model.pdb
+C:\my-programms\website-crawler\WebsiteCrawler.Data\obj\Debug\net7.0\WebsiteCrawler.Data.csproj.CopyComplete

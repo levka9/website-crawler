@@ -3,13 +3,18 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using WebsiteCrawler.Model.Base;
+using System.Text.Json.Serialization;
+using WebsiteCrawler.Model.JsonConverters;
 
 namespace WebsiteCrawler.Model.Responses;
 
-public class PageDataParserModuleResponse
+public class PageDataParserModuleResponse : BaseResponse
 {
     public string? DomainName { get; set; }
-        // webpage charset
+
+    // webpage charset
+    [JsonConverter(typeof(EncodingConverter))] 
     public Encoding? Encoding { get; set; }
     public string? Title { get; set; }
     public string? Description { get; set; }

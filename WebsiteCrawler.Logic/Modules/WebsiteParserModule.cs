@@ -14,6 +14,8 @@ using WebsiteCrawler.Logic.Services;
 using WebsiteCrawler.Logic.Modules;
 using WebsiteCrawler.Logic.Modules.Interfaces;
 using Microsoft.Extensions.Logging;
+using WebsiteCrawler.Data.Elasticsearch.GenericRepository;
+using WebsiteCrawler.Data.Elasticsearch;
 
 namespace WebsiteCrawler.Logic
 {
@@ -35,6 +37,7 @@ namespace WebsiteCrawler.Logic
 
         private int _totalPagesParsed;
         private Dictionary<string, int> _dicAllInternalUrls;
+        IPageDataParserRepository _pageDataParserRepository;
         #endregion
 
         #region Public params
@@ -44,10 +47,12 @@ namespace WebsiteCrawler.Logic
         #region Constructors
         public WebsiteParserModule(IWebPageParserModule webPageParserModule,
                                    IPageDataParserModule pageDataParserModule,
+                                   IPageDataParserRepository pageDataParserRepository,
                                    ILogger<WebsiteParserModule> logger)
         {
             _webPageParserModule = webPageParserModule;
             _pageDataParserModule = pageDataParserModule;
+            _pageDataParserRepository = pageDataParserRepository;
             _log = logger;
         } 
         #endregion
@@ -127,7 +132,8 @@ namespace WebsiteCrawler.Logic
 
             await _pageDataParserModule.StartAsync(_domainName, htmlPageContent, pages);
 
-            await FileData.SaveAsync("websites-content.txt", _pageDataParserModule.PageDataParserResponse.ToString(), ",");            
+            await FileData.SaveAsync("websites-content.txt", _pageDataParserModule.PageDataParserResponse.ToString(), ",");
+            await _pageDataParserRepository.AddAsync(_pageDataParserModule.PageDataParserResponse);
         }
 
         private bool IsContainInnerPages(Page Page)

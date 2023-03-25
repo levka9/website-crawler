@@ -6,9 +6,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebsiteCrawler.Data.Elasticsearch
+namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
 {
-    public interface IElasticsearchRepository<T> where T : class
+    public interface IElasticsearchGenericRepository<T> where T : class
     {
         Task<T> GetByIdAsync(string id);
         Task<IEnumerable<T>> GetAllAsync(int page, int size);
