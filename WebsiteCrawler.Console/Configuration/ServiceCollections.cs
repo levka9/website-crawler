@@ -24,7 +24,8 @@ namespace WebsiteCrawler.Console.Configuration
         public static void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration, Serilog.Core.Logger logger) 
         {
             var defuaultIndex = configuration.GetValue<string>("Elasticsearch:DefaultIndex");
-            var elasticsearchClient = ElasticsearchClientConfig.GetClient(configuration);
+            //var elasticsearchClient = ElasticsearchClientConfig.GetClient(configuration);
+            var elasticsearchClient = ElasticsearchClientConfig.GetNestClient(configuration, logger);
 
             services.AddLogging(configure => configure.AddSerilog(logger))
                     .AddTransient<IMultiThreadWebsiteParserModule, MultiThreadWebsiteParserModule>()

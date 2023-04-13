@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebsiteCrawler.Console",
+    "\\WebsiteCrawler.Console\\TempTests",
+    "\\WebsiteCrawler.Data",
+    "\\WebsiteCrawler.Data\\Elasticsearch",
+    "\\WebsiteCrawler.Data\\Elasticsearch\\GenericRepository"
   ],
+  "SelectedNode": "\\WebsiteCrawler.Data\\Elasticsearch\\GenericRepository\\ElasticsearchGenericRepository.cs",
   "PreviewInSolutionExplorer": false
 }

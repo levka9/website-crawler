@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Nest;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace WebsiteCrawler.Models
 {
+    
     public class Page
     {        
         public string? Url { get; set; }        

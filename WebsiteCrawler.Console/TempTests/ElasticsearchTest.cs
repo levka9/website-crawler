@@ -21,7 +21,7 @@ namespace WebsiteCrawler.Console.TempTests
         {
             var response = await _pageDataParserRepository.AddAsync(new Model.Responses.PageDataParserModuleResponse()
             {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Address = "test",
                 Content = "test",
                 Description = "test",

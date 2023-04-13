@@ -46,3 +46,15 @@ C:\my-programms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCr
 C:\my-programms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\refint\WebsiteCrawler.Helper.dll
 C:\my-programms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.pdb
 C:\my-programms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\ref\WebsiteCrawler.Helper.dll
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\bin\Debug\net7.0\WebsiteCrawler.Helper.deps.json
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\bin\Debug\net7.0\WebsiteCrawler.Helper.dll
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\bin\Debug\net7.0\WebsiteCrawler.Helper.pdb
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.csproj.AssemblyReference.cache
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.AssemblyInfoInputs.cache
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.AssemblyInfo.cs
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.csproj.CoreCompileInputs.cache
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.dll
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\refint\WebsiteCrawler.Helper.dll
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\WebsiteCrawler.Helper.pdb
+C:\MyPrograms\website-crawler\WebsiteCrawler.Helper\obj\Debug\net7.0\ref\WebsiteCrawler.Helper.dll

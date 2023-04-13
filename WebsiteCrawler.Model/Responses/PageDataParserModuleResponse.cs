@@ -6,24 +6,34 @@ using System.Text.Unicode;
 using WebsiteCrawler.Model.Base;
 using System.Text.Json.Serialization;
 using WebsiteCrawler.Model.JsonConverters;
+using Nest;
 
 namespace WebsiteCrawler.Model.Responses;
 
+[ElasticsearchType(RelationName = "page_data")]
 public class PageDataParserModuleResponse : BaseResponse
 {
+    [Text(Name = "domain_name")]
     public string? DomainName { get; set; }
 
     // webpage charset
-    [JsonConverter(typeof(EncodingConverter))] 
+    [JsonConverter(typeof(EncodingConverter))]
+    [Object(Name = "encoding")]
     public Encoding? Encoding { get; set; }
+    [Text(Name = "title")]
     public string? Title { get; set; }
+    [Text(Name = "description")]
     public string? Description { get; set; }
+    [Text(Name = "adderess")]
     public string? Address { get; set; }
+    [Text(Name = "keywords")]
     public List<string> Keywords { get; set; }
+    [Text(Name = "content")]
     public string Content { get; set; }
     public List<string> Emails { get; set; }
     public List<string> Phones { get; set; }
     public List<string> Links { get; set; }
+    [Boolean(Name="is_contact_page_parsed")]
     public bool IsContactPageParsed { get; set; }
 
     public override string ToString()

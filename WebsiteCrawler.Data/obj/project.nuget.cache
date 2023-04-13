@@ -1,17 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "7emyVRXkvPHGOCIvhe/8XHZ861LzVL3oXPFhHy6CVtlPTRmCf9HJcItsBLutuZSI7n2tSGX2ls5qdSCjfk3JuA==",
+  "dgSpecHash": "hpylk/wQMh0p7RjWnBTuYH/zd5I+I2PJjECmx2YNu8zx7JWURwwlHmvXl4CGXKRRNrTWINDDheDG0Q3ekglwSg==",
   "success": true,
-  "projectFilePath": "C:\\my-programms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
+  "projectFilePath": "C:\\MyPrograms\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\USER\\.nuget\\packages\\elastic.clients.elasticsearch\\8.0.8\\elastic.clients.elasticsearch.8.0.8.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\elastic.transport\\0.4.7\\elastic.transport.0.4.7.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\elastic.clients.elasticsearch\\8.0.8\\elastic.clients.elasticsearch.8.0.8.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\elastic.transport\\0.4.7\\elastic.transport.0.4.7.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\elasticsearch.net\\7.17.5\\elasticsearch.net.7.17.5.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\nest\\7.17.5\\nest.7.17.5.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

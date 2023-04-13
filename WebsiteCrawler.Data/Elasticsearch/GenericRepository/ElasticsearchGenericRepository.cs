@@ -4,16 +4,18 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Elastic.Clients.Elasticsearch;
+using Nest;
+using WebsiteCrawler.Model.Base;
+using WebsiteCrawler.Model.Responses;
 
 namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
 {
-    public class ElasticsearchGenericRepository<T> : IElasticsearchGenericRepository<T> where T : class
+    public class ElasticsearchGenericRepository<T> : IElasticsearchGenericRepository<T> where T : BaseResponse
     {
-        private readonly ElasticsearchClient _client;
+        private readonly IElasticClient _client;
         private readonly string _indexName;
 
-        public ElasticsearchGenericRepository(ElasticsearchClient client, string defaultIndexName)
+        public ElasticsearchGenericRepository(IElasticClient client, string defaultIndexName)
         {
             _client = client;
             _indexName = defaultIndexName;
@@ -21,7 +23,8 @@ namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
 
         public async Task<IndexResponse> AddAsync(T entity)
         {
-            var response = await _client.IndexAsync(entity, idx => idx.Index(_indexName));
+            var response = await _client.IndexAsync(entity, idx => idx.Index(_indexName)
+                                                                      .Id(entity.Id));
             return response;
         }
 

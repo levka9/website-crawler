@@ -1,4 +1,5 @@
 ﻿using Elastic.Clients.Elasticsearch;
+using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace WebsiteCrawler.Data.Elasticsearch
     public class PageDataParserRepository : ElasticsearchGenericRepository<PageDataParserModuleResponse>, 
                                             IPageDataParserRepository
     {
-        public PageDataParserRepository(ElasticsearchClient client, string defaultIndexName) 
+        public PageDataParserRepository(IElasticClient client, string defaultIndexName) 
                             : base(client, defaultIndexName)
         {
             
