@@ -82,7 +82,6 @@ namespace WebsiteCrawler.Logic.Modules
 
             try
             {
-                
 
                 var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(htmlPageContent);

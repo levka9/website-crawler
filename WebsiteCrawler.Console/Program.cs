@@ -46,12 +46,12 @@ namespace WebsiteCrawler.Console
             var serviceProvider = serviceCollection.BuildServiceProvider();
             var multiThreadWebsiteParser = serviceProvider.GetService<IMultiThreadWebsiteParserModule>();
 
-            var pageDataParserRepository = serviceProvider.GetService<IPageDataParserRepository>(); 
-            var elasticsearchTest = new ElasticsearchTest(pageDataParserRepository);
-            await elasticsearchTest.AddAsync();
+            //var pageDataParserRepository = serviceProvider.GetService<IPageDataParserRepository>(); 
+            //var elasticsearchTest = new ElasticsearchTest(pageDataParserRepository);
+            //await elasticsearchTest.AddAsync();
 
             /* Website Parser */
-            await OneThreadWebsiteParser.Start(serviceProvider);
+            //await OneThreadWebsiteParser.Start(serviceProvider);
 
             //TestMultithreadTasks testMultithreadTasks = new TestMultithreadTasks();
             //await testMultithreadTasks.Start();

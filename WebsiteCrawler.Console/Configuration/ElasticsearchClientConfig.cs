@@ -19,7 +19,7 @@ namespace WebsiteCrawler.Console.Configuration
     public static class ElasticsearchClientConfig
     {
 
-        public static IElasticClient GetNestClient(IConfigurationRoot configuration, Serilog.Core.Logger log)
+        public static IElasticClient GetNestClient(IConfigurationRoot configuration)
         {
             var url = configuration.GetValue<string>("Elasticsearch:Url");
             var port = configuration.GetValue<int>("Elasticsearch:Port");
@@ -42,23 +42,26 @@ namespace WebsiteCrawler.Console.Configuration
 
             var client = new ElasticClient(connectionSettings);
 
-            CreateIndices(client, defaultIndex, log);
+            CreateIndicesAndMapEntities(client, defaultIndex);
 
             return client;
         }
 
-        private static void CreateIndices(IElasticClient client, string defaultIndex, Serilog.Core.Logger log)
+        /// <summary>
+        /// Create new index and map entities
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="defaultIndex"></param>
+        /// <param name="log"></param>
+        private static void CreateIndicesAndMapEntities(IElasticClient client, string defaultIndex)
         {
 
             // Data model mapping
-            try 
+            var indicesRequest = new IndexExistsRequest(defaultIndex);
+
+            if (!client.Indices.Exists(indicesRequest).Exists)
             {
                 client.Indices.Create(defaultIndex, c => c.Map<PageDataParserModuleResponse>(m => m.AutoMap()));
-            }
-            catch (Exception ex) 
-            {
-                log.Error(ex, ex.Message);
-                //throw;
             }
         }
 

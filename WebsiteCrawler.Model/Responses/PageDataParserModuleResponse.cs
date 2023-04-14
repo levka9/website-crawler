@@ -18,8 +18,16 @@ public class PageDataParserModuleResponse : BaseResponse
 
     // webpage charset
     [JsonConverter(typeof(EncodingConverter))]
-    [Object(Name = "encoding")]
+    [Ignore]
     public Encoding? Encoding { get; set; }
+    [Text(Name = "encoding")]
+    public string EncodingText 
+    { 
+        get 
+        {
+            return Encoding.WebName;
+        } 
+    }
     [Text(Name = "title")]
     public string? Title { get; set; }
     [Text(Name = "description")]
@@ -35,6 +43,11 @@ public class PageDataParserModuleResponse : BaseResponse
     public List<string> Links { get; set; }
     [Boolean(Name="is_contact_page_parsed")]
     public bool IsContactPageParsed { get; set; }
+
+    public PageDataParserModuleResponse()
+    {
+        base.Id = Guid.NewGuid();
+    }
 
     public override string ToString()
     {
