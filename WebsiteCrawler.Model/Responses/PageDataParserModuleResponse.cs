@@ -38,11 +38,13 @@ public class PageDataParserModuleResponse : BaseResponse
     public List<string> Keywords { get; set; }
     [Text(Name = "content")]
     public string Content { get; set; }
+    [Text(Name = "contact_page_url")]
+    public string ContactPageUrl { get; set; }
+    [Boolean(Name = "is_contact_page_parsed")]
+    public bool IsContactPageParsed { get; set; }
     public List<string> Emails { get; set; }
     public List<string> Phones { get; set; }
     public List<string> Links { get; set; }
-    [Boolean(Name="is_contact_page_parsed")]
-    public bool IsContactPageParsed { get; set; }
 
     public PageDataParserModuleResponse()
     {

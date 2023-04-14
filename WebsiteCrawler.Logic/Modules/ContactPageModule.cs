@@ -127,6 +127,7 @@ namespace WebsiteCrawler.Logic.Modules
                 _htmlDocument = new HtmlDocument();
                 _htmlDocument.LoadHtml(contactPageContent);
                 _isParsed = true;
+                ParseContactPageResponse.ContactPageUrl = page.Url;
             }
         }
 

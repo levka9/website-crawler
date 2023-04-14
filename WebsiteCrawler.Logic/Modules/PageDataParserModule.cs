@@ -55,6 +55,7 @@ namespace WebsiteCrawler.Logic.Modules
 
             PageDataParserResponse.Emails = _contactPageModule.ParseContactPageResponse.Emails;
             PageDataParserResponse.Phones = _contactPageModule.ParseContactPageResponse.Phones;
+            PageDataParserResponse.ContactPageUrl = _contactPageModule.ParseContactPageResponse.ContactPageUrl;
             PageDataParserResponse.IsContactPageParsed = _contactPageModule.IsParsed;
         }
 

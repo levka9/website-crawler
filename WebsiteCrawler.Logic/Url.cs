@@ -35,7 +35,7 @@ namespace WebsiteCrawler.Logic
 
         public static string GetBaseUrl<T>(string domainName, ILogger<T> log)
         {
-            return WebRequestHelper.IsUrlAvailable<T>($"http://{domainName}", log) ? $"http://{domainName}" : $"https://{domainName}";
+            return WebRequestHelper.IsUrlAvailable<T>($"https://{domainName}", log) ? $"https://{domainName}" : $"http://{domainName}";
         }
 
         public static string GetFullUrl<T>(string domainName, string pageUrl, ILogger<T> log)

@@ -40,12 +40,6 @@ namespace WebsiteCrawler.Console.TempTests
             await websiteParserModule.ParseAsync(websiteParserModuleRequest);
 
             System.Console.WriteLine("Finished");
-            // using (var websiteParser = new WebsiteParserModule(websiteParserModuleRequest, pageDataParserModule))
-            // {
-            //     await websiteParser.Parse();
-
-            //     await FileData.SerializeAndSaveAsync<IEnumerable<object>>("links.txt", websiteParser.DicAllInternalUrls.Select(x => new { url = x.Key, deep = x.Value }));
-            // }
         }
     }
 }

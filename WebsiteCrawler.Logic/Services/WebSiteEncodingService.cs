@@ -31,8 +31,9 @@ namespace WebsiteCrawler.Logic.Services
             {
                 using(var httpClient = new HttpClient())
                 {
+                    httpClient.Timeout = TimeSpan.FromSeconds(5);
                     var response = await httpClient.GetAsync(url);
-                    httpClient.Timeout = new TimeSpan(0,0,5);
+                    
                     response.EnsureSuccessStatusCode();
 
                     var htmlPageContent = await response.Content.ReadAsStringUtf8Async();
