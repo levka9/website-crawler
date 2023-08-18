@@ -1,5 +1,5 @@
 ﻿using HtmlAgilityPack;
-using log4net;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +14,14 @@ namespace WebsiteCrawler.Logic.Modules
 {
     public class EncodingModule : IEncodingModule
     {
-        static readonly log4net.ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<EncodingModule> _log;
 
         private HtmlNode _documentNode;
         private string _domainName;
 
-        public EncodingModule()
+        public EncodingModule(ILogger<EncodingModule> logger)
         {
-            
+            _log = logger;
         }
 
         public Encoding? GetEncoding(HtmlNode documentNode, string domainName = "")
@@ -97,7 +97,7 @@ namespace WebsiteCrawler.Logic.Modules
             }
             catch (Exception ex)
             {
-                _log.Warn($"Encoding of website:{_domainName} is not valid:{charsetName} exception:", ex);
+                _log.LogWarning($"Encoding of website:{_domainName} is not valid:{charsetName} exception:", ex);
             }
 
             return encoding;

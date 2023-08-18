@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using WebsiteCrawler.Helper;
 using WebsiteCrawler.Logic.Modules.Interfaces;
-using log4net.Core;
 using Microsoft.Extensions.Logging;
+using System.Configuration;
 
 namespace WebsiteCrawler.Logic.Modules
 {
@@ -21,13 +21,21 @@ namespace WebsiteCrawler.Logic.Modules
         private ILogger<PageDataParserModule> _log;
         private HtmlDocument _htmlDocument;
         private IContactPageModule _contactPageModule;
+        private EncodingModule _encodingModule;
         public PageDataParserModuleResponse PageDataParserResponse { get; set; }
         #endregion
 
-        public PageDataParserModule(IContactPageModule contactPageModule, ILogger<PageDataParserModule> logger)
+        //public PageDataParserModule(IContactPageModule contactPageModule, ILogger<PageDataParserModule> logger)
+        //{
+        //    _log = logger;
+        //    _contactPageModule = contactPageModule;
+        //}
+
+        public PageDataParserModule(ILoggerFactory loggerFactory)
         {
-            _log = logger;
-            _contactPageModule = contactPageModule;
+            _log = loggerFactory.CreateLogger<PageDataParserModule>();
+            _contactPageModule = new ContactPageModule(loggerFactory.CreateLogger<ContactPageModule>());
+            _encodingModule = new EncodingModule(loggerFactory.CreateLogger<EncodingModule>());
         }
 
         public async Task StartAsync(string domainName, string htmlContent, IEnumerable<Page> pages = null)
@@ -70,9 +78,7 @@ namespace WebsiteCrawler.Logic.Modules
 
         private Encoding? GetEncoding()
         {
-            var encodingModule = new EncodingModule();
-
-            return encodingModule.GetEncoding(_htmlDocument.DocumentNode, _contactPageModule.DomainName);
+            return _encodingModule.GetEncoding(_htmlDocument.DocumentNode, _contactPageModule.DomainName);
         }
 
         private string GetTitle()
@@ -99,8 +105,11 @@ namespace WebsiteCrawler.Logic.Modules
         {
             var desciptionNode = _htmlDocument.DocumentNode.SelectSingleNode("//meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='keywords']");
 
-            return desciptionNode != null ? desciptionNode.Attributes["content"].Value.Split(',').ToList()
-                                            : null;
+            return desciptionNode != null ? desciptionNode.Attributes["content"]
+                                                          .Value.Split(',')
+                                                          .Where(x => !string.IsNullOrEmpty(x))
+                                                          .ToList()
+                                          : null;
         }
 
         private List<string> GetAllLinks()

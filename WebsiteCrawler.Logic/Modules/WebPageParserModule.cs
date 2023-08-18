@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using WebsiteCrawler.Models;
 using System.Text;
 using WebsiteCrawler.Logic.Extensions;
-using log4net.Core;
 using Microsoft.Extensions.Logging;
 using WebsiteCrawler.Logic.Modules.Interfaces;
 

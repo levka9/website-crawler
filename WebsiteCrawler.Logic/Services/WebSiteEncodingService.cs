@@ -1,4 +1,3 @@
-using log4net.Core;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,11 +11,16 @@ using WebsiteCrawler.Logic.Modules;
 
 namespace WebsiteCrawler.Logic.Services
 {
-    public static class WebSiteEncodingService
+    public class WebSiteEncodingService : IWebSiteEncodingService
     {
-        static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger _logger;
 
-        public static async Task<Encoding> GetEncodingAsync(string url, IPageDataParserModule pageDataParserModule)
+        public WebSiteEncodingService(ILogger<WebSiteEncodingService> logger)
+        {
+            _logger = logger;
+        }
+
+        public async Task<Encoding> GetEncodingAsync(string url, IPageDataParserModule pageDataParserModule)
         {
             var htmlContent = await GetHtmlPageContentAsync(url);
             
@@ -25,7 +29,7 @@ namespace WebsiteCrawler.Logic.Services
             return pageDataParserModule.PageDataParserResponse?.Encoding;
         }
 
-        private static async Task<string> GetHtmlPageContentAsync(string url)
+        private async Task<string> GetHtmlPageContentAsync(string url)
         {
             try
             {
@@ -43,7 +47,7 @@ namespace WebsiteCrawler.Logic.Services
             }
             catch (Exception ex)
             {
-                log.Error($"WebSiteEncoding - GetHtmlPage: {url}", ex);
+                _logger.LogError($"WebSiteEncoding - GetHtmlPage: {url}", ex);
                 return null;
                 //throw ex;
             }

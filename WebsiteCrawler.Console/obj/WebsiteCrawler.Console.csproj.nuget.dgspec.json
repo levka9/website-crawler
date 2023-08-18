@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "NEST.JsonNetSerializer": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            },
             "Serilog.Expressions": {
               "target": "Package",
               "version": "[3.4.1, )"
@@ -91,6 +95,75 @@
             "log4net": {
               "target": "Package",
               "version": "[2.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
+        "projectName": "WebsiteCrawler.Data",
+        "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj",
+        "packagesPath": "C:\\Users\\Moti\\.nuget\\packages\\",
+        "outputPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Moti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj": {
+                "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Model\\WebsiteCrawler.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Elastic.Clients.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.9.2, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.5, )"
             }
           },
           "imports": [
@@ -192,6 +265,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj": {
+                "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Data\\WebsiteCrawler.Data.csproj"
+              },
               "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj": {
                 "projectPath": "C:\\MyCode\\website-crawler\\WebsiteCrawler.Helper\\WebsiteCrawler.Helper.csproj"
               },
@@ -222,10 +298,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
-            },
-            "log4net": {
-              "target": "Package",
-              "version": "[2.0.15, )"
             }
           },
           "imports": [
@@ -283,6 +355,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

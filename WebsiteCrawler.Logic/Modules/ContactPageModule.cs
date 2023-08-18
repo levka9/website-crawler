@@ -15,6 +15,9 @@ using Microsoft.Extensions.Logging;
 
 namespace WebsiteCrawler.Logic.Modules
 {
+    /// <summary>
+    /// TODO: remove phone and address matches to the separate class/module
+    /// </summary>
     public class ContactPageModule : IContactPageModule
     {
         protected string _domainName;
@@ -63,30 +66,37 @@ namespace WebsiteCrawler.Logic.Modules
             ParseContactPageResponse.Phones = new List<string>();
 
             #region MatchByHtmlAgilityPack
-            //var phoneLinks = htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'tel:')]");
+            var phoneLinks = _htmlDocument.DocumentNode.SelectNodes("//a[starts-with(@href, 'tel:')]");
 
-            //foreach (var phoneLink in phoneLinks)
-            //{
-            //    //var phone = phoneLink.Attributes["tel"]
-            //    if (!ParseContactPageResponse.Phones.Contains(phoneLink))
-            //    {
-            //        ParseContactPageResponse.Phones.Add(phoneMatche.Value);
-            //    }
-            //} 
+            if(phoneLinks != null)
+            {
+                foreach (var phoneLink in phoneLinks)
+                {
+                    var phoneNumber = phoneLink.Attributes["href"].Value.Replace("tel:", string.Empty);
+                    if (!ParseContactPageResponse.Phones.Contains(phoneNumber))
+                    {
+                        ParseContactPageResponse.Phones.Add(phoneNumber);
+                    }
+                }
+            }            
             #endregion
 
             #region MatchByRegex
-            var phoneMatches = Regex.Matches(_htmlDocument.Text, RegexPatterns.PhoneNumber, RegexOptions.Singleline);
-
-            if (phoneMatches == null || phoneMatches.Count == 0) return;
-
-            foreach (Match phoneMatche in phoneMatches)
+            if (ParseContactPageResponse.Phones == null || ParseContactPageResponse.Phones.Count == 0)
             {
-                if (!ParseContactPageResponse.Phones.Contains(phoneMatche.Value))
+                var phoneMatches = Regex.Matches(_htmlDocument.Text, RegexPatterns.PhoneNumber, RegexOptions.Singleline)
+                                        .Where(x => x.Length >= 10);
+
+                if (phoneMatches == null || phoneMatches.Count() == 0) return;
+
+                foreach (Match phoneMatche in phoneMatches)
                 {
-                    ParseContactPageResponse.Phones.Add(phoneMatche.Value);
+                    if (!ParseContactPageResponse.Phones.Contains(phoneMatche.Value))
+                    {
+                        ParseContactPageResponse.Phones.Add(phoneMatche.Value);
+                    }
                 }
-            }
+            }            
             #endregion
         }
 

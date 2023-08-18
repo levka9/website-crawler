@@ -40,6 +40,8 @@ public class PageDataParserModuleResponse : BaseResponse
     public string Content { get; set; }
     [Text(Name = "contact_page_url")]
     public string ContactPageUrl { get; set; }
+    [Text(Name = "contact_page_html")]
+    public string ContactPageHtml { get; set; }
     [Boolean(Name = "is_contact_page_parsed")]
     public bool IsContactPageParsed { get; set; }
     public List<string> Emails { get; set; }

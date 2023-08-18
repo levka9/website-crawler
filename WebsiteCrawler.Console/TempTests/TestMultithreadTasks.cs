@@ -1,42 +1,49 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using WebsiteCrawler.Console.Configuration;
 
 namespace WebsiteCrawler.Console.TempTests
 {
     public class TestMultithreadTasks
     {
-        private static int Counter = 0;
-        private List<Task> tasks;
+        private static int _currentTaskQuantity = 0;
+        private int _maxTaskQuantity;
+
+        public TestMultithreadTasks(IConfigurationRoot? configuration)
+        {
+            _maxTaskQuantity = 2; // configuration.GetValue<int>(AppSettingsParameters.PARSER_MULTITHREAD_PARSER_MAX_TASK_QUANTITY);
+        }
 
         public async Task Start()
         {
-            tasks = new List<Task>();
+            var tasks = new List<Task>();
 
             while (true)
             {
-                for (int i = 0; i < 5 && tasks.Count < 5; i++)
+                for (int i = 0; i < _maxTaskQuantity && tasks.Count < _maxTaskQuantity; i++)
                 {
                     Func<int> getTaskId = null;
-                    Task worker = new Task(async () =>
+                    Task task = new Task(async () =>
                     {
-                        DoWork(Counter++, getTaskId);
+                        DoWork(_currentTaskQuantity++, getTaskId);
                     }, TaskCreationOptions.LongRunning);
 
                     getTaskId = delegate ()
                     {
-                        return worker.Id;
+                        return task.Id;
                     };
 
-                    worker.Start();
-                    tasks.Add(worker);
+                    task.Start();
+                    tasks.Add(task);
                 }
 
                 var completedTask = await Task.WhenAny(tasks.ToArray());
                 tasks.Remove(completedTask);
-                System.Console.Write("Task id is {0} removed\r\n", completedTask.Id);
+                System.Console.Write("Task id {0} completed his work.\r\n", completedTask.Id);
                 Thread.Sleep(2000);
             }
         }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Nest;
+using WebsiteCrawler.Data.Models;
 using WebsiteCrawler.Model.Base;
 using WebsiteCrawler.Model.Responses;
 
@@ -28,24 +30,59 @@ namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
             return response;
         }
 
-        public Task DeleteAsync(string id)
+        public async Task<bool> DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            var response = await _client.DeleteAsync<T>(id, idx => idx.Index(_indexName));
+
+            if (!response.IsValid)
+            {
+                throw new Exception(response.OriginalException.Message);
+            }
+            
+            return response.IsValid;
         }
 
-        public Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        public async Task<IEnumerable<T>> FindAsync(ElasticsearchRequest request)
         {
-            throw new NotImplementedException();
+            var dynamicQuery = new List<QueryContainer>();
+            foreach (var item in request.Fields)
+            {
+                dynamicQuery.Add(Query<T>.Match(m => m.Field(new Field(item.Key.ToLower())).Query(item.Value)));
+            }
+
+            var result = await _client.SearchAsync<T>(s => s
+                                           .From(request.From)
+                                           .Size(request.Size)
+                                           .Index(_indexName)
+                                           .Query(q => q.Bool(b => b.Must(dynamicQuery.ToArray()))));
+
+            if (!result.IsValid)
+            {
+                throw new Exception(result.OriginalException.Message);
+            }
+
+            return result.Documents;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(int page = 1, int size = 200)
+        public IEnumerable<T> GetAll(int page = 0, int size = 200)
         {
-            var searchResponse = await _client.SearchAsync<T>(s => s.Index(_indexName)
-                                                                    .From((page - 1) * size)
-                                                                    .Size(size));
-            var hit = searchResponse.Hits;
-            var documents = hit.Select(hit => hit.Source);
-            return documents;
+            ValidateAndSetSize(ref size);
+
+            return _client.Search<T>(s => s.From(page)
+                                           .Size(size)
+                                           .MatchAll()
+                                           .Index(_indexName)).Documents;
+        }
+
+        public async Task<IEnumerable<T>> GetAllAsync(int page = 0, int size = 200)
+        {
+            ValidateAndSetSize(ref size);
+
+            return (await _client.SearchAsync<T>(s => s.From(page)
+                                                       .Size(size)
+                                                       .MatchAll()
+                                                       .Index(_indexName)
+                                                       )).Documents;
         }
 
         public async Task<T> GetByIdAsync(string id)
@@ -57,6 +94,14 @@ namespace WebsiteCrawler.Data.Elasticsearch.GenericRepository
         public Task Update(string id, T entity)
         {
             throw new NotImplementedException();
+        }
+
+        private void ValidateAndSetSize(ref int size)
+        {
+            var maxEntitiesResponse = _client.Count<T>();
+            var maxEntitiesCount = (int)maxEntitiesResponse.Count;
+
+            size = (size > maxEntitiesCount) ? maxEntitiesCount : size;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace WebsiteCrawler.Console.Configuration
         {
             var defuaultIndex = configuration.GetValue<string>("Elasticsearch:DefaultIndex");
             var elasticsearchClient = ElasticsearchClientConfig.GetNestClient(configuration);
-
+            
             services.AddLogging(configure => configure.AddSerilog(logger))
                     .AddTransient<IMultiThreadWebsiteParserModule, MultiThreadWebsiteParserModule>()
                     .AddTransient<IPageDataParserModule, PageDataParserModule>()

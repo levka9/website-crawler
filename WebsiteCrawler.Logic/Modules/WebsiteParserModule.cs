@@ -16,6 +16,7 @@ using WebsiteCrawler.Logic.Modules.Interfaces;
 using Microsoft.Extensions.Logging;
 using WebsiteCrawler.Data.Elasticsearch.GenericRepository;
 using WebsiteCrawler.Data.Elasticsearch;
+using Nest;
 
 namespace WebsiteCrawler.Logic
 {
@@ -32,8 +33,10 @@ namespace WebsiteCrawler.Logic
         private EDomainLevel _domainLevel;
         private IWebPageParserModule _webPageParserModule;
         private IPageDataParserModule _pageDataParserModule;
+        private IWebSiteEncodingService _webSiteEncodingService;
         private IEnumerable<string> _domainExtentions; 
         private ILogger<WebsiteParserModule> _log;
+        private ILoggerFactory _loggerFactory;
 
         private int _totalPagesParsed;
         private Dictionary<string, int> _dicAllInternalUrls;
@@ -45,16 +48,24 @@ namespace WebsiteCrawler.Logic
         #endregion
 
         #region Constructors
-        public WebsiteParserModule(IWebPageParserModule webPageParserModule,
-                                   IPageDataParserModule pageDataParserModule,
-                                   IPageDataParserRepository pageDataParserRepository,
-                                   ILogger<WebsiteParserModule> logger)
-        {
-            _webPageParserModule = webPageParserModule;
-            _pageDataParserModule = pageDataParserModule;
+        //public WebsiteParserModule(IWebPageParserModule webPageParserModule,
+        //                           IPageDataParserModule pageDataParserModule,
+        //                           IPageDataParserRepository pageDataParserRepository,
+        //                           ILogger<WebsiteParserModule> logger)
+        //{
+        //    _webPageParserModule = webPageParserModule;
+        //    _pageDataParserModule = pageDataParserModule;
+        //    _pageDataParserRepository = pageDataParserRepository;
+        //    _log = logger;
+        //} 
+        public WebsiteParserModule(ILoggerFactory loggerFactory, IPageDataParserRepository pageDataParserRepository)
+        {            
+            _webPageParserModule = new WebPageParserModule(loggerFactory.CreateLogger<WebPageParserModule>());
+            _pageDataParserModule = new PageDataParserModule(loggerFactory);
             _pageDataParserRepository = pageDataParserRepository;
-            _log = logger;
-        } 
+            _webSiteEncodingService = new WebSiteEncodingService(loggerFactory.CreateLogger<WebSiteEncodingService>());
+            _log = loggerFactory.CreateLogger<WebsiteParserModule>();
+        }
         #endregion
 
         public async Task ParseAsync(WebsiteParserModuleRequest websiteParserModuleRequest)
@@ -70,9 +81,9 @@ namespace WebsiteCrawler.Logic
                 return;
             } 
 
-            _encoding =  await WebSiteEncodingService.GetEncodingAsync(_baseUrl, _pageDataParserModule);
+            _encoding =  await _webSiteEncodingService.GetEncodingAsync(_baseUrl, _pageDataParserModule);
 
-            await RecursiveParseInnerPages(_baseUrl, 0, new Page());
+            await RecursiveParseInnerPages(_baseUrl, 0, new Models.Page());
             
             Console.WriteLine($"TaskId: {_taskId} TaskCounter: {_taskCounter} Domain: {_domainName} ended.");
         }
@@ -93,7 +104,7 @@ namespace WebsiteCrawler.Logic
             _totalPagesParsed = 0;
         }
         
-        private async Task RecursiveParseInnerPages(string url, int deep, Page page)
+        private async Task RecursiveParseInnerPages(string url, int deep, Models.Page page)
         {
             if (deep > _maxDeep || _totalPagesParsed > _maxInternalLinks)
             {
@@ -123,7 +134,7 @@ namespace WebsiteCrawler.Logic
             }            
         }
                 
-        private async Task GetHomepageContent(string htmlPageContent, IEnumerable<Page> pages, int deep)
+        private async Task GetHomepageContent(string htmlPageContent, IEnumerable<Models.Page> pages, int deep)
         {
             if (!IsHomepage(deep)) 
             {
@@ -136,7 +147,7 @@ namespace WebsiteCrawler.Logic
             await _pageDataParserRepository.AddAsync(_pageDataParserModule.PageDataParserResponse);
         }
 
-        private bool IsContainInnerPages(Page Page)
+        private bool IsContainInnerPages(Models.Page Page)
         {
             return _webPageParserModule.Page != null &&
                    _webPageParserModule.Page.InnerPages != null &&
@@ -159,11 +170,11 @@ namespace WebsiteCrawler.Logic
             return pageUrl;
         }
 
-        private List<Page> GetOnlyNewInternalPages(List<Page> pages, int deep)
+        private List<Models.Page> GetOnlyNewInternalPages(List<Models.Page> pages, int deep)
         {
             if (pages == null && pages.Count == 0) return null;
 
-            var newPages = new List<Page>();
+            var newPages = new List<Models.Page>();
             var internalPages = pages.Where(x => x.IsExternal != true).ToList();
 
             for (int i = 0, length = internalPages.Count(); i < length; i++)
@@ -189,7 +200,7 @@ namespace WebsiteCrawler.Logic
             return newPages;
         }
 
-        private void SetExternalWebsite(List<Page> Pages)
+        private void SetExternalWebsite(List<Models.Page> Pages)
         {
             if (Pages == null && Pages.Count == 0) return;
 

@@ -10,6 +10,9 @@ using WebsiteCrawler.Model.Responses;
 
 namespace WebsiteCrawler.Data.Elasticsearch
 {
+    /// <summary>
+    /// TODO: Make this repository safe in concurently way
+    /// </summary>
     public class PageDataParserRepository : ElasticsearchGenericRepository<PageDataParserModuleResponse>, 
                                             IPageDataParserRepository
     {

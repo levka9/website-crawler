@@ -1,5 +1,4 @@
 C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/WebsiteCrawler.Console.exe
-C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/log4net.config
 C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/WebsiteCrawler.Console.deps.json
 C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/WebsiteCrawler.Console.runtimeconfig.json
 C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/WebsiteCrawler.Console.dll
@@ -102,7 +101,6 @@ C:/MyCode/website-crawler/WebsiteCrawler.Console/bin/Debug/net7.0/Serilog.Extens
 /home/moti/Documents/website-crawler/WebsiteCrawler.Console/obj/Debug/net7.0/ref/WebsiteCrawler.Console.dll
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.exe
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\appsettings.json
-C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\log4net.config
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.deps.json
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.runtimeconfig.json
 C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Console.dll
@@ -268,3 +266,10 @@ C:\MyPrograms\website-crawler\WebsiteCrawler.Console\obj\Debug\net7.0\ref\Websit
 C:\MyPrograms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elasticsearch.Net.dll
 C:\MyPrograms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Nest.dll
 C:\MyPrograms\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Nest.JsonNetSerializer.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elastic.Clients.Elasticsearch.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elastic.Transport.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Elasticsearch.Net.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Nest.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\Nest.JsonNetSerializer.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Data.dll
+C:\MyCode\website-crawler\WebsiteCrawler.Console\bin\Debug\net7.0\WebsiteCrawler.Data.pdb
